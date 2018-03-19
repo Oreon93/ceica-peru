@@ -1,0 +1,21 @@
+{% block content %}
+{% load static %}
+<section>
+  <div class="group">
+    {% for e in service_list %}
+    <div class="col-1-3 card light">
+      <img src="/static/uploads/{{e.image}}">
+      <div class="card-caption">
+        <p class="card-title">
+        {{ e.service_name }}
+        </p>
+        <p>
+        {{ e.service_description }}
+      </p>
+      </div>
+    </div><!--Stop the white space
+    -->
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

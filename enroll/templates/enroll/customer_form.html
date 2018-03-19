@@ -1,0 +1,41 @@
+
+{% extends "template.html" %}
+{% block content %}
+{% load static %}
+
+<section class="full-width inset ">
+  <div class="container">
+  <p class="prominent"><strong>Thanks for choosing Ceica Peru!</strong></p>
+  <p class="prominent">
+    In order to register for lessons in Ceica Peru Spanish  School each student must submit the enrollment form that appears below and a one time (non-refundable) 20 dollars registration fee. This fee guarantees your enrollment in Ceica Peru Spanish School. This fee is not part of your tuition, which you will pay upon arrival. You may pay your tuition in Soles.
+  </p>
+</div>
+</section>
+<section class="container">
+  <h2 class="text-center">
+    Step 1: Your details
+  </h2>
+  <form action="" method="post">
+      {% csrf_token %}
+      <table>
+        <div class="contact-details enroll-form">{{form.first_name.errors}}{{ form.first_name.label_tag }} {{ form.first_name }}</div>
+        <div class="contact-details enroll-form">{{form.last_name.errors}}{{ form.last_name.label_tag }} {{ form.last_name }}</div>
+        <div class="enroll-form">
+        {{form.last_name.errors}}
+        {{form.email_address.label_tag}}
+        {{form.email_address}}
+        </div>
+        <div class="contact-details enroll-form">{{form.phone.errors}}{{ form.phone.label_tag }} {{ form.phone }}</div>
+        <div class="contact-details enroll-form">{{form.whatsapp.errors}}{{ form.whatsapp.label_tag }} {{ form.whatsapp }}</div>
+        <div class="contact-details enroll-form">{{form.nationality.errors}}{{ form.nationality.label_tag }} {{ form.nationality }}</div>
+        <div class="contact-details enroll-form">{{form.passport_number.errors}}{{ form.passport_number.label_tag }} {{ form.passport_number }}</div>
+        <div class="contact-details enroll-form">{{form.occupation.errors}}{{ form.occupation.label_tag }} {{ form.occupation }}</div>
+        <div class="contact-details enroll-form">{{form.date_of_birth.errors}}{{ form.date_of_birth.label_tag }} {{ form.date_of_birth }}</div>
+        <div class="contact-details enroll-form">{{form.gender.errors}}{{ form.gender.label_tag }} {{ form.gender }}</div>
+        <div class="contact-details enroll-form">{{form.marital_status.errors}}{{ form.marital_status.label_tag }} {{ form.marital_status }}</div>
+      </table>
+      <input type="submit" value="Submit" />
+
+  </form>
+</section>
+{% endblock %}

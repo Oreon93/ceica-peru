@@ -1,0 +1,16 @@
+{% block content %}
+{% load static %}
+{% if abilitylevel_list %}
+<h2 class="text-center"> Course levels</h2>
+  {% for abilitylevel in abilitylevel_list %}
+  <button class="accordion">{{abilitylevel.level_name }}</button>
+  <div class="panel">
+    <img src="/static/uploads/{{abilitylevel.image}}">
+    <p>{{abilitylevel.level_description|linebreaksbr}}</p>
+
+  </div>
+  {% endfor %}
+{% else %}
+<p>No courses, sorry!</p>
+{% endif %}
+{% endblock %}

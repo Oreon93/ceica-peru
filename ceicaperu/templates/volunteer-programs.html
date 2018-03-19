@@ -1,0 +1,78 @@
+{% extends "template.html" %}
+{% block content %}
+{% load static %}
+<header class="full-width ">
+  <div class="full-width-title-image">
+    <img src="{% static 'images/volunteer-programs.JPG' %}">
+    <div class="title-image-text">
+      <h1 class="slider-title">Volunteer Programs</h1>
+    </div>
+  </div>
+</header>
+<div class="container two-column">
+
+
+  <section class="main">
+    <p>Below you will find the list of volunteer projects that Ceica Peru currently offers. You can choose the length of your stay and you can also choose to combine volunteering with Spanish lessons. For more information on this,, see the price table at the bottom of the page.</p>
+    {% if volunteer_project_list %}
+    <h2>Volunteer Projects</h2>
+    {% for project in volunteer_project_list %}
+    <button class="accordion">{{project.project_name }}<i class="fas fa-angle-down fa-lg style="float:right""></i></button>
+
+    <div class="panel">
+      <img src="/static/uploads/{{project.image}}">
+
+      <p>{{project.description|linebreaksbr}}</p>
+
+    </div>
+    {% endfor %}
+    {% else %}
+    <p>No courses, sorry!</p>
+    {% endif %}
+    <br>
+    {% if price_list %}
+    <h2>Prices</h2>
+    {% regroup price_list by get_program_type_display as program_type_list %}
+    {% for program_type, programs in program_type_list %}
+
+
+        <table class="price-list">
+          <tr>
+            <th>{{program_type}}</th>
+            <th>Orientation</th>
+            <th>Volunteering</th>
+            <th>Accommodation</th>
+            <th>Price</th>
+          </tr>
+          {% for program in programs %}
+          <tr>
+            <td>{{program.name}}</td>
+            <td>{{program.orientation}}</td>
+            <td>{{program.volunteer_work}}</td>
+            <td>{{program.accommodation}}</td>
+            <td>S/. {{program.price}}</td>
+          </tr>
+          {% endfor %}
+        </table>
+        <br>
+
+
+    {% endfor %}
+    <p class="prominent">For more prices and to calculate the total cost of your stay at Ceica Peru, <a href="/prices">click here</a>.</p>
+
+
+    {% endif %}
+  </section>
+  <section class="key-information">
+    <h2>Program requirements</h2>
+    <ul>
+      <li>You must be at least 18 years old.</li>
+      <li>You should obey the personnel in charge of your social project.</li>
+      <li>It's important to have an open mindset to understand the restrictions that our traditional  conservative culture imposes, for example when you are working wear appropriate clothes (no miniskirts, shorts, low or skimpy tops etc); avoid romantic relationships with the personnel or youths in care.</li>
+      <li>Behave ethically in the volunteer work place and be willing to comply with the norms established by the institution.</li>
+
+    </ul>
+    <a href="{% url 'enroll' %}"><button class="btn">Enrol now</button></a>
+  </section>
+</div>
+{% endblock %}

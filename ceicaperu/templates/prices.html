@@ -1,0 +1,137 @@
+{% extends "template.html" %}
+{% block content %}
+{% load static %}
+<header class="full-width">
+  <div class="full-width-title-image">
+    <img style="margin-top: -47%" src="{% static 'images/prices.JPG' %}">
+    <div class="title-image-text">
+      <h1 class="slider-title">Prices</h1>
+    </div>
+</header>
+<div class="container">
+  <p class="prominent"><a href="#C">Courses</a> | <a href="#A">Accommodation</a> | <a href="#O">Other</a></p>
+</div>
+<section class="strips">
+{% if price_list %}
+  <h2 id="C" class="text-center">Courses</h2>
+  <p class="prominent">Prices are shown per week in Soles. Special courses may have a fixed duration (see <a href="{% url 'special-programs' %}">special programs</a>).</p>
+  {% regroup price_list by service.get_service_type_display as service_type_list %}
+  {% for service_type, prices in service_type_list %}
+      <div class="container">
+      <h2 id="{{service_type|first}}"> {{ service_type }}s</h2>
+        <table class="price-list">
+          <tr>
+            <th>(Price per person)
+            </th>
+
+        {% for customer_type in customer_type_list %}
+          {% if customer_type.number == 4 %}
+          <th>Group of 4 or more </th>
+          {% elif customer_type.number == 1 %}
+          <th>One on one</th>
+          {% else %}
+          <th>Group of {{ customer_type.number}}</th>
+          {% endif %}
+        {% endfor %}
+          </tr>
+          {% regroup prices by service as service_list %}
+          {% for service, prices in service_list %}
+          <tr>
+            <td>{{service}}
+            </td>
+            {% for customer_type in customer_type_list %}
+            <td>{% for price in prices %}{% if price.customer_type == customer_type %}S/.{{ price.price}}{% endif %}{% endfor %}</td>
+            {% endfor %}
+          {% endfor %}
+          </tr>
+        </table>
+
+      </div>
+  {% endfor %}
+{% else %}
+<p>No courses, sorry!</p>
+{% endif %}
+</section>
+<section class="strips">
+<div class="container">
+  <h2 id="A" class="text-center">Accommodation</h2>
+
+  {% if first_price_list %}
+  <h2>Host family</h2>
+  <table class="price-list">
+    <tr>
+      <th>(Price per room per week)</th>
+      {% regroup catering_price_list by catering as catering_type_list %}
+      {% for catering_type, prices in catering_type_list %}
+      <th>{{catering_type}}</th>
+      {% endfor %}
+      {% regroup room_price_list by room_type as room_type_list %}
+      {% for room_type, the_prices in room_type_list %}
+      <tr>
+
+        <td>{{room_type}} room
+        </td>
+        {% for catering_type in catering_type_list %}
+        <td>{% for price in the_prices %}{% if price.catering == catering_type.grouper %}S/.{{ price.price}}{% endif %}{% endfor %}</td>
+        {% endfor %}
+      {% endfor %}
+      </tr>
+    </tr>
+  </table>
+  {% endif %}
+
+  {% if second_price_list %}
+  <h2>School building</h2>
+  <table class="price-list">
+    <tr>
+      <th>(Price per room per week)</th>
+      {% regroup school_room_price_list by room_type as room_type_list %}
+      {% for room_type, prices in room_type_list %}
+      <th>{{room_type}} room</th>
+      {% endfor %}
+      {% regroup school_catering_price_list by catering as catering_type_list %}
+      {% for catering_type, the_prices in catering_type_list %}
+      <tr>
+
+        <td>Catering - {{catering_type}}
+        </td>
+        {% for room_type in room_type_list %}
+        <td>{% for price in the_prices %}{% if price.room_type == room_type.grouper %}S/.{{ price.price}}0{% endif %}{% endfor %}</td>
+        {% endfor %}
+      {% endfor %}
+      </tr>
+    </tr>
+  </table>
+  {% endif %}
+
+  {% if third_price_list %}
+  <h2>Private apartment</h2>
+  <table class="price-list">
+    <tr>
+      <th></th>
+      {% for duration in third_price_list %}
+      <th>{{duration.duration|capfirst}}</th>
+      {% endfor %}
+    </tr>
+    <tr>
+      <td>Price</td>
+      {% for duration in third_price_list %}
+      <td>S/.{{duration.price}}0</td>
+      {% endfor %}
+    </tr>
+  </table>
+  {% else %}
+  Oh no!
+  {% endif %}
+  <p>A deposit of  450  soles is required to rent an apartment for two weeks, to rent an apartment for a month or more a deposit of 900 soles is required.  The deposit will be returned at the end of the contract if there has been no breakage or damage to the apartment; if there has been either a corresponding deduction of the refund will be made.</p>
+</div>
+</section>
+<section class="strips">
+  <div class="container">
+    <h2 id="O" class="text-center">Other</h2>
+    <p><b>Airport and pickup:</b> We offer pick-up service for our students, we charge 35 soles for transportation from the airport or bus station to the host family.</p>
+    <p><b>Enrollment and reservation: </b>To book  courses and  accommodation  students have to pay the enrollment fee, complete and send the enrollment form that appears on the "Enroll" page. We request an enrollment fee of US$ 20 to book a place for a student, this fee must be paid with a credit card via paypal. The payment of  Spanish lessons and  accommodation must be paid weekly at the school at the beginning of each week. We only accept cash and we prefer  payment in US dollars or Soles (the local currency).</p>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "template.html" %}
+{% block content %}
+{% load static %}
+<header class="full-width page-title">
+  <div class="container">
+    <img src="{% static 'images/icon-contact.png' %}">
+    <h1>Enroll</h1>
+  </div>
+</header>
+<section class="container">
+  <h2 class="text-center">
+    All done!
+  </h2>
+  <p class="prominent">Thanks for enrolling with us. We'll be in touch shortly to confirm your place on your chosen course. If you have any questions, just e-mail: <a href="mailto:info@ceica-peru.com">info@ceica-peru.com</a>.</p>
+  <a href="{% url 'index' %}"><p class="prominent">Back to the home page.</p></a>
+{{ request.session.username }}
+</section>
+{% endblock %}

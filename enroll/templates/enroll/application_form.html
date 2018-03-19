@@ -1,0 +1,49 @@
+
+{% extends "template.html" %}
+{% block content %}
+{% load static %}
+<header class="full-width page-title">
+  <div class="container">
+    <img src="{% static 'images/icon-contact.png' %}">
+    <h1>Enroll</h1>
+  </div>
+</header>
+<section class="container">
+  <h2 class="text-center">
+    Finally...
+  </h2>
+  <form action="" method="post" class="course-form">
+        {% csrf_token %}
+        <div id="optionlist" class="dynamic-options">
+        {{optionlist}}
+        </div>
+        <table>
+          <p class="prominent">Give us some more information about your stay:</p>
+          <div class="contact-details enroll-form">{{form.arrival_date.label_tag}}{{form.arrival_date}}</div>
+          <div class="contact-details enroll-form">{{form.departure_date.label_tag}}{{form.departure_date}}</div>
+          <div class="enroll-form">
+            <p class="prominent">Airport pickup?</p>
+            {{form.airport_pickup}}
+          </div>
+          <div id="level-0">
+          <p class="prominent">Would you like accommodation?</p>
+          {{form.accommodation}}
+          </div>
+          <div id="level-1" class="dynamic-options">
+          <p class="prominent">Select your accommodation:</p>
+          {{form.accommodation_type}}
+          </div>
+          <div id="level-2" class="dynamic-options">
+          <p class="prominent">Select your room:</p>
+          {{form.room_type}}
+          </div>
+          <div id="level-3" class="dynamic-options">
+          <p class="prominent">Catering:</p>
+          {{form.catering}}
+          </div>
+
+        </table>
+        <input type="submit" value="Submit" />
+    </form>
+</section>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "template.html" %}
+{% block content %}
+{% load static %}
+<section class="full-width">
+  <div class="parallax-window" data-parallax="scroll" data-image-src="{% static 'images/slide-3.PNG' %}">
+      <h1 class="parallax-title">About us</h1>
+    <p class="parallax-text">Welcome to the Ceica Peru  Spanish School  and to the city of Arequipa, <br>the main city of southern Peru.</p>
+    <p class="parallax-text">Arequipa is a beautiful city with excellent weather, surrounded by spectacular mountains and declared by UNESCO as a world heritage site because of its colonial architecture. From here you can go on excursions to Colca Canyon, Cotahuasi Canyon (the deepest Canyon of the world) or to the cities of Puno, and Cuzco.</p>
+    <p class="parallax-text">At Ceica Peru Spanish School, we have taught hundreds of people from around the world who are interested in studying in South America because of its culture, fascinating geography and the opportunity to get to know its diverse peoples.</p>
+    <p class="parallax-text">Our teaching methods are regularly reviewed and updated based on the latest educational research and techniques. Based on this and our highly qualified teachers, you can be assured that you will quickly learn Spanish. It's easy.</p>
+  </div>
+</section>
+
+<section class="full-width strips">
+  <div class="container group">
+    <div class="col col-2-3">
+      <h2>About the school</h2>
+      <p>Ceica Peru is a small Spanish School founded in 1996 by Dr. Carmen Cornejo, who earned her doctorate in history and is a professor of linguistic and literature. Co-founders include a group of highly qualified teachers with specialized training in teaching Spanish as a foreign language.</p>
+      <p>Ceica Peru Spanish School is situated near the center of Arequipa (only a 25 – minute walk from the historical city center).</p>
+  </div>
+  <div class="col col-1-3 image-col">
+    <img src="{% static 'images/about-the-school-1.PNG' %}" class="photo">
+  </div>
+</section>
+<section class="full-width strips">
+  <div class="container group">
+    <div class="col col-1-3 image-col">
+      <img src="{% static 'images/about-the-school-2.PNG' %}" class="photo">
+    </div>
+    <div class="col col-2-3">
+      <h2>Teaching method</h2>
+      <p>Our teaching method normally combines both grammar and conversation, but the students can specialize in one or the other.</p>
+      <p>All classes have a maximum of four students. Basic classes are taught by bilingual teachers (English and Spanish), more advance and special courses such as Peruvian history and literature are taught by monolingual teachers. All our teachers are professionals who have specialized in teaching Spanish as a foreign language and have many years of experience in this area.</p>
+  </div>
+</section>
+<section class="full-width strips">
+  <div class="container">
+    <h2 class="text-center">Our team</h2>
+    <img src="{% static 'images/about-the-school-3.PNG' %}" class="photo feature">
+
+  {% if teacher_list %}
+  {% for teacher in teacher_list %}
+    <div class="quote teacher">
+      <a class="control control-left">‹</a>
+      <div>
+        <p>"{{teacher.description}}"</p>
+        <p class="author">{{teacher.name}}</p>
+        <p class="position">{{teacher.title}}</p>
+      </div>
+      <a class="control control-right">›</a>
+    </div>
+  {% endfor %}
+  </div>
+  {% else %}
+  <p>No teachers, sorry!</p>
+  {% endif %}
+</section>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends "template.html" %}
+{% block content %}
+{% load static %}
+<header class="full-width">
+  <div class="full-width-title-image">
+    <img src="{% static 'images/accommodation-4.JPG' %}">
+    <div class="title-image-text">
+      <h1 class="slider-title">Accommodation</h1>
+    </div>
+  </div>
+</header>
+<section class="container">
+  <p class="prominent">Ceica Peru offers three accommodation options for your stay in Arequipa. Immerse yourself in Peruvian life by staying with a host family, stay in the school building for conveniently located facilities, or live it up in a private apartment.</p>
+</section>
+{% if accommodation_list %}
+  {% for e in accommodation_list %}
+  <div class="strips">
+  <section class="container">
+  <h2> {{ e.name }}</h2>
+  <div class="group">
+    <div class="col-2-3">
+    <div class="group">
+    {% for feature in e.features.all %}
+    <div class="features">
+    <img src="/static/uploads/{{feature.icon}}">
+    <p>
+      <b>{{feature.name}}</b><br>
+      {{feature.description}}
+    </p>
+    </div>
+    {% endfor %}
+    </div>
+
+    <p>
+      {{ e.description|linebreaksbr }}
+    </p>
+    <a class="btn" href="{% url 'prices' %}#A">See prices ></a>
+    </div>
+    <div class="col-1-3">
+    <img class="photo" src="/static/uploads/{{e.image}}">
+    </div>
+  </div>
+  </section>
+
+  </div>
+  {% endfor %}
+{% else %}
+<p>No courses, sorry!</p>
+{% endif %}
+
+{% if faq_list %}
+<section class="container">
+  <h2 class="text-center">FAQs</h2>
+  {% for FAQ in faq_list %}
+  <button class="accordion">{{ FAQ.question }}<i class="fas fa-angle-down fa-lg style="float:right""></i></button>
+  <div class="panel faq">
+    <p>{{FAQ.answer|linebreaksbr}}</p>
+
+
+  </div>
+  {% endfor %}
+</section>
+{% else %}
+<p>No courses, sorry!</p>
+{% endif %}
+{% endblock %}

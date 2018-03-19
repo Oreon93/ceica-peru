@@ -1,0 +1,29 @@
+{% extends "template.html" %}
+{% block content %}
+{% load static %}
+<header class="full-width">
+  <div class="full-width-title-image">
+    <img style="margin-top: -45%" src="{% static 'images/how-to-enroll.JPG' %}">
+    <div class="title-image-text">
+      <h1 class="slider-title">How to enroll</h1>
+    </div>
+</header>
+<section class="container">
+{% if object_list %}
+  {% regroup object_list by get_question_type_display as question_type_list %}
+  {% for question_type in question_type_list %}
+  <h2 class="text-center"> {{ question_type.grouper }}</h2>
+  {% for FAQ in question_type.list %}
+  <button class="accordion">{{ FAQ.question }}<i class="fas fa-angle-down fa-lg style="float:right""></i></button>
+  <div class="panel faq">
+    <p>{{FAQ.answer|linebreaksbr}}</p>
+
+
+  </div>
+  {% endfor %}
+  {% endfor %}
+{% else %}
+<p>No courses, sorry!</p>
+{% endif %}
+</section>
+{% endblock %}

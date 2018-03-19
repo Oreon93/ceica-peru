@@ -1,0 +1,85 @@
+{% extends "template.html" %}
+{% block content %}
+{% load static %}
+<header class="full-width ">
+  <div class="full-width-title-image">
+    <img src="{% static 'images/learn-spanish-2.JPG' %}">
+    <div class="title-image-text">
+      <h1 class="slider-title">Spanish Lessons</h1>
+    </div>
+  </div>
+</header>
+<section class="full-width inset ">
+<div class="container">
+  <p>Ceica Peru Spanish School has the Spanish course you need because all our courses are  tailor-made to suit the ability and needs of our students. You decide what day to start your course, the number of hours to study (at least 10 hours per week) and the duration of the course. Lessons are normally held from Monday to Friday, but lessons during the weekend are also possible.</p>
+</div>
+</section>
+<div class="container two-column">
+
+  <section class="key-information">
+    <h2>Course information</h2>
+    <ul>
+      <li>Lessons evenly divided between grammar and speaking practice</li>
+      <li>Each day of lessons includes a 20 minute coffee break</li>
+      <li>Coursebook and teaching material provided free of charge</li>
+      <li>You will be presented with a certificate at the end of your course</li>
+      <li>Maximum of <strong>4 students</strong> in a group</li>
+
+    </ul>
+    <button class="btn">Enrol now</button>
+  </section>
+  <section class="main">
+    {% if abilitylevel_list %}
+    <h2 class="text-center">Ability levels</h2>
+    {% for abilitylevel in abilitylevel_list %}
+    <button class="accordion">{{abilitylevel.level_name }}</button>
+    <div class="panel">
+      <img src="/static/uploads/{{abilitylevel.image}}">
+      <p>{{abilitylevel.level_description|linebreaksbr}}</p>
+
+    </div>
+    {% endfor %}
+    {% else %}
+    <p>No courses, sorry!</p>
+    {% endif %}
+    <br>
+    {% if price_list %}
+    <h2 class="text-center">Course prices</h2>
+    <table class="price-list">
+      <tr>
+        <th>(Price per person)
+        </th>
+
+    {% for customer_type in customer_type_list %}
+      {% if customer_type.number == 4 %}
+      <th>Group of 4 or more </th>
+      {% elif customer_type.number == 1 %}
+      <th>One on one</th>
+      {% else %}
+      <th>Group of {{ customer_type.number}}</th>
+      {% endif %}
+    {% endfor %}
+      </tr>
+      {% regroup price_list by service as lesson_list %}
+      {% for service, prices in lesson_list %}
+      <tr>
+        <td>{{service}}
+        </td>
+        {% for customer_type in customer_type_list %}
+        <td>{% for price in prices %}{% if price.customer_type == customer_type %}S/.{{ price.price}}{% endif %}{% endfor %}</td>
+        {% endfor %}
+      {% endfor %}
+      </tr>
+    </table>
+
+
+
+    {% endif %}
+  </section>
+</div>
+
+
+<h2 class="text-center">Extra courses</h2>
+<p class="prominent">If you're interested in taking things further, we also offer a number of supplementary courses. Prices depend on the number of students attending:</p>
+{% include 'snippets/extra_courses.html' %}
+{% endblock %}

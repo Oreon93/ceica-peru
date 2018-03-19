@@ -1,0 +1,37 @@
+
+{% extends "template.html" %}
+{% block content %}
+{% load static %}
+<header class="full-width page-title">
+  <div class="container">
+    <img src="{% static 'images/icon-contact.png' %}">
+    <h1>Enroll</h1>
+  </div>
+</header>
+<section class="container">
+  <h2 class="text-center">
+    Step 2: Course Registration
+  </h2>
+  <p class="prominent">Now it's time to register for a course! Select your current Spanish level:</p>
+  <form action="" method="post" class="course-form">
+        {% csrf_token %}
+
+        <table>
+          {{form.applicant.errors}}{{form.applicant}}
+          {{form.current_spanish_level.errors}}{{form.current_spanish_level}}
+          <p class="prominent">Select your course:</p>
+          {{form.course_chosen.errors}}{{form.course_chosen}}
+          <div class="enroll-form">
+            <p class="prominent">When would you like the course to begin?
+            </p>
+            {{form.course_start_date.errors}}{{form.course_start_date}}
+          </div>
+
+          <div class="contact-details enroll-form">{{form.course_length.errors}}{{form.course_length.label_tag}}{{form.course_length}}</div>
+          <div class="contact-details enroll-form">{{form.group_number.errors}}{{form.group_number.label_tag}}{{form.group_number}}</div>
+
+        </table>
+        <input type="submit" value="Submit" />
+    </form>
+</section>
+{% endblock %}
