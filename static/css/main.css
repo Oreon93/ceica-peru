@@ -201,6 +201,9 @@ img.feature {
     width: 90%;
     display: block;
   }
+
+  body, textarea, input, button {
+    background-color: #fff;
 }
 
 .container.two-column {
