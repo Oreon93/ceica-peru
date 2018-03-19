@@ -987,6 +987,14 @@ label {
   display: none;
 }
 
+.cascading li {
+  display:none;
+}
+
+.cascading li.validoption {
+  display: block;
+}
+
 .answer-selected {
   background-color: #ddd;
   position: relative;

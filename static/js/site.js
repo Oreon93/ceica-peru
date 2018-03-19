@@ -36,9 +36,10 @@ $(document).ready(function(){
 
 
   if ($('#optionlist').length > 0) {
+  var optionlist = [];
   get_option_list();
-  console.log("Horray!");
   }
+  
   radioselect('#id_course_chosen');
   radioselect('#id_current_spanish_level');
   radioselect('#id_accommodation');
@@ -48,6 +49,7 @@ $(document).ready(function(){
   radioselect('#id_airport_pickup');
   checkboxselect('#id_interested_in');
   dynamicview();
+  cascadingbinary();
   ifaccordion();
   iftable();
   date();
@@ -97,6 +99,18 @@ function ifaccordion() {
 }
 
 
+function dynamicview() {
+  $('.cascading input').on("click", function() {
+      var value = $(this).val();
+      container = $(this).parent().parent().parent().parent();
+      container.next().removeClass('dynamic-options');
+      var container_id = container.attr("id");
+      if (container_id !== undefined) {
+      currentlevel = parseInt(container.attr("id").slice(6));
+      trackselection(currentlevel, value);
+      }
+    })
+  };
 
 function get_option_list() {
   optionlist = (document.getElementById('optionlist').innerHTML.trim());
@@ -104,8 +118,63 @@ function get_option_list() {
   optionlist = array.filter( function( element ) {
     return element.length > 0;
   });
+  console.log(optionlist);
   for (i=0; i<optionlist.length; i++) {
     optionlist[i] = optionlist[i].split(" ");
+  }
+  console.log(optionlist);
+}
+
+function trackselection(currentlevel, value) {
+  current_selection[currentlevel] = value;
+  if (current_selection.length > currentlevel +1) {
+    for (i = current_selection.length; i > currentlevel +1; i--) {
+      current_selection.pop();
+    }
+  }
+  console.log(current_selection);
+  optionfilter(currentlevel);
+  /*filteroptions(currentlevel)*/;
+
+}
+
+function optionfilter(currentlevel) {
+  /* Get inputs of next optionset */
+  var div_name = "level-" + (currentlevel+1);
+  console.log("hello?");
+  var container = $('#'+div_name);
+  var input = $('#'+div_name).find("input");
+  console.log(input);
+
+  /* Avoid additive filtering! */
+  $(input).parent().parent().removeClass('validoption');
+
+
+  var filteredOptionList = optionlist.slice(0);
+
+  /* Filter the accommodation options by the current selection */
+  var filter = current_selection;
+  filteredOptionList = filteredOptionList.filter(function (option) {
+    var i = 0;
+    while (i<current_selection.length) {
+      if (option[i] != filter[i]) {
+        return false;
+      }
+      i++;
+    }
+    return true;
+  });
+
+
+  /* Now filter out inputs that don't match the remaining options */
+  for (i = 0; i<filteredOptionList.length; i++) {
+    for (j = 0; j< input.length; j++) {
+      var this_input = input[j];
+      var input_value = $(this_input).val();
+      if (filteredOptionList[i][currentlevel + 1] == input_value) {
+        $(this_input).parent().parent().addClass('validoption');
+      }
+    }
   }
 }
 
@@ -117,11 +186,12 @@ function date() {
     console.log("DATE");
 }
 
-function trackselection(currentlevel, value) {
-  current_selection[currentlevel] = value;
-  filteroptions(currentlevel);
-}
 
+
+
+
+
+/* Deprecated option filter
 function filteroptions(currentlevel) {
   var div_name = "level-" + (currentlevel+1);
   var container = $('#'+div_name);
@@ -129,6 +199,7 @@ function filteroptions(currentlevel) {
   for (i = 0; i< input.length; i++) {
     var this_input = input[i];
     var input_value = $(this_input).val();
+    console.log(input_value + "is the input we're filtering");
     score = 0;
     recursivefilter(currentlevel, input_value);
     if (score == 0)
@@ -139,7 +210,9 @@ function filteroptions(currentlevel) {
 }
 
 function recursivefilter(currentlevel, input_value) {
+  console.log('the current level is' + currentlevel)
   for (j = 0; j<optionlist.length; j++) {
+    console.log("input:"+ input_value+ ", tocheckagainst:" +optionlist[j][currentlevel]);
     if (optionlist[j][currentlevel] == input_value) {
       console.log("Right");
       if (currentlevel == 0) {
@@ -153,25 +226,23 @@ function recursivefilter(currentlevel, input_value) {
     }
   }
 }
+*/
 
-function dynamicview() {
-  $('input').on("click", function() {
-      var value = $(this).val();
-      container = $(this).parent().parent().parent().parent();
-      var container_id = container.attr("id");
-      if (container_id !== undefined) {
-      currentlevel = parseInt(container.attr("id").slice(6));
-      trackselection(currentlevel, value);
-      }
-      if (value != "n") {
-        container.next().removeClass('dynamic-options');
-      }
-      else {
-        container.next().addClass('dynamic-options');
-      }
+/* Simple function to reveal the next set of options. */
+function cascadingbinary() {
+  $('.cascading-binary input').on("click", function() {
+    var value = $(this).val();
+    container = $(this).parent().parent().parent().parent();
+    if (value != "n") {
+      container.next().removeClass('dynamic-options');
+      container.next().find('li').addClass('validoption');
+    }
+    else {
+      container.next().addClass('dynamic-options');
+    }
+  })
+};
 
-    })
-  };
 
 function radioselect(id) {
   var id = id;

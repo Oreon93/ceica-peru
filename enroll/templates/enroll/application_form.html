@@ -26,19 +26,19 @@
             <p class="prominent">Airport pickup?</p>
             {{form.airport_pickup.errors}}{{form.airport_pickup}}
           </div>
-          <div id="level-0">
+          <div class="cascading-binary">
           <p class="prominent">Would you like accommodation?</p>
           {{form.accommodation.errors}}{{form.accommodation}}
           </div>
-          <div id="level-1" class="dynamic-options">
+          <div id="level-0" class="cascading dynamic-options">
           <p class="prominent">Select your accommodation:</p>
           {{form.accommodation_type.errors}}{{form.accommodation_type}}
           </div>
-          <div id="level-2" class="dynamic-options">
+          <div id="level-1" class="cascading dynamic-options">
           <p class="prominent">Select your room:</p>
           {{form.room_type.errors}}{{form.room_type}}
           </div>
-          <div id="level-3" class="dynamic-options">
+          <div id="level-2" class="cascading dynamic-options">
           <p class="prominent">Catering:</p>
           {{form.catering.errors}}{{form.catering}}
           </div>
