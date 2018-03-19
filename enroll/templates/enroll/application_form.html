@@ -19,27 +19,28 @@
         </div>
         <table>
           <p class="prominent">Give us some more information about your stay:</p>
-          <div class="contact-details enroll-form">{{form.arrival_date.label_tag}}{{form.arrival_date}}</div>
-          <div class="contact-details enroll-form">{{form.departure_date.label_tag}}{{form.departure_date}}</div>
+          {{form.applicant.errors}}{{form.applicant.as_hidden}}
+          <div class="contact-details enroll-form">{{form.arrival_date.label_tag}}{{form.arrival_date.errors}}{{form.arrival_date}}</div>
+          <div class="contact-details enroll-form">{{form.departure_date.label_tag}}{{form.departure_date.errors}}{{form.departure_date}}</div>
           <div class="enroll-form">
             <p class="prominent">Airport pickup?</p>
-            {{form.airport_pickup}}
+            {{form.airport_pickup.errors}}{{form.airport_pickup}}
           </div>
           <div id="level-0">
           <p class="prominent">Would you like accommodation?</p>
-          {{form.accommodation}}
+          {{form.accommodation.errors}}{{form.accommodation}}
           </div>
           <div id="level-1" class="dynamic-options">
           <p class="prominent">Select your accommodation:</p>
-          {{form.accommodation_type}}
+          {{form.accommodation_type.errors}}{{form.accommodation_type}}
           </div>
           <div id="level-2" class="dynamic-options">
           <p class="prominent">Select your room:</p>
-          {{form.room_type}}
+          {{form.room_type.errors}}{{form.room_type}}
           </div>
           <div id="level-3" class="dynamic-options">
           <p class="prominent">Catering:</p>
-          {{form.catering}}
+          {{form.catering.errors}}{{form.catering}}
           </div>
 
         </table>
