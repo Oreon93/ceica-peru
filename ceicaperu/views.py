@@ -8,6 +8,7 @@ from django.shortcuts import redirect
 from django.template import Context
 from django.template.loader import get_template
 from django.db.models import Q
+from django.utils.translation import gettext as _
 
 def index(request):
     return render(

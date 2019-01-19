@@ -1,0 +1,115 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-19 12:30+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\ceicaperu\templates\about-the-school.html:7
+msgid "About us"
+msgstr "Sobre Ceica Peru"
+
+#: .\ceicaperu\templates\about-the-school.html:8
+msgid ""
+"Welcome to the Ceica Peru  Spanish School  and to the city of Arequipa, "
+"<br>the main city of southern Peru."
+msgstr "Bienvenido a Ceica Peru y a la ciudad de Arequipa."
+
+#: .\ceicaperu\templates\about-the-school.html:9
+msgid ""
+"Arequipa is a beautiful city with excellent weather, surrounded by "
+"spectacular mountains and declared by UNESCO as a world heritage site "
+"because of its colonial architecture. From here you can go on excursions to "
+"Colca Canyon, Cotahuasi Canyon (the deepest Canyon of the world) or to the "
+"cities of Puno, and Cuzco."
+msgstr ""
+
+#: .\ceicaperu\templates\about-the-school.html:10
+msgid ""
+"At Ceica Peru Spanish School, we have taught hundreds of people from around "
+"the world who are interested in studying in South America because of its "
+"culture, fascinating geography and the opportunity to get to know its "
+"diverse peoples."
+msgstr ""
+
+#: .\ceicaperu\templates\about-the-school.html:11
+msgid ""
+"Our teaching methods are regularly reviewed and updated based on the latest "
+"educational research and techniques. Based on this and our highly qualified "
+"teachers, you can be assured that you will quickly learn Spanish. It's easy."
+msgstr ""
+
+#: .\ceicaperu\templates\template.html:39
+msgid "Learn Spanish"
+msgstr "Aprender Español"
+
+#: .\ceicaperu\templates\template.html:41
+msgid "Spanish lessons"
+msgstr "Clases"
+
+#: .\ceicaperu\templates\template.html:42
+msgid "Special programs"
+msgstr "Programas Especiales"
+
+#: .\ceicaperu\templates\template.html:43
+msgid "Extras"
+msgstr "Complementarios"
+
+#: .\ceicaperu\templates\template.html:48
+msgid "Volunteer"
+msgstr "Voluntariado"
+
+#: .\ceicaperu\templates\template.html:50
+msgid "Why volunteer?"
+msgstr "¿Por qué?"
+
+#: .\ceicaperu\templates\template.html:51
+msgid "Volunteer programs"
+msgstr "Programas disponibles"
+
+#: .\ceicaperu\templates\template.html:52
+msgid "How to enroll"
+msgstr "Como registrarse"
+
+#: .\ceicaperu\templates\template.html:55
+msgid "Accommodation"
+msgstr "Alojamiento"
+
+#: .\ceicaperu\templates\template.html:56
+msgid "Prices"
+msgstr "Precios"
+
+#: .\ceicaperu\templates\template.html:59
+msgid "About Us"
+msgstr "Nosotros"
+
+#: .\ceicaperu\templates\template.html:61
+msgid "About the school"
+msgstr "La escuela"
+
+#: .\ceicaperu\templates\template.html:62
+msgid "About Arequipa"
+msgstr "Arequipa"
+
+#: .\ceicaperu\templates\template.html:63
+msgid "Contact Us"
+msgstr "Contacto"
+
+#: .\ceicaperu\templates\template.html:64
+msgid "FAQs"
+msgstr "Preguntas frecuentes"
+
+#: .\ceicaperu\templates\template.html:67
+msgid "Enroll"
+msgstr "Registrarse"

@@ -10,57 +10,61 @@
   <link rel="stylesheet" href="{% static 'css/jquery-ui.structure.css' %}">
   <link rel="stylesheet" href="{% static 'css/jquery-ui.theme.css' %}">
   <link rel="stylesheet" href="{% static 'css/main.css' %}">
-  <link rel="stylesheet/less" type="text/css" href="{% static 'css/cleancss.less' %}" />
+  <link rel="stylesheet/less" type="text/css" href="{% static 'css/cleancss03.less' %}" />
   <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}">
   <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700" rel="stylesheet">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js" ></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js" >less = { env: 'development'};</script>
+  <script>less.watch();</script>
 
   <title>Ceica Peru Home</title>
 </html>
 <body>
+  {% load i18n %}
   <header class="page-header">
     <nav class="language-nav">
       <ul>
-        <li><a href="#"><img src="{% static 'images/united-kingdom.png' %}" class="active-language" /></a></li>
-        <li><a href="#"><img src="{% static 'images/france.png' %}"/></a></li>
-        <li><a href="#"><img src="{% static 'images/germany.png' %}"/></a></li>
-        <li><a href="#"><img src="{% static 'images/spain.png' %}"/></a></li>
+        {% get_current_language as LANGUAGE_CODE %}
+        <p id="current-language">{{ LANGUAGE_CODE }}</p>
+        <li id="en"><a href="/en"><img src="{% static 'images/united-kingdom.png' %}" /></a></li>
+        <li id="fr"><a href="#"><img src="{% static 'images/france.png' %}"/></a></li>
+        <li id="de"><a href="#"><img src="{% static 'images/germany.png' %}"/></a></li>
+        <li id="es"><a href="/es"><img src="{% static 'images/spain.png' %}"/></a></li>
       </ul>
     </nav>
     <nav class="top-nav" id="scroll-nav" >
       <ul>
         <li class="dropdown-header">
           <img src="{% static 'images/learn-spanish.png' %}">
-          <p>Learn Spanish</p>
+          <p>{% trans "Learn Spanish" %}</p>
           <ul class="dropdown">
-            <li class="navlink"><a href="{% url 'courses' %}"><p>Spanish lessons</p></a></li>
-            <li class="navlink"><a href="{% url 'special-programs' %}"><p>Special programs</p></a></li>
-            <li class="navlink"><a href="{% url 'extras' %}"><p>Extras</p></a></li>
+            <li class="navlink"><a href="{% url 'courses' %}"><p>{% trans "Spanish lessons" %}</p></a></li>
+            <li class="navlink"><a href="{% url 'special-programs' %}"><p>{% trans "Special programs" %}</p></a></li>
+            <li class="navlink"><a href="{% url 'extras' %}"><p>{% trans "Extras" %}</p></a></li>
           </ul>
         </li>
         <li class="dropdown-header">
           <img src="{% static 'images/volunteer.png' %}">
-          <p>Volunteer</p>
+          <p>{% trans "Volunteer" %}</p>
           <ul class="dropdown">
-            <li class="navlink"><a href="{% url 'why-volunteer' %}"><p>Why volunteer?</p></a></li>
-            <li class="navlink"><a href="{% url 'volunteer-programs' %}"><p>Volunteer programs</p></a></li>
-            <li class="navlink"><a href="{% url 'how-to-enroll' %}"><p>How to enroll</p></a></li>
+            <li class="navlink"><a href="{% url 'why-volunteer' %}"><p>{% trans "Why volunteer?" %}</p></a></li>
+            <li class="navlink"><a href="{% url 'volunteer-programs' %}"><p>{% trans "Volunteer programs" %}</p></a></li>
+            <li class="navlink"><a href="{% url 'how-to-enroll' %}"><p>{% trans "How to enroll" %}</p></a></li>
           </ul>
         </li>
-        <li class="navlink"><a href="{% url 'accommodation' %}"><img src="{% static 'images/accommodation.png' %}"><p>Accommodation</p></a></li>
-        <li class="navlink"><a href="{% url 'prices' %}"><img src="{% static 'images/prices.png' %}"><p>Prices</p></a></li>
+        <li class="navlink"><a href="{% url 'accommodation' %}"><img src="{% static 'images/accommodation.png' %}"><p>{% trans "Accommodation" %}</p></a></li>
+        <li class="navlink"><a href="{% url 'prices' %}"><img src="{% static 'images/prices.png' %}"><p>{% trans "Prices" %}</p></a></li>
         <li class="dropdown-header">
           <img src="{% static 'images/about-us.png' %}">
-          <p>About Us</p>
+          <p>{% trans "About Us" %}</p>
           <ul class="dropdown">
-            <li class="navlink"><a href="{% url 'about-the-school' %}"><p>About the school</p></a></li>
-            <li class="navlink"><a href="#"><p>About Arequipa</p></a></li>
-            <li class="navlink"><a href="{% url 'contact' %}"><p>Contact Us</p></a></li>
-            <li class="navlink"><a href="{% url 'faqs' %}"><p>FAQs</p></a></li>
+            <li class="navlink"><a href="{% url 'about-the-school' %}"><p>{% trans "About the school" %}</p></a></li>
+            <li class="navlink"><a href="#"><p>{% trans "About Arequipa" %}</p></a></li>
+            <li class="navlink"><a href="{% url 'contact' %}"><p>{% trans "Contact Us" %}</p></a></li>
+            <li class="navlink"><a href="{% url 'faqs' %}"><p>{% trans "FAQs" %}</p></a></li>
           </ul>
         </li>
-        <li class="action-btn" ><a href="{% url 'enroll' %}" class="navlink"><p>Enroll</p></a></li>
+        <li class="action-btn" ><a href="{% url 'enroll' %}" class="navlink"><p>{% trans "Enroll" %}</p></a></li>
       </ul>
     </nav>
     <div class="logo">

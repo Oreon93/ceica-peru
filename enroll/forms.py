@@ -20,7 +20,6 @@ class ApplicationForm(forms.Form):
     )
 
     ACCOMMODATION_TYPES = (
-        ('n', 'None'),
         ('h', 'Host Family'),
         ('s', 'School building'),
         ('p', 'Private Apartment'),
@@ -42,11 +41,12 @@ class ApplicationForm(forms.Form):
     applicant = forms.CharField();
     accommodation = forms.ChoiceField(choices=YESNO, widget=forms.RadioSelect, initial="n")
     airport_pickup = forms.ChoiceField(choices=YESNO, widget=forms.RadioSelect, initial="n")
-    accommodation_type = forms.ChoiceField(choices=ACCOMMODATION_TYPES, widget=forms.RadioSelect, initial="n")
+    accommodation_type = forms.ChoiceField(choices=ACCOMMODATION_TYPES, widget=forms.RadioSelect, initial="h")
     room_type = forms.ChoiceField(choices=ROOM_TYPES, widget=forms.RadioSelect, initial="n")
     catering = forms.ChoiceField(choices=CATERING, widget=forms.RadioSelect, initial="n")
     arrival_date = forms.DateField()
     departure_date = forms.DateField()
+    accommodation_choice = forms.CharField();
 
     class Meta:
         widgets = {

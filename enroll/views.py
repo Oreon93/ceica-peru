@@ -84,7 +84,7 @@ def EnrollPartThree(request):
         print(optionlist)
     if request.method == 'GET':
         applicant = Customer.objects.get(pk = request.session['username'])
-        form = ApplicationForm(initial={'applicant': applicant})
+        form = ApplicationForm(initial={'applicant': applicant, 'accommodation_choice': ["h","s","b"]})
         print('Yay!')
     if request.method == 'POST':
         form = ApplicationForm(request.POST)
@@ -95,6 +95,10 @@ def EnrollPartThree(request):
             new_app.airport_pickup = form.cleaned_data['airport_pickup']
             new_app.arrival_date = form.cleaned_data['arrival_date']
             new_app.departure_date = form.cleaned_data['departure_date']
+            a = form.cleaned_data['accommodation_choice']
+            a = eval(a)
+            print(a)
+            new_app.accommodation = AccommodationOption.objects.get(accommodation_type = a[0], room_type = a[1], catering = a[2])
             new_app.save()
             return HttpResponseRedirect('application_submitted')
         else:

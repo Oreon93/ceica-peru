@@ -3,7 +3,7 @@
 {% load static %}
 <header class="full-width ">
   <div class="full-width-title-image">
-    <img src="{% static 'images/extras-1.JPG' %}">
+    <img src="{% static 'images/extras-1.jpg' %}">
     <div class="title-image-text">
       <h1 class="slider-title">Extras</h1>
     </div>
@@ -12,7 +12,7 @@
 <div class="container two-column">
 
 
-  <section class="main">
+  <main class="col col-2-3">
     <p>Not everyone has the same needs, so we've put together special programs for people who are interested in using Spanish for travelling or curious about the culture and sights of Arequipa.</p>
     {% if extras_list %}
     <h2>Extras</h2>
@@ -62,15 +62,15 @@
 
 
     {% endif %}
-  </section>
-  <section class="key-information">
-    <h2>Program information</h2>
+  </main>
+  <aside class="col col-1-3 key-information">
+    <h2 class="aside-header">Program information</h2>
     <ul>
       <li>You must already be enrolled in a course or special program</li>
       <li>Extras are subject to availability and some courses are restricted to advanced students</li>
       <li>You can express an interest in extra courses when you enroll</li>
     </ul>
     <a href="{% url 'enroll' %}"><button class="btn">Enrol now</button></a>
-  </section>
+  </aside>
 </div>
 {% endblock %}

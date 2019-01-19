@@ -20,6 +20,7 @@
         <table>
           <p class="prominent">Give us some more information about your stay:</p>
           {{form.applicant.errors}}{{form.applicant.as_hidden}}
+          {{form.accommodation_choice.errors}}{{form.accommodation_choice.as_hidden}}
           <div class="contact-details enroll-form">{{form.arrival_date.label_tag}}{{form.arrival_date.errors}}{{form.arrival_date}}</div>
           <div class="contact-details enroll-form">{{form.departure_date.label_tag}}{{form.departure_date.errors}}{{form.departure_date}}</div>
           <div class="enroll-form">
@@ -44,7 +45,7 @@
           </div>
 
         </table>
-        <input type="submit" value="Submit" />
+        <input type="submit" id="submit" value="Submit" />
     </form>
 </section>
 {% endblock %}

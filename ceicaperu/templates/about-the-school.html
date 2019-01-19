@@ -1,13 +1,14 @@
 {% extends "template.html" %}
 {% block content %}
 {% load static %}
+
 <section class="full-width">
   <div class="parallax-window" data-parallax="scroll" data-image-src="{% static 'images/slide-3.PNG' %}">
-      <h1 class="parallax-title">About us</h1>
-    <p class="parallax-text">Welcome to the Ceica Peru  Spanish School  and to the city of Arequipa, <br>the main city of southern Peru.</p>
-    <p class="parallax-text">Arequipa is a beautiful city with excellent weather, surrounded by spectacular mountains and declared by UNESCO as a world heritage site because of its colonial architecture. From here you can go on excursions to Colca Canyon, Cotahuasi Canyon (the deepest Canyon of the world) or to the cities of Puno, and Cuzco.</p>
-    <p class="parallax-text">At Ceica Peru Spanish School, we have taught hundreds of people from around the world who are interested in studying in South America because of its culture, fascinating geography and the opportunity to get to know its diverse peoples.</p>
-    <p class="parallax-text">Our teaching methods are regularly reviewed and updated based on the latest educational research and techniques. Based on this and our highly qualified teachers, you can be assured that you will quickly learn Spanish. It's easy.</p>
+      <h1 class="parallax-title">{% trans "About us" %}</h1>
+    <p class="parallax-text">{% trans "Welcome to the Ceica Peru  Spanish School  and to the city of Arequipa, <br>the main city of southern Peru." %}</p>
+    <p class="parallax-text">{% trans "Arequipa is a beautiful city with excellent weather, surrounded by spectacular mountains and declared by UNESCO as a world heritage site because of its colonial architecture. From here you can go on excursions to Colca Canyon, Cotahuasi Canyon (the deepest Canyon of the world) or to the cities of Puno, and Cuzco." %}</p>
+    <p class="parallax-text">{% trans "At Ceica Peru Spanish School, we have taught hundreds of people from around the world who are interested in studying in South America because of its culture, fascinating geography and the opportunity to get to know its diverse peoples." %}</p>
+    <p class="parallax-text">{% trans "Our teaching methods are regularly reviewed and updated based on the latest educational research and techniques. Based on this and our highly qualified teachers, you can be assured that you will quickly learn Spanish. It's easy." %}</p>
   </div>
 </section>
 

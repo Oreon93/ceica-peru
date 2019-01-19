@@ -38,12 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'enroll.apps.EnrollConfig',
-    'datetimewidget'
+    'datetimewidget',
+    'rosetta'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -108,6 +110,15 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
 LANGUAGE_CODE = 'en'
+
+LANGUAGES = [
+  ('es', 'Español'),
+  ('en', 'English'),
+]
+
+LOCALE_PATHS = (
+    os.path.join(os.path.abspath(os.path.dirname(__file__)), 'locale'),
+)
 
 TIME_ZONE = 'Europe/Madrid'
 

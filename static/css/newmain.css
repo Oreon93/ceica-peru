@@ -81,6 +81,10 @@ a {
   padding: 20px 10px;
 }
 
+.container.two-colummn {
+  padding: 0px;
+}
+
 .inset {
   background-color: #e0e0e0;
   -moz-box-shadow:    inset 0 5px 10px -5px #000000;
@@ -600,7 +604,7 @@ nav li {
     border: none;
     outline: none;
     transition: 0.4s;
-    margin-top: 10px;
+    margin: 6px 0px;
     font-size: 1.3em;
 }
 
@@ -861,12 +865,14 @@ footer .col-1-4:not(:first-child) {
   color: #fff;
   font-size: 85px;
   margin: 0;
+  text-align: center;
 }
 
 .slider-subtitle {
   font-size: 50px;
   margin: 0px;
   color: #fff;
+  text-align: center;
 }
 
 @media all and (max-width: 940px) {
