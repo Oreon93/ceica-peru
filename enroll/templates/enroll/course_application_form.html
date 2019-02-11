@@ -12,23 +12,32 @@
   <h2 class="text-center">
     Step 2: Course Registration
   </h2>
-  <p class="prominent">Now it's time to register for a course! Select your current Spanish level:</p>
+  <p class="prominent">Now it's time to register for a course! Tell us how many are in your group:</p>
   <form action="" method="post" class="course-form">
         {% csrf_token %}
 
         <table>
+          <div class="enroll-form">
+          {{form.group_number.errors}}{{form.group_number}}
+
+          <p class="prominent">Select your current Spanish level:</p>
           {{form.applicant.errors}}{{form.applicant}}
           {{form.current_spanish_level.errors}}{{form.current_spanish_level}}
+          <p style="text-align: center">We will be happy to hold group classes for members of your party who are at the same level.</p>
           <p class="prominent">Select your course:</p>
           {{form.course_chosen.errors}}{{form.course_chosen}}
-          <div class="enroll-form">
+
             <p class="prominent">When would you like the course to begin?
             </p>
             {{form.course_start_date.errors}}{{form.course_start_date}}
+            <br>
+            <br>
+            <p class="prominent">How many weeks of teaching would you like?
+            </p>
+            {{form.course_length.errors}}{{form.course_length}}
           </div>
 
-          <div class="contact-details enroll-form">{{form.course_length.errors}}{{form.course_length.label_tag}}{{form.course_length}}</div>
-          <div class="contact-details enroll-form">{{form.group_number.errors}}{{form.group_number.label_tag}}{{form.group_number}}</div>
+
 
         </table>
         <input type="submit" value="Submit" />

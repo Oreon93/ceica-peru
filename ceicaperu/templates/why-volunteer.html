@@ -1,26 +1,27 @@
 {% extends "template.html" %}
 {% block content %}
 {% load static %}
+{% load i18n %}
 <section class="full-width">
   <div class="parallax-window" data-parallax="scroll" data-image-src="{% static 'images/why-volunteer.jpg' %}">
-      <h1 class="parallax-title">Why volunteer?</h1>
-    <p class="parallax-text">In the present globalized world, a feeling of solidarity is growing like a light of hope which shows itself in many ways. There are for example the efforts to join forces to protect the environment; to save children from ignorance and distress; and to lift communities out of extreme poverty.</p>
-    <p class="parallax-text">For this reason, Arequipa, like many cities in Latin America, has had the invaluable help of foreign friends and institutions who voluntarily work with abandoned children and the handicapped, in nurseries, in schools, and in health centers.</p>
-    <p class="parallax-text">Using its experience Ceica Peru Spanish School has designed some special programs for those interested in improving their Spanish and/or participating in voluntary work.</p>
+      <h1 class="parallax-title">{% trans 'Why volunteer?' %}</h1>
+    <p class="parallax-text">{% trans 'In the present globalized world, a feeling of solidarity is growing like a light of hope which shows itself in many ways. There are for example the efforts to join forces to protect the environment; to save children from ignorance and distress; and to lift communities out of extreme poverty.' %}</p>
+    <p class="parallax-text">{% trans 'For this reason, Arequipa, like many cities in Latin America, has had the invaluable help of foreign friends and institutions who voluntarily work with abandoned children and the handicapped, in nurseries, in schools, and in health centers.' %}</p>
+    <p class="parallax-text">{% trans 'Using its experience Ceica Peru Spanish School has designed some special programs for those interested in improving their Spanish and/or participating in voluntary work.' %}</p>
   </div>
 </section>
 
 <section class="full-width strips">
   <div class="container group">
     <div class="col col-2-3">
-      <h2>Reasons to volunteer</h2>
+      <h2>{% trans 'Reasons to volunteer' %}</h2>
       <ul>
-        <li>You will improve your natural abilities in a completely different culture. You will learn a great deal from the new situations that you will be met with  in your work place. All of which will enrich your perception of  life.</li>
-        <li>You will contribute to the education and upbringing of children in  schools or in care.</li>
-        <li>You will discover your strengths and talents. You will develop new abilities that will serve you for the rest of  your life.</li>
-        <li>You will gain work experience.</li>
-        <li>In a cultural exchange, you will learn about Peruvian culture and we will learn about your country and life in other countries.</li>
-        <li>And for those who wish to improve their knowledge of Spanish, there is nothing better than practicing it every day at work.</li>
+        <li>{% trans 'You will improve your natural abilities in a completely different culture. You will learn a great deal from the new situations that you will be met with  in your work place. All of which will enrich your perception of  life.' %}</li>
+        <li>{% trans 'You will contribute to the education and upbringing of children in  schools or in care.' %}</li>
+        <li>{% trans 'You will discover your strengths and talents. You will develop new abilities that will serve you for the rest of  your life.' %}</li>
+        <li>{% trans 'You will gain work experience.' %}</li>
+        <li>{% trans 'In a cultural exchange, you will learn about Peruvian culture and we will learn about your country and life in other countries.' %}</li>
+        <li>{% trans 'And for those who wish to improve their knowledge of Spanish, there is nothing better than practicing it every day at work.' %}</li>
       </ul>
   </div>
   <div class="col col-1-3 image-col">
@@ -28,7 +29,7 @@
   </div>
 </div>
 <div class="container">
-  <a href="{% url 'volunteer-programs' %}"><button class="btn btn-center">See our volunteer programs <i class="fas fa-angle-right fa-lg style="float:right""></i></button></a>
+  <a href="{% url 'volunteer-programs' %}"><button class="btn btn-center">{% trans 'See our volunteer programs' %} <i class="fas fa-angle-right fa-lg style="float:right""></i></button></a>
 </div>
 </section>
 

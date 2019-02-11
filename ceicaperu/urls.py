@@ -31,6 +31,7 @@ if 'rosetta' in settings.INSTALLED_APPS:
         path('rosetta/', include('rosetta.urls'))
     ]
 
+
 urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
     path('enroll/', include('enroll.urls')),

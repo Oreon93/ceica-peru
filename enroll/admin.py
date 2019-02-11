@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Customer, AbilityLevel, Service, Price, CustomerType, CourseApplication, Application, AccommodationOption, AccommodationPrice, FAQ, AccommodationDescription, Testimonial, Teacher, Feature, VolunteerProject, VolunteerProgram
+from modeltranslation.admin import TranslationAdmin
 
 class CourseApplicationInline(admin.TabularInline):
     model = CourseApplication
@@ -26,6 +27,9 @@ class CustomerAdmin(admin.ModelAdmin):
 class Teacher(admin.ModelAdmin):
     list_display = ('name', 'title', 'description')
 
+class TeacherTranslationAdmin(Teacher, TranslationAdmin):
+    pass
+
 @admin.register(Feature)
 class Feature(admin.ModelAdmin):
     list_display = ('name', 'description', 'icon')
@@ -33,6 +37,9 @@ class Feature(admin.ModelAdmin):
 @admin.register(VolunteerProject)
 class VolunteerProject(admin.ModelAdmin):
     list_display = ('project_name', 'description')
+
+class ServiceTranslationAdmin(VolunteerProject, TranslationAdmin):
+    pass
 
 @admin.register(VolunteerProgram)
 class VolunteerProgram(admin.ModelAdmin):
@@ -43,6 +50,9 @@ class ServiceAdmin(admin.ModelAdmin):
     list_display = ('service_name', 'display_first_price')
     inlines = [PriceInline]
 
+class ServiceTranslationAdmin(ServiceAdmin, TranslationAdmin):
+    pass
+
 @admin.register(AccommodationOption)
 class AccommodationOptionAdmin(admin.ModelAdmin):
     list_display = ('__str__', 'display_first_price', 'catering')
@@ -51,9 +61,31 @@ class AccommodationOptionAdmin(admin.ModelAdmin):
 admin.site.register([AbilityLevel])
 admin.site.register([Price])
 admin.site.register([CustomerType])
-admin.site.register([AccommodationDescription])
-admin.site.register([FAQ])
-admin.site.register([Testimonial])
+#admin.site.register([AccommodationDescription])
+#admin.site.register([FAQ])
+#admin.site.register([Testimonial])
+
+@admin.register(AccommodationDescription)
+class AccommodationDescriptionAdmin(admin.ModelAdmin):
+    pass
+
+class AccommodationDescriptionTranslationAdmin(AccommodationDescriptionAdmin, TranslationAdmin):
+    pass
+
+@admin.register(Testimonial)
+class TestimonialAdmin(admin.ModelAdmin):
+    pass
+
+class TestimonialTranslationAdmin(TestimonialAdmin, TranslationAdmin):
+    pass
+
+@admin.register(FAQ)
+class FAQAdmin(admin.ModelAdmin):
+    pass
+
+class FAQTranslationAdmin(FAQAdmin, TranslationAdmin):
+    pass
+
 
 @admin.register(Application)
 class ApplicationAdmin(admin.ModelAdmin):

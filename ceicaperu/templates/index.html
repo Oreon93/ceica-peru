@@ -1,11 +1,12 @@
 {% extends "template.html" %}
 {% block content %}
 {% load static %}
+{% load i18n %}
 <section class="full-width">
   <div class="slider">
     <video autoplay playsinline muted class="active" controls>
       <source src="{% static 'videos/welcome.mp4' %}" type="video/mp4">
-      Your browser does not support the video tag.
+      {% trans "Your browser does not support the video tag." %}"
     </video>
     <img src="{% static 'images/slide-1.PNG' %}"/>
     <img src="{% static 'images/slide-2.png' %}"/>
@@ -23,15 +24,15 @@
 </section>
 <section class="container single-column">
   <p class="prominent">
-    Ceica Peru is a Spanish language school located in Arequipa, Peru.
+    {% trans "Ceica Peru is a Spanish language school located in Arequipa, Peru." %}
   </p>
   <p class="prominent">
-    We provide <b>individual lessons for all levels of Spanish speakers</b> and group lessons for new learners in a relaxed setting, in our beautiful garden or in the classroom. We have <b>special courses for travellers, volunteers and missionaries</b>. We also offer <b>a variety of accommodation options</b>, including living with local families, staying in the school building, and staying in a private furnished apartment.
+    {% trans "We provide <b>individual lessons for all levels of Spanish speakers</b> and group lessons for new learners in a relaxed setting, in our beautiful garden or in the classroom. We have <b>special courses for travellers, volunteers and missionaries</b>. We also offer <b>a variety of accommodation options</b>, including living with local families, staying in the school building, and staying in a private furnished apartment." %}
   </p>
 </section>
 <section class="inset">
   <div class="container single-column">
-      <h2 class="text-center">What we offer</h2>
+      <h2 class="text-center">{% trans "What we offer" %}</h2>
     <div class="card-group">
       <div class="col-1-3 card">
         <div class="card-icon">
@@ -40,12 +41,12 @@
         <img src="{% static 'images/home-courses.PNG' %}">
         <div class="card-caption">
           <p class="card-title">
-          Courses
+          {% trans "Courses" %}
           </p>
           <p>
-          We have a variety of courses for all levels of Spanish, as well as special courses in Peruvian history, Peruvian literature and Quechua.
+          {% trans "We have a variety of courses for all levels of Spanish, as well as special courses in Peruvian history, Peruvian literature and Quechua." %}
           </p>
-          <a href="{% url 'courses' %}">Read more ></a>
+          <a href="{% url 'courses' %}">{% trans "Read more" %} ></a>
         </div>
 
       </div><!--Stop the white space
@@ -56,12 +57,12 @@
         <img src="{% static 'images/home-special.PNG' %}">
         <div class="card-caption">
           <p class="card-title">
-          Special programs
+          {% trans "Special programs" %}
           </p>
           <p>
-          We also offer special courses in Spanish for travelling, and programms combining Spanish learning with speaking practice around the city of Arequipa.
+          {% trans "We also offer special courses in Spanish for travelling, and programms combining Spanish learning with speaking practice around the city of Arequipa." %}
           </p>
-          <a href="{% url 'special-programs' %}">Read more ></a>
+          <a href="{% url 'special-programs' %}">{% trans "Read more" %} ></a>
         </div>
       </div><!--Stop the white space
       --><div class="col-1-3 card">
@@ -71,83 +72,33 @@
         <img src="{% static 'images/home-volunteering.PNG' %}">
         <div class="card-caption">
           <p class="card-title">
-          Volunteering
+          {% trans "Volunteering" %}
           </p>
           <p>
-          Ceica Peru Spanish School works together with several social projects in Arequipa to offer volunteer programs that allow you to practice Spanish and at the same time contribute to the social development of the children and adults of these communities.
+          {% trans "Ceica Peru Spanish School works together with several social projects in Arequipa to offer volunteer programs that allow you to practice Spanish and at the same time contribute to the social development of the children and adults of these communities." %}
           </p>
-          <a href="{% url 'volunteer-programs' %}">Read more ></a>
+          <a href="{% url 'volunteer-programs' %}">{% trans "Read more" %} ></a>
         </div>
     </div>
   </div>
 </section>
 <section class="container single-column">
-  <h2 class="text-center">What our students say</h2>
-  <div class="group quote current">
-    <a class="control control-left">‹</a>
-    <div class="col col-3-4">
-      <p>"Ceica Peru is a great place to learn or improve your Spanish. My teacher Sonia was  a fantastic teacher and I learnt a lot during my week there. The lessons are totally tailored to your needs and we were taught in the garden which beat any classroom! All the staff were incredibly welcoming and encouraged all the students to get to know each other and practice Spanish together during breaks and activities. Can't recommend it enough!"</p>
-      <p class="author">S Young, Scotland</p>
+  <h2 class="text-center">{% trans "What our students say" %}</h2>
+  {% if testimonial_list %}
+    {% for testimonial in testimonial_list %}
+    <div class="group quote">
+      <a class="control control-left">‹</a>
+      <div class="col col-3-4">
+        <p>"{{testimonial.testimonial}}"</p>
+        <p class="author">{{testimonial.name}}</p>
+      </div>
+      <div class="col col-1-4">
+        <img class="photo" src="/static/uploads/{{testimonial.image}}">
+      </div>
+      <a class="control control-right">›</a>
     </div>
-    <div class="col col-1-4">
-      <img class="photo" src="https://static.wixstatic.com/media/bf211d_302ad9902e2a4e71ad3d3a78dab91628~mv2.jpg/v1/fill/w_153,h_151,al_c,q_80,usm_1.20_1.00_0.01/bf211d_302ad9902e2a4e71ad3d3a78dab91628~mv2.webp">
-    </div>
-    <a class="control control-right">›</a>
-  </div>
-  <div class="group quote">
-    <a class="control control-left">‹</a>
-    <div class="col col-3-4">
-      <p>"I studied Spanish at Ceica Peru for 100 hours over four weeks. Right from my first email, the service was amazing. Sofia organised a host family for me to stay with and arranged for the school to pick me up from the airport. My teacher Ada was fantastic. As well as preparing educational and interesting lessons, we also had so much fun during our time together. I would 100% recommend Ceica Peru to anyone wishing to study Spanish."</p>
-      <p class="author">L Bilinski, UK</p>
-    </div>
-    <div class="col col-1-4">
-      <img class="photo" src="https://static.wixstatic.com/media/bf211d_5f1f7522bfe24e16a18448f21e737a91~mv2_d_1200_1302_s_2.jpg/v1/crop/x_387,y_244,w_813,h_803/fill/w_152,h_151,al_c,q_80,usm_1.20_1.00_0.01/bf211d_5f1f7522bfe24e16a18448f21e737a91~mv2_d_1200_1302_s_2.webp">
-    </div>
-    <a class="control control-right">›</a>
-  </div>
-  <div class="group quote">
-    <a class="control control-left">‹</a>
-    <div class="col col-3-4">
-      <p>"The family I stayed with and the home-stay in general was great. The family was extremely pleasant and helpful in all ways. Their house was warm and welcoming. They truly consider you to be a part of their family - even after your studies have ended and you’ve continued on with your travels or returned home. The school is also very reasonably priced and the professors excellent. They’re not just there to get paid, they take interest in their students and want them to succeed."</p>
-      <p class="author">C Baaden, USA</p>
-    </div>
-    <div class="col col-1-4">
-      <img class="photo" src="https://static.wixstatic.com/media/bf211d_ae7fe245a2c144feaa4dadb37ff91bbf~mv2_d_1572_1944_s_2.jpg/v1/crop/x_191,y_163,w_1147,h_1138/fill/w_152,h_151,al_c,q_80,usm_1.20_1.00_0.01/bf211d_ae7fe245a2c144feaa4dadb37ff91bbf~mv2_d_1572_1944_s_2.webp">
-    </div>
-    <a class="control control-right">›</a>
-  </div>
-  <div class="group quote">
-    <a class="control control-left">‹</a>
-    <div class="col col-3-4">
-      <p>"Without having deepened Spanish knowledge I was a little bit uncertain about   everything-how to communicate, how to discuss, how to settle in appropriately, but this uncertainty disappeared within a few hours when I met my host family. Thanks to the highly efficient and methodically good structured  single lessons at Ceica Peru Spanish School, I  quickly learnt Spanish. In addition to  this my teacher had German language skills and together we  enjoyed the classes in the sunny, calm and green garden of Ceica Peru Spanish School learning has never been so easy!</p>
-      <p class="author">F Muster, Switzerland</p>
-    </div>
-    <div class="col col-1-4">
-      <img class="photo" src="https://static.wixstatic.com/media/bf211d_f3d0e0ddf81745f99455b20398f2aa49~mv2.jpg/v1/fill/w_152,h_151,al_c,q_80,usm_1.20_1.00_0.01/bf211d_f3d0e0ddf81745f99455b20398f2aa49~mv2.webp">
-    </div>
-    <a class="control control-right">›</a>
-  </div>
-  <div class="group quote">
-    <a class="control control-left">‹</a>
-    <div class="col col-3-4">
-      <p>"My three stays at Ceica Peru have been very pleasant and enriching for me. The atmosphere of the school and the quality of the family's hospitality provided me with the ideal conditions for learning in an immersion environment. Both the family and the school surrounded me with attention which made me feel very secure. Furthermore, the teaching was suited to my pace of learning in Spanish. At the advanced level, I benefited from very instructive lessons about the history and society of Peru and, as well, I enjoyed tremendously my gastronomical experiences in the Arequipa region."</p>
-      <p class="author">Jean Ives, Canada</p>
-    </div>
-    <div class="col col-1-4">
-      <img class="photo" src="https://static.wixstatic.com/media/bf211d_c47242b3d5694a4fb7dd30e9128ef25b~mv2.jpg/v1/fill/w_152,h_151,al_c,lg_1,q_80,usm_1.20_1.00_0.01/bf211d_c47242b3d5694a4fb7dd30e9128ef25b~mv2.webp">
-    </div>
-    <a class="control control-right">›</a>
-  </div>
-  <div class="group quote">
-    <a class="control control-left">‹</a>
-    <div class="col col-3-4">
-      <p>"I love Ceica Peru Spanish School more than all the others. I have taken Spanish in many schools - in Mexico, Chile and Peru - and Ceica Peru  is the best. First, the owners are locals, not large American or European companies. During my two month at Ceica Peru, my money directly helped Peruvians - not other countries. In addition, the quality of the teachers at Ceica Peru - Carmen, Carlos and others - is the best I have found. Finally, an affordable school with excellent teachers and the perfect environment. I recommend Ceica Peru Spanish School to everyone to improve their Spanish.</p>
-      <p class="author">K Anderson, USA</p>
-    </div>
-    <div class="col col-1-4">
-      <img class="photo" src="https://static.wixstatic.com/media/bf211d_8c986cc5a4b2441f8250c91006810ba4~mv2.jpg/v1/fill/w_152,h_151,al_c,lg_1,q_80,usm_1.20_1.00_0.01/bf211d_8c986cc5a4b2441f8250c91006810ba4~mv2.webp">
-    </div>
-    <a class="control control-right">›</a>
-  </div>
+    {% endfor %}
+  {% endif %}
 </section>
+<script src="{% static 'js/index.js' %}" defer></script>
 {% endblock %}

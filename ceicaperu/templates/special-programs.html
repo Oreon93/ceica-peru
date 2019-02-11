@@ -1,82 +1,86 @@
 {% extends "template.html" %}
 {% block content %}
 {% load static %}
+{% load i18n %}
 <header class="full-width ">
   <div class="full-width-title-image">
     <img src="{% static 'images/special-courses.JPG' %}">
     <div class="title-image-text">
-      <h1 class="slider-title">Special Programs</h1>
+      <h1 class="slider-title">{% trans 'Special Programs' %}</h1>
     </div>
   </div>
 </header>
 <div class="container two-column">
 
 
-  <section class="main">
-    <p>Not everyone has the same needs, so we've put together special programs for people who are interested in using Spanish for travelling or curious about the culture and sights of Arequipa.</p>
+  <main class="col col-2-3">
+    <p>{% trans "Not everyone has the same needs, so we've put together special programs for people who are interested in using Spanish for travelling or curious about the culture and sights of Arequipa." %}</p>
     {% if special_program_list %}
-    <h2>Programs</h2>
-    {% for program in special_program_list %}
-    <button class="accordion">{{program.service_name }}<i class="fas fa-angle-down fa-lg style="float:right""></i></button>
+    <section class="section">
+      <h2>{% trans 'Programs' %}</h2>
+      {% for program in special_program_list %}
+      <button class="accordion">{{program.service_name }}<i class="fas fa-angle-down fa-lg style="float:right""></i></button>
 
-    <div class="panel">
-      {% if program.duration_weeks == 1 %}
-      <p><b>Length: {{ program.duration_weeks }} week | Spanish lessons: {{ program.hours}} hours ({{ program.daily_hours }} hours a day)</b></p>
-      {% else %}
-      <p><b>Length: {{ program.duration_weeks }} weeks | Spanish: {{ program.hours}} a week</b></p>
-      {% endif %}
-      <img src="/static/uploads/{{program.image}}">
+      <div class="panel">
+        {% if program.duration_weeks == 1 %}
+        <p><b>{% trans 'Length' %}: {{ program.duration_weeks }} {% trans 'week' %} | {% trans 'Spanish lessons' %}: {{ program.hours}} {% trans 'hours' %} ({{ program.daily_hours }} {% trans 'hours a day' %})</b></p>
+        {% else %}
+        <p><b>{% trans 'Length' %}: {{ program.duration_weeks }} {% trans 'weeks' %} | {% trans 'Spanish' %}: {{ program.hours}} {% trans 'a week' %}</b></p>
+        {% endif %}
+        <img src="/static/uploads/{{program.image}}">
 
-      <p>{{program.service_description|linebreaksbr}}</p>
+        <p>{{program.service_description|linebreaksbr}}</p>
 
-    </div>
-    {% endfor %}
-    {% else %}
-    <p>No courses, sorry!</p>
-    {% endif %}
-    <br>
-    {% if price_list %}
-    <h2>Prices</h2>
-    <table class="price-list">
-      <tr>
-        <th>(Price per person)
-        </th>
-
-    {% for customer_type in customer_type_list %}
-      {% if customer_type.number == 4 %}
-      <th>Group of 4 or more </th>
-      {% elif customer_type.number == 1 %}
-      <th>One on one</th>
-      {% else %}
-      <th>Group of {{ customer_type.number}}</th>
-      {% endif %}
-    {% endfor %}
-      </tr>
-      {% regroup price_list by service as lesson_list %}
-      {% for service, prices in lesson_list %}
-      <tr>
-        <td>{{service}}
-        </td>
-        {% for customer_type in customer_type_list %}
-        <td>{% for price in prices %}{% if price.customer_type == customer_type %}S/.{{ price.price}}{% endif %}{% endfor %}</td>
-        {% endfor %}
+      </div>
       {% endfor %}
-      </tr>
-    </table>
-    <p class="prominent">For more prices and to calculate the total cost of your stay at Ceica Peru, <a href="/prices">click here</a>.</p>
+      {% else %}
+      <p>{% trans 'No courses, sorry!' %}</p>
+      {% endif %}
+    </section>
+    <section class="section">
+      {% if price_list %}
+      <h2>{% trans 'Prices' %}</h2>
+      <table class="price-list">
+        <tr>
+          <th>{% trans '(Price per person)' %}
+          </th>
+
+      {% for customer_type in customer_type_list %}
+        {% if customer_type.number == 4 %}
+        <th>{% trans 'Group of 4 or more' %} </th>
+        {% elif customer_type.number == 1 %}
+        <th>{% trans 'One on one' %}</th>
+        {% else %}
+        <th>{% trans 'Group of' %} {{ customer_type.number}}</th>
+        {% endif %}
+      {% endfor %}
+        </tr>
+        {% regroup price_list by service as lesson_list %}
+        {% for service, prices in lesson_list %}
+        <tr>
+          <td>{{service}}
+          </td>
+          {% for customer_type in customer_type_list %}
+          <td>{% for price in prices %}{% if price.customer_type == customer_type %}S/.{{ price.price}}{% endif %}{% endfor %}</td>
+          {% endfor %}
+        {% endfor %}
+        </tr>
+      </table>
+      <p class="prominent">{% trans 'For more prices and to calculate the total cost of your stay at Ceica Peru' %}, <a href="/prices">{% trans 'click here' %}</a>.</p>
 
 
-    {% endif %}
-  </section>
-  <section class="key-information">
-    <h2>Program information</h2>
+      {% endif %}
+    </section>
+  </main>
+  <aside class="col col-1-3 key-information">
+    <h2 class="aside-header">{% trans 'Program information' %}</h2>
     <ul>
-      <li>Special programs have a fixed duration</li>
-      <li>All programs involve some Spanish teaching</li>
-      <li>If you'd like to discuss putting together a program to meet your needs, get in touch!</li>
+      <li>{% trans 'Special programs have a fixed duration' %}</li>
+      <li>{% trans 'All programs involve some Spanish teaching' %}</li>
+      <li>{% trans "If you'd like to discuss putting together a program to meet your needs, get in touch!" %}</li>
 
     </ul>
-    <a href="{% url 'enroll' %}"><button class="btn">Enrol now</button></a>
-  </section>
+    <a href="{% url 'enroll' %}"><button class="btn">{% trans 'Enrol now' %}</button></a>
+  </aside>
 </div>
 {% endblock %}

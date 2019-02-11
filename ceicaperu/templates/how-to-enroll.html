@@ -1,11 +1,12 @@
 {% extends "template.html" %}
 {% block content %}
 {% load static %}
+{% load i18n %}
 <header class="full-width">
   <div class="full-width-title-image">
     <img style="margin-top: -45%" src="{% static 'images/how-to-enroll.jpg' %}">
     <div class="title-image-text">
-      <h1 class="slider-title">How to enroll</h1>
+      <h1 class="slider-title">{% trans 'How to enroll' %}</h1>
     </div>
 </header>
 <section class="container">

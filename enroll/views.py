@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
 from django.views import generic
+from django.core.mail import send_mail
 
 # Create your views here.
 def enroll(request):
@@ -34,7 +35,6 @@ def EnrollPartOne(request):
     if request.method == 'POST':
         form = CustomerForm(request.POST)
         if form.is_valid():
-            print('Hello!')
             customer = form.save()
             request.session['username'] = customer.pk
             return HttpResponseRedirect('part_two')
@@ -57,15 +57,18 @@ def EnrollPartTwo(request):
         form.fields['course_chosen'].default = 'Spanish Lessons (10 hours / week)'
         form.fields['course_chosen'].blank = False
         form.fields['current_spanish_level'].widget.attrs['type'] = 'radio'
+        form.fields['group_number'].widget.attrs['type'] = 'radio'
         print('Hello!')
     if request.method == 'POST':
         form = CourseApplicationForm(request.POST)
         if form.is_valid():
             print('Hello!')
             course_application = form.save()
+
             return HttpResponseRedirect('part_three')
         else:
             print('Not valid!')
+            return HttpResponseRedirect('part_three')
 
     return render(request, 'enroll/course_application_form.html', {
         'form': form,
@@ -100,6 +103,15 @@ def EnrollPartThree(request):
             print(a)
             new_app.accommodation = AccommodationOption.objects.get(accommodation_type = a[0], room_type = a[1], catering = a[2])
             new_app.save()
+            # Send confirmation e-mail
+            applicant = Customer.objects.get(pk = request.session['username'])
+            send_mail(
+                'Subject here',
+                'Dear ' + applicant.first_name + ", \n\n Thanks for enrolling with Ceica Peru! Your application is being processed and we'll get in touch with you shortly.\n If you have any questions about the school or about your stay, please send us an e-mail and we will be happy to help. \n\nHasta pronto!\nThe Ceica Peru Team",
+                'ceicaperuspanishschool@hotmail.com',
+                ['nicholas-howley@hotmail.com'],
+                fail_silently=False,
+            )
             return HttpResponseRedirect('application_submitted')
         else:
             print('Not valid!')

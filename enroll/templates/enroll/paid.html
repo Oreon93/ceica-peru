@@ -9,9 +9,10 @@
 </header>
 <section class="container">
   <h2 class="text-center">
-    One more step...
+    All done!
   </h2>
-  <p class="prominent">You're almost enrolled! To confirm your application and book your place at our school, please pay the enrollment fee using the button below:</p>
-  
+  <p>We'll be in touch shortly to confirm your place on your chosen course. If you have any questions, just e-mail: <a href="mailto:info@ceica-peru.com">info@ceica-peru.com</a>.
+  <a href="{% url 'index' %}"><p class="prominent">Back to the home page.</p></a>
+{{ request.session.username }}
 </section>
 {% endblock %}

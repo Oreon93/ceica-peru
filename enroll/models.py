@@ -161,8 +161,23 @@ class CourseApplication(models.Model):
     course_chosen = models.ForeignKey('Service', on_delete=models.SET_NULL, null=True, default=DEFAULT_COURSE_ID)
     course_start_date = models.DateField(auto_now=False, auto_now_add=False)
     course_length = models.PositiveSmallIntegerField(default=1)
-    current_spanish_level = models.ForeignKey('AbilityLevel', on_delete=models.SET_NULL, null=True, default=DEFAULT_COURSE_ID)
-    group_number = models.PositiveSmallIntegerField(default=1)
+
+    GROUPNUMBER = (
+        (1, "1"),
+        (2, "2"),
+        (3, "3"),
+        (4, "4 or more"),
+    )
+
+    SPANISHLEVEL = (
+        ("b", "Beginner"),
+        ("i", "Intermediate"),
+        ("a", "Advanced"),
+        ("d", "Different levels"),
+    )
+
+    current_spanish_level = models.CharField(max_length=1, choices=SPANISHLEVEL, default="b")
+    group_number = models.PositiveSmallIntegerField(default=1, choices=GROUPNUMBER)
     application_made = models.DateField(auto_now=True, auto_now_add=False)
 
 
@@ -191,7 +206,8 @@ class CourseApplicationForm(ModelForm):
         widgets = {
             'course_chosen': forms.RadioSelect(),
             'current_spanish_level': forms.RadioSelect(),
-            'course_start_date': DateInput(),
+            'group_number': forms.RadioSelect(),
+            #'course_start_date': DateInput(),
             'applicant': TextInput(attrs={'readonly': True})
         }
         labels = {
@@ -298,7 +314,7 @@ class FAQ(models.Model):
     def __str__(self):
         return self.question
     class Meta:
-        ordering = ['question']
+        ordering = ['question_type']
 
 class AccommodationDescription(models.Model):
     #Fields

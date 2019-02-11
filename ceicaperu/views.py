@@ -11,9 +11,12 @@ from django.db.models import Q
 from django.utils.translation import gettext as _
 
 def index(request):
+    testimonial_list = Testimonial.objects.all()
+    context = {'testimonial_list': testimonial_list}
     return render(
         request,
         'index.html',
+        context
     )
 
 def enroll(request):

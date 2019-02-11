@@ -1,11 +1,12 @@
 {% extends "template.html" %}
 {% block content %}
 {% load static %}
+{% load i18n %}
 <header class="full-width ">
   <div class="full-width-title-image">
     <img src="{% static 'images/learn-spanish-2.JPG' %}">
     <div class="title-image-text">
-      <h1 class="slider-title">Spanish Lessons</h1>
+      <h1 class="slider-title">{% trans 'Spanish Lessons' %}</h1>
     </div>
   </div>
 </header>
@@ -13,9 +14,9 @@
 
 
   <main class="col col-2-3">
-    <p>Ceica Peru Spanish School has the Spanish course you need because all our courses are  tailor-made to suit the ability and needs of our students. You decide what day to start your course, the number of hours to study (at least 10 hours per week) and the duration of the course. Lessons are normally held from Monday to Friday, but lessons during the weekend are also possible.</p>
+    <p>{% trans 'Ceica Peru Spanish School has the Spanish course you need because all our courses are  tailor-made to suit the ability and needs of our students. You decide what day to start your course, the number of hours to study (at least 10 hours per week) and the duration of the course. Lessons are normally held from Monday to Friday, but lessons during the weekend are also possible.' %}</p>
     {% if abilitylevel_list %}
-    <h2>Ability levels</h2>
+    <h2>{% trans 'Ability levels' %}</h2>
     {% for abilitylevel in abilitylevel_list %}
     <button class="accordion">{{abilitylevel.level_name }}<i class="fas fa-angle-down fa-lg style="float:right""></i></button>
 
@@ -26,12 +27,12 @@
     </div>
     {% endfor %}
     {% else %}
-    <p>No courses, sorry!</p>
+    <p>{% trans 'No courses, sorry!' %}</p>
     {% endif %}
     <br>
     {% if price_list %}
     <section class="single-column">
-    <h2>Prices</h2>
+    <h2>{% trans 'Prices' %}</h2>
     <table class="price-list">
       <tr>
         <th>(Price per person)
@@ -39,11 +40,11 @@
 
     {% for customer_type in customer_type_list %}
       {% if customer_type.number == 4 %}
-      <th>Group of 4 or more </th>
+      <th>{% trans 'Group of 4 or more ' %}</th>
       {% elif customer_type.number == 1 %}
       <th>One on one</th>
       {% else %}
-      <th>Group of {{ customer_type.number}}</th>
+      <th>{% trans 'Group of ' %}{{ customer_type.number}}</th>
       {% endif %}
     {% endfor %}
       </tr>
@@ -59,7 +60,7 @@
       </tr>
     </table>
 
-    <p class="prominent">For more prices and to calculate the total cost of your stay at Ceica Peru, <a href="/prices">click here</a>.</p>
+    <p class="prominent">{% trans 'For more prices and to calculate the total cost of your stay at Ceica Peru, ' %}<a href="/prices">{% trans 'click here' %}</a>.</p>
 
 
     {% endif %}
@@ -67,16 +68,16 @@
     </section>
   </main>
   <aside class="col col-1-3 key-information">
-    <h2 class="aside-header">Course information</h2>
+    <h2 class="aside-header">{% trans 'Course information' %}</h2>
     <ul>
-      <li>Lessons evenly divided between grammar and speaking practice</li>
-      <li>Each day of lessons includes a 20 minute coffee break</li>
-      <li>Coursebook and teaching material provided free of charge</li>
-      <li>You will be presented with a certificate at the end of your course</li>
-      <li>Maximum of <strong>4 students</strong> in a group</li>
+      <li>{% trans 'Lessons evenly divided between grammar and speaking practice' %}</li>
+      <li>{% trans 'Each day of lessons includes a 20 minute coffee break' %}</li>
+      <li>{% trans 'Coursebook and teaching material provided free of charge' %}</li>
+      <li>{% trans 'You will be presented with a certificate at the end of your course' %}</li>
+      <li>{% trans 'Maximum of <strong>4 students</strong> in a group' %}</li>
 
     </ul>
-    <a href="{% url 'enroll' %}"><button class="btn">Enrol now</button></a>
+    <a href="{% url 'enroll' %}"><button class="btn">{% trans 'Enrol now' %}</button></a>
   </aside>
 </div>
 {% endblock %}

@@ -22,112 +22,6 @@
 </html>
 <body>
   {% load i18n %}
-  <link href="https://fonts.googleapis.com/css?family=Mukta:400,600,700" rel="stylesheet">
-<!-- Note: add some JS to disable the href of the link! -->
-  <div class="header-container">
-    <header class="header">
-
-      <div class="header-top">
-        <div class="logo">
-          <span class="logo-mobile" style="color: #fff; font-size: 24px">Ceica Peru</SPAN>
-          <a href="{% url 'index' %}"><img  class="logo-full" src="{% static 'images/logo.png' %}"/></a>
-        </div>
-        <div id="menu-toggle" class="menu-toggle close">
-
-            <div class="hamburger">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <div class="cross">
-              <span></span>
-              <span></span>
-            </div>
-          </div>
-
-      </div>
-      <div class="navbar">
-
-        <div class="languages">
-          {% get_current_language as LANGUAGE_CODE %}
-          <p id="current-language">{{ LANGUAGE_CODE }}</p>
-          <img class="language-selection-icon" src="https://png.pngtree.com/svg/20170608/ico_language_1214587.png">
-          <input id="dropdown"  type="checkbox" name="menu" class="language-dropdown">
-          <label for="dropdown" class="dropdown-label"></label>
-          <div class="language-options">
-            <a id="en" class="language-option" href="/en">
-              <img src="{% static 'images/united-kingdom.png' %}" />
-              <p class="language-text nav-item">English</p>
-            </a>
-            <a id="fr" class="language-option" href="#">
-              <img src="{% static 'images/france.png' %}"/>
-              <p class="language-text nav-item">Francais</p>
-            </a>
-            <a id="de" class="language-option" href="#">
-              <img src="{% static 'images/germany.png' %}"/>
-              <p class="language-text nav-item">Deutsch</p>
-            </a>
-            <a id="es" class="language-option" href="/es">
-              <img src="{% static 'images/spain.png' %}"/>
-              <p class="language-text nav-item">Espanol</p>
-            </a>
-          </div>
-
-          <hr class="nav-divider">
-        </div>
-
-        <ul class="primary-nav">
-          <li class="nav-item sub-menu-link">
-            <input class="sub-menu-toggle" id="learn-spanish" type="checkbox">
-            <img class="primary-nav-image" src="{% static 'images/learn-spanish.png' %}"/>
-            <label class="sub-menu-label" for="learn-spanish">{% trans "Learn Spanish" %}</label>
-
-            <ul class="sub-menu">
-              <li class="nav-item">
-                <label class="sub-menu-back" for="learn-spanish">&lt; Back</label>
-              </li>
-              <li class="nav-item"><a href="{% url 'courses' %}">{% trans "Spanish lessons" %}</a></li>
-              <li class="nav-item"><a href="{% url 'special-programs' %}">{% trans "Special programs" %}</a></li>
-              <li class="nav-item"><a href="{% url 'extras' %}">{% trans "Extras" %}</a></li>
-            </ul>
-          </li>
-          <li class="nav-item sub-menu-link">
-            <input class="sub-menu-toggle" id="volunteer" type="checkbox">
-            <img class="primary-nav-image" src="{% static 'images/volunteer.png' %}">
-            <label class="sub-menu-label" for="volunteer">{% trans "Volunteer" %}</label>
-
-            <ul class="sub-menu">
-              <li class="nav-item">
-                <label class="sub-menu-back" for="volunteer">&lt; Back</label
-              </li>
-              <li class="nav-item"><a href="{% url 'why-volunteer' %}">{% trans "Why volunteer?" %}</a></li>
-              <li class="nav-item"><a href="{% url 'volunteer-programs' %}">{% trans "Volunteer programs" %}</a></li>
-              <li class="nav-item"><a href="{% url 'how-to-enroll' %}">{% trans "How to enroll" %}</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><img class="primary-nav-image" src="{% static 'images/accommodation.png' %}"><a href="{% url 'accommodation' %}"><p>{% trans "Accommodation" %}</p></a></li>
-          <li class="nav-item"><img class="primary-nav-image" src="{% static 'images/prices.png' %}"><a href="{% url 'prices' %}"><p>{% trans "Prices" %}</p></a></li>
-          <li class="nav-item sub-menu-link">
-            <input class="sub-menu-toggle" id="about" type="checkbox">
-            <img class="primary-nav-image" src="{% static 'images/about-us.png' %}">
-            <label class="sub-menu-label" for="about">{% trans "About Us" %}</label>
-
-            <ul class="sub-menu">
-              <li class="nav-item">
-                <label class="sub-menu-back" for="about">&lt; Back</label
-              </li>
-              <li class="nav-item"><a href="{% url 'about-the-school' %}">{% trans "About the school" %}</a></li>
-              <li class="nav-item"><a href="#">{% trans "About Arequipa" %}</a></li>
-              <li class="nav-item"><a href="{% url 'contact' %}">{% trans "Contact Us" %}</a></li>
-              <li class="nav-item"><a href="{% url 'faqs' %}">{% trans "FAQs" %}</a></li>
-            </ul>
-          </li>
-          <li class="nav-item action-btn"><a href="{% url 'enroll' %}"><p>{% trans "Enroll" %}</p></a></li>
-        </ul>
-      </div>
-    </header>
-  </div>
-<!--
   <header class="page-header">
     <nav class="language-nav">
       <ul>
@@ -178,7 +72,6 @@
       <a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt="Ceica Peru Spanish School"/></a>
     </div>
   </header>
--->
   <main>{% block content %}<!-- default content text (typically empty) -->{% endblock %}
   </main>
   <footer class="full-width">

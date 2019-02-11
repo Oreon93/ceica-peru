@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-19 12:30+0100\n"
+"POT-Creation-Date: 2019-01-20 20:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,6 +50,137 @@ msgid ""
 "teachers, you can be assured that you will quickly learn Spanish. It's easy."
 msgstr ""
 
+#: .\ceicaperu\templates\about-the-school.html:18
+#: .\ceicaperu\templates\template.html:61
+msgid "About the school"
+msgstr "La escuela"
+
+#: .\ceicaperu\templates\about-the-school.html:19
+msgid ""
+"Ceica Peru is a small Spanish School founded in 1996 by Dr. Carmen Cornejo, "
+"who earned her doctorate in history and is a professor of linguistic and "
+"literature. Co-founders include a group of highly qualified teachers with "
+"specialized training in teaching Spanish as a foreign language."
+msgstr ""
+
+#: .\ceicaperu\templates\about-the-school.html:20
+msgid ""
+"Ceica Peru Spanish School is situated near the center of Arequipa (only a 25 "
+"– minute walk from the historical city center)."
+msgstr ""
+
+#: .\ceicaperu\templates\about-the-school.html:32
+msgid "Teaching method"
+msgstr ""
+
+#: .\ceicaperu\templates\about-the-school.html:33
+msgid ""
+"Our teaching method normally combines both grammar and conversation, but the "
+"students can specialize in one or the other."
+msgstr ""
+
+#: .\ceicaperu\templates\about-the-school.html:34
+msgid ""
+"All classes have a maximum of four students. Basic classes are taught by "
+"bilingual teachers (English and Spanish), more advance and special courses "
+"such as Peruvian history and literature are taught by monolingual teachers. "
+"All our teachers are professionals who have specialized in teaching Spanish "
+"as a foreign language and have many years of experience in this area."
+msgstr ""
+
+#: .\ceicaperu\templates\about-the-school.html:39
+msgid "Our team"
+msgstr ""
+
+#: .\ceicaperu\templates\about-the-school.html:56
+msgid "No teachers, sorry!"
+msgstr ""
+
+#: .\ceicaperu\templates\accommodation.html:8
+#: .\ceicaperu\templates\template.html:55
+msgid "Accommodation"
+msgstr "Alojamiento"
+
+#: .\ceicaperu\templates\accommodation.html:13
+msgid ""
+"Ceica Peru offers three accommodation options for your stay in Arequipa. "
+"Immerse yourself in Peruvian life by staying with a host family, stay in the "
+"school building for conveniently located facilities, or live it up in a "
+"private apartment."
+msgstr ""
+
+#: .\ceicaperu\templates\accommodation.html:48
+#, fuzzy
+#| msgid "Accommodation"
+msgid "No accommodation, sorry!"
+msgstr "Alojamiento"
+
+#: .\ceicaperu\templates\accommodation.html:64
+msgid "No FAQs, sorry!"
+msgstr ""
+
+#: .\ceicaperu\templates\index.html:9
+msgid "Your browser does not support the video tag."
+msgstr ""
+
+#: .\ceicaperu\templates\index.html:27
+msgid "Ceica Peru is a Spanish language school located in Arequipa, Peru."
+msgstr ""
+
+#: .\ceicaperu\templates\index.html:30
+msgid ""
+"We provide <b>individual lessons for all levels of Spanish speakers</b> and "
+"group lessons for new learners in a relaxed setting, in our beautiful garden "
+"or in the classroom. We have <b>special courses for travellers, volunteers "
+"and missionaries</b>. We also offer <b>a variety of accommodation options</"
+"b>, including living with local families, staying in the school building, "
+"and staying in a private furnished apartment."
+msgstr ""
+
+#: .\ceicaperu\templates\index.html:44
+msgid "Courses"
+msgstr ""
+
+#: .\ceicaperu\templates\index.html:47
+msgid ""
+"We have a variety of courses for all levels of Spanish, as well as special "
+"courses in Peruvian history, Peruvian literature and Quechua."
+msgstr ""
+
+#: .\ceicaperu\templates\index.html:49 .\ceicaperu\templates\index.html:65
+#: .\ceicaperu\templates\index.html:80
+msgid "Read more"
+msgstr ""
+
+#: .\ceicaperu\templates\index.html:60 .\ceicaperu\templates\template.html:42
+msgid "Special programs"
+msgstr "Programas Especiales"
+
+#: .\ceicaperu\templates\index.html:63
+msgid ""
+"We also offer special courses in Spanish for travelling, and programms "
+"combining Spanish learning with speaking practice around the city of "
+"Arequipa."
+msgstr ""
+
+#: .\ceicaperu\templates\index.html:75
+#, fuzzy
+#| msgid "Volunteer"
+msgid "Volunteering"
+msgstr "Voluntariado"
+
+#: .\ceicaperu\templates\index.html:78
+msgid ""
+"Ceica Peru Spanish School works together with several social projects in "
+"Arequipa to offer volunteer programs that allow you to practice Spanish and "
+"at the same time contribute to the social development of the children and "
+"adults of these communities."
+msgstr ""
+
+#: .\ceicaperu\templates\index.html:86
+msgid "What our students say"
+msgstr ""
+
 #: .\ceicaperu\templates\template.html:39
 msgid "Learn Spanish"
 msgstr "Aprender Español"
@@ -57,10 +188,6 @@ msgstr "Aprender Español"
 #: .\ceicaperu\templates\template.html:41
 msgid "Spanish lessons"
 msgstr "Clases"
-
-#: .\ceicaperu\templates\template.html:42
-msgid "Special programs"
-msgstr "Programas Especiales"
 
 #: .\ceicaperu\templates\template.html:43
 msgid "Extras"
@@ -82,10 +209,6 @@ msgstr "Programas disponibles"
 msgid "How to enroll"
 msgstr "Como registrarse"
 
-#: .\ceicaperu\templates\template.html:55
-msgid "Accommodation"
-msgstr "Alojamiento"
-
 #: .\ceicaperu\templates\template.html:56
 msgid "Prices"
 msgstr "Precios"
@@ -93,10 +216,6 @@ msgstr "Precios"
 #: .\ceicaperu\templates\template.html:59
 msgid "About Us"
 msgstr "Nosotros"
-
-#: .\ceicaperu\templates\template.html:61
-msgid "About the school"
-msgstr "La escuela"
 
 #: .\ceicaperu\templates\template.html:62
 msgid "About Arequipa"
@@ -113,3 +232,7 @@ msgstr "Preguntas frecuentes"
 #: .\ceicaperu\templates\template.html:67
 msgid "Enroll"
 msgstr "Registrarse"
+
+#: .\ceicaperu\templates\template.html:84
+msgid "Address:"
+msgstr ""

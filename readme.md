@@ -30,6 +30,15 @@ This site makes use of the following frameworks:
 - Fixed some images not displaying
 - Added multilingual support and started translations
 
+0.3 - 11/02/2018
+- Redesigned nav bar and made responsive
+- All database models which display on the front end are now translatable
+- Added FAQs
+- Made Contact Us & Volunteer Programs responsive and made accordion component responsive
+- E-mail integration with confirmation of enrolment
+- Clarified enroll form to explain that group classes are not usually possible at the same level
+- Testimonials now managed in admin
+
 
 # Future development
 - Integration with a Price Estimation app giving the user the ability to estimate the total cost of their registration before enrolling.

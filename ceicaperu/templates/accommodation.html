@@ -1,16 +1,17 @@
 {% extends "template.html" %}
 {% block content %}
 {% load static %}
+{% load i18n %}
 <header class="full-width">
   <div class="full-width-title-image">
     <img src="{% static 'images/accommodation-4.JPG' %}">
     <div class="title-image-text">
-      <h1 class="slider-title">Accommodation</h1>
+      <h1 class="slider-title">{% trans 'Accommodation' %}</h1>
     </div>
   </div>
 </header>
 <section class="container">
-  <p class="prominent">Ceica Peru offers three accommodation options for your stay in Arequipa. Immerse yourself in Peruvian life by staying with a host family, stay in the school building for conveniently located facilities, or live it up in a private apartment.</p>
+  <p class="prominent">{% trans 'Ceica Peru offers three accommodation options for your stay in Arequipa. Immerse yourself in Peruvian life by staying with a host family, stay in the school building for conveniently located facilities, or live it up in a private apartment.' %}</p>
 </section>
 {% if accommodation_list %}
   {% for e in accommodation_list %}
@@ -45,7 +46,7 @@
   </div>
   {% endfor %}
 {% else %}
-<p>No courses, sorry!</p>
+<p>{% trans 'No accommodation, sorry!' %}</p>
 {% endif %}
 
 {% if faq_list %}
@@ -61,6 +62,6 @@
   {% endfor %}
 </section>
 {% else %}
-<p>No courses, sorry!</p>
+<p>{% trans 'No FAQs, sorry!' %}</p>
 {% endif %}
 {% endblock %}
