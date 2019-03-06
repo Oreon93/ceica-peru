@@ -1,10 +1,16 @@
 {% extends "template.html" %}
+{% load i18n %}
+{% block title %}{% trans "Accommodation options | Ceica Peru Spanish School" %}{% endblock %}
+{% block metadescription %}<meta name="description" content="{% trans 'Ceica Peru offers many accommodation options, including staying in the school building, in a private apartment, or with one of our host families.' %}">{% endblock %}
 {% block content %}
 {% load static %}
-{% load i18n %}
 <header class="full-width">
   <div class="full-width-title-image">
-    <img src="{% static 'images/accommodation-4.JPG' %}">
+    <picture>
+      <source media="(max-width: 799px)" srcset=" {% static 'images/accommodation-800.JPG' %}">
+      <source media="(min-width: 800px)" srcset=" {% static 'images/accommodation-1600.JPG' %}">
+      <img style="margin-top: -35%" src=" {% static 'images/accommodation-1600.JPG' %}" alt="{% trans 'A student in the house of their host family' %}">
+    </picture>
     <div class="title-image-text">
       <h1 class="slider-title">{% trans 'Accommodation' %}</h1>
     </div>
@@ -18,19 +24,21 @@
   <div class="strips">
   <section class="container">
   <h2> {{ e.name }}</h2>
-  <div class="group">
-    <div class="col-2-3">
-    <div class="group">
+  <div class="features-group">
     {% for feature in e.features.all %}
     <div class="features">
-    <img src="/static/uploads/{{feature.icon}}">
-    <p>
-      <b>{{feature.name}}</b><br>
-      {{feature.description}}
-    </p>
+      <img src="/static/uploads/{{feature.icon}}">
+      <p>
+        <b>{{feature.name}}</b><br>
+        {{feature.description}}
+      </p>
     </div>
     {% endfor %}
-    </div>
+  </div>
+  <div class="group">
+
+    <div class="col-2-3">
+
 
     <p>
       {{ e.description|linebreaksbr }}

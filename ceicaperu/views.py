@@ -37,13 +37,13 @@ def whyvolunteer(request):
         'why-volunteer.html',
     )
 
-class VolunteerProgramListView(generic.ListView):
+class VolunteerProjectListView(generic.ListView):
     model = VolunteerProject
-    template_name = 'volunteer-programs.html'
+    template_name = 'volunteer-projects.html'
     context_object_name = 'volunteer_project_list'
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get the context
-        context = super(VolunteerProgramListView, self).get_context_data(**kwargs)
+        context = super(VolunteerProjectListView, self).get_context_data(**kwargs)
         # Create any data and add it to the context
         context['price_list'] = VolunteerProgram.objects.all()
         return context

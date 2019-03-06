@@ -1,9 +1,13 @@
 from django.contrib import admin
-from .models import Customer, AbilityLevel, Service, Price, CustomerType, CourseApplication, Application, AccommodationOption, AccommodationPrice, FAQ, AccommodationDescription, Testimonial, Teacher, Feature, VolunteerProject, VolunteerProgram
+from .models import Customer, AbilityLevel, Service, Price, CustomerType, CourseApplication, Application, AccommodationOption, AccommodationPrice, FAQ, AccommodationDescription, Testimonial, Teacher, Feature, VolunteerProject, VolunteerProgram, VolunteerApplication, VolunteerApplicationForm
 from modeltranslation.admin import TranslationAdmin
 
 class CourseApplicationInline(admin.TabularInline):
     model = CourseApplication
+    extra = 0
+
+class VolunteerApplicationInline(admin.TabularInline):
+    model = VolunteerApplication
     extra = 0
 
 class PriceInline(admin.TabularInline):
@@ -99,5 +103,9 @@ class AccommodationPrice(admin.ModelAdmin):
 @admin.register(CourseApplication)
 class CourseApplicationAdmin(admin.ModelAdmin):
     list_display = ('__str__', 'total_price')
+
+@admin.register(VolunteerApplication)
+class VolunteerApplicationAdmin(admin.ModelAdmin):
+    list_display = ('__str__', 'total_price')#
 
 # Register your models here.

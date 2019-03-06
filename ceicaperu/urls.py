@@ -18,8 +18,10 @@ from django.urls import path
 from django.urls import include
 from . import views
 from . import settings
+from django.conf.urls import include, url
 from django.conf.urls.i18n import i18n_patterns
 from django.views.generic import RedirectView
+from django.utils.translation import ugettext_lazy as _
 
 urlpatterns = [
     path('', RedirectView.as_view(url='/en/')),
@@ -43,11 +45,13 @@ urlpatterns += i18n_patterns(
     path('accommodation/', views.AccommodationListView.as_view(), name='accommodation'),
     path('prices/', views.PriceListView.as_view(), name='prices'),
     path('about-the-school/', views.TeacherListView.as_view(), name='about-the-school'),
-    path('contact/', views.contact, name='contact'),
+    url(_(r'^contact/$'), views.contact, name='contact'),
     path('why-volunteer', views.whyvolunteer, name='why-volunteer'),
-    path('volunteer-programs', views.VolunteerProgramListView.as_view(), name='volunteer-programs'),
+    path('volunteer-projects', views.VolunteerProjectListView.as_view(), name='volunteer-projects'),
     path('how-to-enroll', views.howtoenroll, name="how-to-enroll"),
 )
+
+
 
 from django.conf import settings
 from django.conf.urls.static import static

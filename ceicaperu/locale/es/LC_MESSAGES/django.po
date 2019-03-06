@@ -7,26 +7,59 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-20 20:15+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2019-03-02 17:00+0100\n"
+"PO-Revision-Date: 2019-03-02 17:14-0015\n"
+"Last-Translator: b'  <nicholas-howley@hotmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.9.1\n"
 
-#: .\ceicaperu\templates\about-the-school.html:7
+#: .\ceicaperu\templates\404.html:3 .\ceicaperu\templates\500.html:3
+msgid "Sorry - page not found!"
+msgstr "Pagina no encontrada "
+
+#: .\ceicaperu\templates\404.html:4 .\ceicaperu\templates\500.html:4
+msgid "We are very sorry that the page you are looking for cannot be found."
+msgstr "Lo sentimos, no se pudo encontrar la página solicitada. "
+
+#: .\ceicaperu\templates\404.html:9 .\ceicaperu\templates\500.html:9
+msgid ""
+"We could not find the page you were looking for. If you would like support, "
+"please"
+msgstr ""
+"Lo sentimos, no se pudo encontrar la página solicitada. Si desea ampliar "
+"ésta información no dude en"
+
+#: .\ceicaperu\templates\404.html:9 .\ceicaperu\templates\500.html:9
+msgid "contact us"
+msgstr "consultar con nosotros."
+
+#: .\ceicaperu\templates\about-the-school.html:3
+msgid "About the school | Ceica Peru Spanish School"
+msgstr "Sobre la escuela | Ceica Peru"
+
+#: .\ceicaperu\templates\about-the-school.html:4
+msgid ""
+"Learn all about the history of Ceica Peru Spanish school, our teaching "
+"methods, and meet the team"
+msgstr ""
+"Aprenda la historia de la escuela, nuestros métodos de enseñanza, y conozca "
+"el equipo."
+
+#: .\ceicaperu\templates\about-the-school.html:11
 msgid "About us"
 msgstr "Sobre Ceica Peru"
 
-#: .\ceicaperu\templates\about-the-school.html:8
+#: .\ceicaperu\templates\about-the-school.html:12
 msgid ""
 "Welcome to the Ceica Peru  Spanish School  and to the city of Arequipa, "
 "<br>the main city of southern Peru."
 msgstr "Bienvenido a Ceica Peru y a la ciudad de Arequipa."
 
-#: .\ceicaperu\templates\about-the-school.html:9
+#: .\ceicaperu\templates\about-the-school.html:13
 msgid ""
 "Arequipa is a beautiful city with excellent weather, surrounded by "
 "spectacular mountains and declared by UNESCO as a world heritage site "
@@ -34,52 +67,75 @@ msgid ""
 "Colca Canyon, Cotahuasi Canyon (the deepest Canyon of the world) or to the "
 "cities of Puno, and Cuzco."
 msgstr ""
+"Arequipa es una ciudad hermosa, con un clima excelente, rodeada de tres "
+"espectaculares volcanes y alcanzó en el año 2000 el título de Patrimonio "
+"Cultural de la Humanidad por su arquitectura colonial. Desde Arequipa puede "
+"visitar los cañones del Colca y de Cotahuasi (el más profundo del mundo) y a"
+" otras ciudades como Puno y Cusco."
 
-#: .\ceicaperu\templates\about-the-school.html:10
+#: .\ceicaperu\templates\about-the-school.html:14
 msgid ""
 "At Ceica Peru Spanish School, we have taught hundreds of people from around "
 "the world who are interested in studying in South America because of its "
 "culture, fascinating geography and the opportunity to get to know its "
 "diverse peoples."
 msgstr ""
+"Nuestra escuela tiene como objetivo primordial no solo ayudarte a que "
+"aprendas el Español a fin de que te sea posible apreciar nuestra cultura de "
+"una manera mucho más profunda, sino que también te puedas relacionar con "
+"todas las personas que hablan este idioma."
 
-#: .\ceicaperu\templates\about-the-school.html:11
+#: .\ceicaperu\templates\about-the-school.html:15
 msgid ""
 "Our teaching methods are regularly reviewed and updated based on the latest "
 "educational research and techniques. Based on this and our highly qualified "
 "teachers, you can be assured that you will quickly learn Spanish. It's easy."
 msgstr ""
+"Indudablemente que, nuestros profesores te ayudarán a tener la confianza "
+"para aprender el Español de una manera rápida y sencilla."
 
-#: .\ceicaperu\templates\about-the-school.html:18
-#: .\ceicaperu\templates\template.html:61
+#: .\ceicaperu\templates\about-the-school.html:23
+#: .\ceicaperu\templates\template.html:150
+#: .\ceicaperu\templates\templateold.html:62
 msgid "About the school"
 msgstr "La escuela"
 
-#: .\ceicaperu\templates\about-the-school.html:19
+#: .\ceicaperu\templates\about-the-school.html:24
 msgid ""
 "Ceica Peru is a small Spanish School founded in 1996 by Dr. Carmen Cornejo, "
 "who earned her doctorate in history and is a professor of linguistic and "
 "literature. Co-founders include a group of highly qualified teachers with "
 "specialized training in teaching Spanish as a foreign language."
 msgstr ""
+"Ceica Peru es una escuela de Español fundada por Carmen Cornejo en 1996, "
+"ella tiene el título de Profesora en la especialidad de Lengua y Literatura "
+"y el grado académico de Doctora en Historia. Como co-fundadores están "
+"incluidos un grupo de profesoras y profesores capacitados y con "
+"entrenamiento especial para enseñar Español como segunda lengua. "
 
-#: .\ceicaperu\templates\about-the-school.html:20
+#: .\ceicaperu\templates\about-the-school.html:25
 msgid ""
-"Ceica Peru Spanish School is situated near the center of Arequipa (only a 25 "
-"– minute walk from the historical city center)."
+"Ceica Peru Spanish School is situated near the center of Arequipa (only a 25"
+" – minute walk from the historical city center)."
 msgstr ""
+"En los últimos años, Ceica, se mudó a un nuevo local ubicado en una zona "
+"cercana a los principales atractivos de la ciudad, es decir, a tan solo 25 "
+"minutos de caminata al Centro Histórico y a todos sus lugares recreativos."
 
-#: .\ceicaperu\templates\about-the-school.html:32
+#: .\ceicaperu\templates\about-the-school.html:37
 msgid "Teaching method"
-msgstr ""
+msgstr "Método de enseñanza"
 
-#: .\ceicaperu\templates\about-the-school.html:33
+#: .\ceicaperu\templates\about-the-school.html:38
 msgid ""
-"Our teaching method normally combines both grammar and conversation, but the "
-"students can specialize in one or the other."
+"Our teaching method normally combines both grammar and conversation, but the"
+" students can specialize in one or the other."
 msgstr ""
+"Nuestro método combina tanto la gramática y la conversación. Si el "
+"estudiante prefiere enfocarse en uno de estos dos aspectos, solo debe de "
+"pedírselo a su profesor."
 
-#: .\ceicaperu\templates\about-the-school.html:34
+#: .\ceicaperu\templates\about-the-school.html:39
 msgid ""
 "All classes have a maximum of four students. Basic classes are taught by "
 "bilingual teachers (English and Spanish), more advance and special courses "
@@ -87,152 +143,881 @@ msgid ""
 "All our teachers are professionals who have specialized in teaching Spanish "
 "as a foreign language and have many years of experience in this area."
 msgstr ""
+"Las clases son de máximo cuatro estudiantes y se los agrupan teniendo muy en"
+" cuenta su nivel en el conocimiento del Español. Las lecciones para personas"
+" con un nivel básico se encargan a profesores bilingües; las clases para "
+"estudiantes de nivel intermedio y/o avanzado o de cursos especiales "
+"(redacción, ortografía, historia) son dictadas por profesores especializados"
+" y con experiencia."
 
-#: .\ceicaperu\templates\about-the-school.html:39
+#: .\ceicaperu\templates\about-the-school.html:43
 msgid "Our team"
-msgstr ""
+msgstr "Nuestro equipo"
 
-#: .\ceicaperu\templates\about-the-school.html:56
+#: .\ceicaperu\templates\about-the-school.html:59
 msgid "No teachers, sorry!"
-msgstr ""
+msgstr "No se han encontrado profesores"
 
-#: .\ceicaperu\templates\accommodation.html:8
-#: .\ceicaperu\templates\template.html:55
+#: .\ceicaperu\templates\accommodation.html:3
+msgid "Accommodation options | Ceica Peru Spanish School"
+msgstr "Alojamiento | Ceica Peru"
+
+#: .\ceicaperu\templates\accommodation.html:4
+msgid ""
+"Ceica Peru offers many accommodation options, including staying in the "
+"school building, in a private apartment, or with one of our host families."
+msgstr ""
+"Ceica Peru ofrece varioses opciones para alojarse en Arequipa, incluidos "
+"quedar en el edificio de la escuela, en un departamento privato y con una "
+"familia local."
+
+#: .\ceicaperu\templates\accommodation.html:11
+#: .\ceicaperu\templates\prices.html:16 .\ceicaperu\templates\prices.html:62
+#: .\ceicaperu\templates\template.html:139
+#: .\ceicaperu\templates\templateold.html:56
+#: .\ceicaperu\templates\volunteer-projects.html:52
 msgid "Accommodation"
 msgstr "Alojamiento"
 
-#: .\ceicaperu\templates\accommodation.html:13
+#: .\ceicaperu\templates\accommodation.html:16
 msgid ""
 "Ceica Peru offers three accommodation options for your stay in Arequipa. "
-"Immerse yourself in Peruvian life by staying with a host family, stay in the "
-"school building for conveniently located facilities, or live it up in a "
+"Immerse yourself in Peruvian life by staying with a host family, stay in the"
+" school building for conveniently located facilities, or live it up in a "
 "private apartment."
 msgstr ""
+"Ceica Peru ofrece tres opciones para alojarse en Arequipa. Puedes conocer "
+"como es estilo de vida en el Perú quedándote con una familia local o si "
+"prefieres puedes quedarte en el edificio de la escuela y disfrutar de su "
+"ubicación estratégica o también puedes elegir quedarte en un departamento "
+"privado."
 
-#: .\ceicaperu\templates\accommodation.html:48
-#, fuzzy
-#| msgid "Accommodation"
+#: .\ceicaperu\templates\accommodation.html:53
 msgid "No accommodation, sorry!"
-msgstr "Alojamiento"
+msgstr "No se han encontrado opciones de alojamiento"
 
-#: .\ceicaperu\templates\accommodation.html:64
+#: .\ceicaperu\templates\accommodation.html:69
+#: .\ceicaperu\templates\faqs.html:30
 msgid "No FAQs, sorry!"
+msgstr "No se han encontrado preguntas frecuentes"
+
+#: .\ceicaperu\templates\contact.html:3
+msgid "Contact Us | Ceica Peru Spanish School"
+msgstr "Contacto | Ceica Peru"
+
+#: .\ceicaperu\templates\contact.html:4
+msgid ""
+"Fill in our contact form to get in touch and we will respond to your query "
+"as soon as we can."
+msgstr ""
+"Rellene nuestro formulario de contacto y le responderemos lo antes posible."
+
+#: .\ceicaperu\templates\contact.html:12
+#: .\ceicaperu\templates\template.html:152
+#: .\ceicaperu\templates\templateold.html:64
+msgid "Contact Us"
+msgstr "Contacto"
+
+#: .\ceicaperu\templates\contact.html:17
+msgid "Contact form"
+msgstr "Formulario de contacto"
+
+#: .\ceicaperu\templates\contact.html:19
+msgid "Any questions? Contact us using this form:"
+msgstr "Para cualquier duda contáctenos a través del formulario de contacto:"
+
+#: .\ceicaperu\templates\contact.html:24
+msgid "Submit"
+msgstr "Enviar"
+
+#: .\ceicaperu\templates\contact.html:28
+msgid "Contact Details"
+msgstr "Datos de contacto"
+
+#: .\ceicaperu\templates\contact.html:29
+msgid "Address"
+msgstr "Dirección"
+
+#: .\ceicaperu\templates\contact.html:35
+msgid "Opening hours"
+msgstr "Horarios de apertura"
+
+#: .\ceicaperu\templates\contact.html:38
+msgid "Monday - Saturday"
+msgstr "Lunes - sabado"
+
+#: .\ceicaperu\templates\contact.html:40
+msgid "Telephone"
+msgstr "Número de teléfono"
+
+#: .\ceicaperu\templates\contact.html:49
+msgid "How to find us"
+msgstr "Como encontrarnos"
+
+#: .\ceicaperu\templates\courses.html:3
+msgid "Spanish lessons: beginner to advanced | Ceica Peru Spanish School"
+msgstr "Clases: Principiantes a avanzados | Ceica Peru"
+
+#: .\ceicaperu\templates\courses.html:4
+msgid ""
+"Ceica Peru offers Spanish lessons for all ability levels in our sunny "
+"garden. We also offer flexible schedules from easy-going to intensive "
+"courses."
+msgstr ""
+"Ofrecemos clases para todas las habilidades en nuestro jardín soledao. "
+"También ofrecemos horarios flexibles, de cursos faciles a intensivos."
+
+#: .\ceicaperu\templates\courses.html:12
+msgid "Spanish Lessons"
+msgstr "Clases"
+
+#: .\ceicaperu\templates\courses.html:20
+msgid ""
+"Ceica Peru Spanish School has the Spanish course you need because all our "
+"courses are  tailor-made to suit the ability and needs of our students. You "
+"decide what day to start your course, the number of hours to study (at least"
+" 10 hours per week) and the duration of the course. Lessons are normally "
+"held from Monday to Friday, but lessons during the weekend are also "
+"possible."
+msgstr ""
+"Ceica Peru tiene el curso de español que usted necesita ya que cada curso es"
+" diseñado tomando en consideración  las habilidades y necesidades "
+"particulares  de cada uno de sus estudiantes. Decide cuando van a comenzar "
+"el curso, el número de horas que desean estudiar  (minimo 10 horas por "
+"semana) y la duración de los cursos."
+
+#: .\ceicaperu\templates\courses.html:22
+msgid "Ability levels"
+msgstr "Nuestros niveles"
+
+#: .\ceicaperu\templates\courses.html:33 .\ceicaperu\templates\extras.html:35
+#: .\ceicaperu\templates\special-programs.html:39
+msgid "No courses, sorry!"
+msgstr "No se han encontrado cursos"
+
+#: .\ceicaperu\templates\courses.html:38 .\ceicaperu\templates\extras.html:40
+#: .\ceicaperu\templates\prices.html:12
+#: .\ceicaperu\templates\special-programs.html:44
+#: .\ceicaperu\templates\template.html:140
+#: .\ceicaperu\templates\templateold.html:57
+#: .\ceicaperu\templates\volunteer-projects.html:42
+msgid "Prices"
+msgstr "Precios"
+
+#: .\ceicaperu\templates\courses.html:47 .\ceicaperu\templates\extras.html:49
+#: .\ceicaperu\templates\prices.html:34
+msgid "Group of 4 or more "
+msgstr "Grupo de 4 o más"
+
+#: .\ceicaperu\templates\courses.html:51 .\ceicaperu\templates\extras.html:53
+msgid "Group of "
+msgstr "Grupo de"
+
+#: .\ceicaperu\templates\courses.html:67
+msgid ""
+"For more prices and to calculate the total cost of your stay at Ceica Peru,"
+msgstr "Para ver más precios y calcular el coste de su estancia,"
+
+#: .\ceicaperu\templates\courses.html:67 .\ceicaperu\templates\extras.html:69
+#: .\ceicaperu\templates\special-programs.html:73
+#: .\ceicaperu\templates\volunteer-projects.html:70
+msgid "click here"
+msgstr "pulse aquí"
+
+#: .\ceicaperu\templates\courses.html:75
+msgid "Course information"
+msgstr "Información importante"
+
+#: .\ceicaperu\templates\courses.html:77
+msgid "Lessons evenly divided between grammar and speaking practice"
+msgstr ""
+"Las clases se dividen de forma equilibrada entre la gramatica y la "
+"conversación"
+
+#: .\ceicaperu\templates\courses.html:78
+msgid "Each day of lessons includes a 20 minute coffee break"
+msgstr "Hay un descanso de 20 minutes para café cada día "
+
+#: .\ceicaperu\templates\courses.html:79
+msgid "Coursebook and teaching material provided free of charge"
+msgstr "Todo el material de enseñanza es gratis."
+
+#: .\ceicaperu\templates\courses.html:80
+msgid "You will be presented with a certificate at the end of your course"
+msgstr ""
+"Un certificado de asistencia sera entregado al alumno al final del curso"
+
+#: .\ceicaperu\templates\courses.html:81
+msgid "Maximum of <strong>4 students</strong> in a group"
+msgstr "El número máximo de estudiantes por clases es de 4."
+
+#: .\ceicaperu\templates\courses.html:84 .\ceicaperu\templates\extras.html:81
+#: .\ceicaperu\templates\special-programs.html:87
+#: .\ceicaperu\templates\volunteer-projects.html:85
+msgid "Enroll now"
+msgstr "Registrarse"
+
+#: .\ceicaperu\templates\extras.html:3
+msgid ""
+"Extras: Learn about Quechua, Peruvian cooking, or Peruvian literature at "
+"Ceica Peru Spanish School"
+msgstr ""
+"Complementarios: Aprender Quechua, cocina peruana o literatura peruana en "
+"Ceica Peru"
+
+#: .\ceicaperu\templates\extras.html:4
+msgid ""
+"Ceica Peru offers extra courses for those looking to dive deeper into "
+"Peruvian culture - from 1-2-1 Quechua lessons to authentic cooking classes "
+"and more."
+msgstr ""
+"Ofrecemos cursos complementarios si quiere adentrar en la cultura peruana - "
+"de clases individuales de Quechua a clases de cocinar en grupos."
+
+#: .\ceicaperu\templates\extras.html:12 .\ceicaperu\templates\extras.html:23
+#: .\ceicaperu\templates\template.html:122
+#: .\ceicaperu\templates\templateold.html:44
+msgid "Extras"
+msgstr "Complementarios"
+
+#: .\ceicaperu\templates\extras.html:20
+msgid ""
+"Ceica Peru offers extra courses for those looking to dive deeper into "
+"Peruvian culture - from one on one Quechua lessons to authentic cooking "
+"classes and more."
+msgstr ""
+"Ofrecemos cursos complementarios si quiere adentrar en la cultura peruana - "
+"de clases individuales de Quechua a clases de cocinar en grupos."
+
+#: .\ceicaperu\templates\extras.html:44 .\ceicaperu\templates\prices.html:29
+#: .\ceicaperu\templates\special-programs.html:48
+msgid "(Price per person)"
+msgstr "Precio por persona"
+
+#: .\ceicaperu\templates\extras.html:69
+msgid ""
+"For more prices and to calculate the total cost of your stay at Ceica Peru, "
+msgstr "Para ver más precios y calcular el coste de su estancia,"
+
+#: .\ceicaperu\templates\extras.html:76
+#: .\ceicaperu\templates\special-programs.html:80
+msgid "Program information"
+msgstr "Información importante"
+
+#: .\ceicaperu\templates\extras.html:78
+msgid "You must already be enrolled in a course or special program"
+msgstr "Tiene que ser registrado en un curso o una programa especial."
+
+#: .\ceicaperu\templates\extras.html:79
+msgid ""
+"Extras are subject to availability and some courses are restricted to "
+"advanced students"
+msgstr ""
+"Cursos complementarios están sujetas a disponibilidad y algunos están "
+"limitados a estudiantes avanzadas."
+
+#: .\ceicaperu\templates\faqs.html:3
+msgid "FAQs | Ceica Peru Spanish School"
+msgstr "Preguntas frecuentes | Ceica Peru"
+
+#: .\ceicaperu\templates\faqs.html:4
+msgid ""
+"How much can I learn in a week? How do I get to Arequipa? Check out our FAQs"
+" and find the answer."
+msgstr ""
+"Cuanto puedo apreneder en solo una semana? Como puedo llegar a Arequipa? "
+"Mirar nuestras preguntas frecuentes para encontrar la repuesta."
+
+#: .\ceicaperu\templates\faqs.html:12 .\ceicaperu\templates\template.html:153
+#: .\ceicaperu\templates\templateold.html:65
+msgid "FAQs"
+msgstr "Preguntas frecuentes"
+
+#: .\ceicaperu\templates\how-to-enroll.html:3
+msgid "How to enroll in a volunteer program | Ceica Peru Spanish School"
+msgstr "Como inscribirse y voluntar | Ceica Peru"
+
+#: .\ceicaperu\templates\how-to-enroll.html:4
+msgid ""
+"Read on to find out how enrollment for a volunteer program works once you "
+"have decided on the project you want to do."
+msgstr ""
+"Leer más sobre el proceso de la registración para una programa de "
+"voluntariado una vez que ha elegido un proyeto."
+
+#: .\ceicaperu\templates\how-to-enroll.html:12
+#: .\ceicaperu\templates\template.html:136
+#: .\ceicaperu\templates\templateold.html:53
+msgid "How to enroll"
+msgstr "Como inscribirse"
+
+#: .\ceicaperu\templates\how-to-enroll.html:16
+msgid ""
+"Our volunteer enrollment process aims to ensure that you are in a position "
+"to carry out your role safely and you are in the right project to you."
 msgstr ""
 
-#: .\ceicaperu\templates\index.html:9
+#: .\ceicaperu\templates\how-to-enroll.html:19
+msgid "How it works"
+msgstr ""
+
+#: .\ceicaperu\templates\index.html:3
+msgid "Ceica Peru: Spanish lessons and volunteer programs in Arequipa"
+msgstr "Ceica Peru: Clases de español y programas de voluntariado en Arequipa"
+
+#: .\ceicaperu\templates\index.html:4
+msgid ""
+"Ceica Peru is a Spanish language school located in Arequipa, Peru. We "
+"provide lessons for all levels of Spanish speakers in a relaxed setting, in "
+"our beautiful garden or in the classroom."
+msgstr ""
+"Ceica Peru es una escuela de español para extranjeros ubicada en Arequipa, "
+"Perú. Nuestra escuela ofrece  lecciones de español individuales para todos "
+"los niveles y grupales para los niveles básicos, en un ambiente relajado, al"
+" aire libre o en clases. "
+
+#: .\ceicaperu\templates\index.html:13
 msgid "Your browser does not support the video tag."
-msgstr ""
-
-#: .\ceicaperu\templates\index.html:27
-msgid "Ceica Peru is a Spanish language school located in Arequipa, Peru."
-msgstr ""
+msgstr "Su navegador no soporta la el tag 'video'."
 
 #: .\ceicaperu\templates\index.html:30
+msgid "Welcome to Ceica Peru"
+msgstr "Bienvenido a Ceica Peru"
+
+#: .\ceicaperu\templates\index.html:32
+msgid "Ceica Peru is a Spanish language school located in Arequipa, Peru."
+msgstr "Ceica Peru es una escuela de español ubicada en Arequipa, Perú."
+
+#: .\ceicaperu\templates\index.html:35
 msgid ""
 "We provide <b>individual lessons for all levels of Spanish speakers</b> and "
-"group lessons for new learners in a relaxed setting, in our beautiful garden "
-"or in the classroom. We have <b>special courses for travellers, volunteers "
-"and missionaries</b>. We also offer <b>a variety of accommodation options</"
-"b>, including living with local families, staying in the school building, "
-"and staying in a private furnished apartment."
+"group lessons for new learners in a relaxed setting, in our beautiful garden"
+" or in the classroom. We have <b>special courses for travellers, volunteers "
+"and missionaries</b>. We also offer <b>a variety of accommodation "
+"options</b>, including living with local families, staying in the school "
+"building, and staying in a private furnished apartment."
 msgstr ""
+"Nuestra escuela ofrece  lecciones de español  individuales para todos los "
+"niveles y grupales para los niveles básicos,  en un ambiente relajado,  al "
+"aire libre o en clases.  Tenemos cursos especiales para viajeros, "
+"voluntarios y misioneros.  También,   ofrecemos una variedad de  "
+"alojamientos ya sea con familias locales, habitaciones en la misma escuela y"
+" departamentos amoblados."
 
-#: .\ceicaperu\templates\index.html:44
+#: .\ceicaperu\templates\index.html:40
+msgid "What we offer"
+msgstr "Que ofrecemos"
+
+#: .\ceicaperu\templates\index.html:49 .\ceicaperu\templates\prices.html:16
+#: .\ceicaperu\templates\prices.html:20
 msgid "Courses"
-msgstr ""
+msgstr "Clases"
 
-#: .\ceicaperu\templates\index.html:47
+#: .\ceicaperu\templates\index.html:52
 msgid ""
 "We have a variety of courses for all levels of Spanish, as well as special "
 "courses in Peruvian history, Peruvian literature and Quechua."
 msgstr ""
+"Ofrecemos una variedad de cursos para todos los niveles de español, así como"
+" cursos especiales en historia peruana, literatura peruana y quechua."
 
-#: .\ceicaperu\templates\index.html:49 .\ceicaperu\templates\index.html:65
-#: .\ceicaperu\templates\index.html:80
+#: .\ceicaperu\templates\index.html:54 .\ceicaperu\templates\index.html:70
+#: .\ceicaperu\templates\index.html:85
 msgid "Read more"
-msgstr ""
+msgstr "Leer más"
 
-#: .\ceicaperu\templates\index.html:60 .\ceicaperu\templates\template.html:42
+#: .\ceicaperu\templates\index.html:65 .\ceicaperu\templates\template.html:121
+#: .\ceicaperu\templates\templateold.html:43
 msgid "Special programs"
 msgstr "Programas Especiales"
 
-#: .\ceicaperu\templates\index.html:63
+#: .\ceicaperu\templates\index.html:68
 msgid ""
 "We also offer special courses in Spanish for travelling, and programms "
 "combining Spanish learning with speaking practice around the city of "
 "Arequipa."
 msgstr ""
+"También ofrecemos cursos especiales en español para viajar, y programas que "
+"combinan el aprendizaje del español con la práctica de conversación en la "
+"ciudad de Arequipa."
 
-#: .\ceicaperu\templates\index.html:75
-#, fuzzy
-#| msgid "Volunteer"
+#: .\ceicaperu\templates\index.html:80
+#: .\ceicaperu\templates\volunteer-projects.html:51
 msgid "Volunteering"
 msgstr "Voluntariado"
 
-#: .\ceicaperu\templates\index.html:78
+#: .\ceicaperu\templates\index.html:83
 msgid ""
 "Ceica Peru Spanish School works together with several social projects in "
 "Arequipa to offer volunteer programs that allow you to practice Spanish and "
 "at the same time contribute to the social development of the children and "
 "adults of these communities."
 msgstr ""
+"Ceica Peru trabaja conjuntamente con varios proyectos sociales en Arequipa "
+"para ofrecer programas de voluntariado que  permiten practicar el español y "
+"a la vez contribuir al desarrollo social de los niños y adultos de  estas "
+"comunidades."
 
-#: .\ceicaperu\templates\index.html:86
+#: .\ceicaperu\templates\index.html:92
 msgid "What our students say"
+msgstr "Que nuestras estudiantes dicen"
+
+#: .\ceicaperu\templates\prices.html:3
+msgid "Prices | Ceica Peru Spanish School"
+msgstr "Precios | Ceica Peru"
+
+#: .\ceicaperu\templates\prices.html:4
+msgid ""
+"A full price list for our courses, volunteer programs, extras, and "
+"accommodation at Ceica Peru Spanish School."
 msgstr ""
+"Una lista completa de precios para nuestros cursos, programas de "
+"voluntariado, complementarios, y alojamiento en Ceica Peru."
 
-#: .\ceicaperu\templates\template.html:39
-msgid "Learn Spanish"
-msgstr "Aprender Español"
+#: .\ceicaperu\templates\prices.html:16 .\ceicaperu\templates\prices.html:142
+msgid "Other"
+msgstr "Otros"
 
-#: .\ceicaperu\templates\template.html:41
+#: .\ceicaperu\templates\prices.html:21
+msgid ""
+"Prices are shown per week in Soles. Special courses may have a fixed "
+"duration (see "
+msgstr ""
+"Precios están en función a una semana y en soles. Programas especiales "
+"pueden tienen una duración determinada."
+
+#: .\ceicaperu\templates\prices.html:21
+msgid "special programs"
+msgstr "Programas Especiales"
+
+#: .\ceicaperu\templates\prices.html:38
+#: .\ceicaperu\templates\special-programs.html:57
+msgid "Group of"
+msgstr "Groupo de"
+
+#: .\ceicaperu\templates\prices.html:57
+msgid "No prices, sorry!"
+msgstr "No se han encontrado precios."
+
+#: .\ceicaperu\templates\prices.html:65
+msgid "Host family"
+msgstr "Familia hospedadora"
+
+#: .\ceicaperu\templates\prices.html:69 .\ceicaperu\templates\prices.html:95
+msgid "(Price per room per week)"
+msgstr "Precio por persona por semana"
+
+#: .\ceicaperu\templates\prices.html:78 .\ceicaperu\templates\prices.html:98
+msgid "room"
+msgstr "Habitación"
+
+#: .\ceicaperu\templates\prices.html:91
+msgid "School building"
+msgstr "Edificio de la escuela"
+
+#: .\ceicaperu\templates\prices.html:104
+msgid "Catering"
+msgstr "Voluntariado"
+
+#: .\ceicaperu\templates\prices.html:117
+msgid "Private apartment"
+msgstr "Departamento de dos cuartos"
+
+#: .\ceicaperu\templates\prices.html:127
+#: .\ceicaperu\templates\volunteer-projects.html:53
+msgid "Price"
+msgstr "Precios"
+
+#: .\ceicaperu\templates\prices.html:137
+#, fuzzy
+#| msgid ""
+#| "A deposit of  450  soles is required to rent an apartment for two weeks, to "
+#| "rent an apartment for a month or more a deposit of 900 soles is required.  "
+#| "The deposit will be returned at the end of the contract if there has been no"
+#| " breakage or damage to the apartment; if there has been either a "
+#| "corresponding deduction of the refund will be made."
+msgid ""
+"A deposit of  450  soles is required to rent an apartment for two weeks. To "
+"rent an apartment for a month or more a deposit of 900 soles is required.  "
+"The deposit will be returned at the end of the contract if there has been no"
+" breakage or damage to the apartment; if there has been either a "
+"corresponding deduction of the refund will be made."
+msgstr ""
+"Si alquilas un departamento por dos semanas de beberás pagar 450 soles de "
+"garantía, si quieres vas a alquilarlo por un mes o más la garantía es de 900"
+" soles. Esta garantía será devuelta al final del contrato si es que no hay "
+"ningún daño en el departamento; si existiera algún daño se hará una "
+"deducción del monto."
+
+#: .\ceicaperu\templates\prices.html:143
+msgid "Airport and pickup:"
+msgstr "Recojo aeropuerto / estación de bus"
+
+#: .\ceicaperu\templates\prices.html:143
+#, fuzzy
+#| msgid ""
+#| "We offer pick-up service for our students, we charge 35 soles for "
+#| "transportation from the airport or bus station to the host family."
+msgid ""
+"We offer pick-up service for our students, where we charge 35 soles for "
+"transportation from the airport or bus station to the host family."
+msgstr ""
+"Ofrecemos un servicio de recojo para nuestros estudiantes, el precio es de "
+"35 por el transporte desde el aeropuerto o la estación de bus al "
+"alojamiento."
+
+#: .\ceicaperu\templates\prices.html:144
+msgid "Enrollment and reservation: "
+msgstr "Reserva e inscripción"
+
+#: .\ceicaperu\templates\prices.html:144
+#, fuzzy
+#| msgid ""
+#| "To book  courses and  accommodation  students have to pay the enrollment "
+#| "fee, complete and send the enrollment form that appears on the \"Enroll\" "
+#| "page. We request an enrollment fee of US$ 20 to book a place for a student, "
+#| "this fee must be paid with a credit card via paypal. The payment of  Spanish"
+#| " lessons and  accommodation must be paid weekly at the school at the "
+#| "beginning of each week. We only accept cash and we prefer  payment in US "
+#| "dollars or Soles (the local currency)."
+msgid ""
+"To book  courses and  accommodation students have to pay the enrollment fee,"
+" and complete and send the enrollment form that appears on the \"Enroll\" "
+"page. We request an enrollment fee of US$20 to book a place for a student, "
+"and this fee must be paid with a credit card via paypal. The payment of "
+"Spanish lessons and accommodation must be paid weekly at the school at the "
+"beginning of each week. We only accept cash and we prefer  payment in US "
+"dollars or Soles (the local currency)."
+msgstr ""
+"Para reserva los programas y el alojamiento los estudiantes deberán pagar un"
+" pago de inscripción, llenar y enviar la forma de inscripción (ver sección "
+"“Registrarse”). Es necesario el pago de inscripción de US$ 20 para reservar "
+"un lugar, este debe ser pagado por medio de una tarjeta de crédito vía "
+"paypal. El pago de las clases de español y el alojamiento debe ser pagado el"
+" primer día de la semana de cada semana en las oficinas de la escuela. Solo "
+"aceptamos efectivo y de preferencia el pago en Dólares americanos o en Soles"
+" (moneda local)."
+
+#: .\ceicaperu\templates\special-programs.html:3
+msgid ""
+"Special programs for travellers & tours of Arequipa | Ceica Peru Spanish "
+"School"
+msgstr "Programas especiales | Ceica Peru"
+
+#: .\ceicaperu\templates\special-programs.html:4
+msgid ""
+"Enroll in our intensive 1-week Spanish program tailored to travellers, or "
+"combine Spanish lessons with tours around the city of Arequipa"
+msgstr ""
+"Registrarse en un curso intensivo de una semana, ideal para viajeros, o "
+"combinar clases con tours de la ciudad de Arequipa."
+
+#: .\ceicaperu\templates\special-programs.html:11
+msgid "Special Programs"
+msgstr "Programas Especiales"
+
+#: .\ceicaperu\templates\special-programs.html:19
+msgid ""
+"Not everyone has the same needs, so we've put together special programs for "
+"people who are interested in using Spanish for travelling or curious about "
+"the culture and sights of Arequipa."
+msgstr ""
+"No todos tienen las mismas necesidades, por ello hemos diseñado programas "
+"especiales para aquellos interesados en usar el español para viajar o que "
+"simplemente están interesados en conocer mas sobre Arequipa. "
+
+#: .\ceicaperu\templates\special-programs.html:22
+msgid "Programs"
+msgstr "Programas"
+
+#: .\ceicaperu\templates\special-programs.html:28
+#: .\ceicaperu\templates\special-programs.html:30
+msgid "Length"
+msgstr "Duración"
+
+#: .\ceicaperu\templates\special-programs.html:28
+msgid "week"
+msgstr "semana"
+
+#: .\ceicaperu\templates\special-programs.html:28
+#: .\ceicaperu\templates\special-programs.html:30
+#: .\ceicaperu\templates\template.html:120
+#: .\ceicaperu\templates\templateold.html:42
 msgid "Spanish lessons"
 msgstr "Clases"
 
-#: .\ceicaperu\templates\template.html:43
-msgid "Extras"
-msgstr "Complementarios"
+#: .\ceicaperu\templates\special-programs.html:28
+msgid "hours"
+msgstr "horas"
 
-#: .\ceicaperu\templates\template.html:48
+#: .\ceicaperu\templates\special-programs.html:28
+msgid "hours a day"
+msgstr "horas al día"
+
+#: .\ceicaperu\templates\special-programs.html:30
+msgid "weeks"
+msgstr "semanas"
+
+#: .\ceicaperu\templates\special-programs.html:30
+msgid "a week"
+msgstr "a la semana"
+
+#: .\ceicaperu\templates\special-programs.html:53
+msgid "Group of 4 or more"
+msgstr "Grupo de 4 o más"
+
+#: .\ceicaperu\templates\special-programs.html:55
+msgid "One on one"
+msgstr "Individuales"
+
+#: .\ceicaperu\templates\special-programs.html:73
+#: .\ceicaperu\templates\volunteer-projects.html:70
+msgid ""
+"For more prices and to calculate the total cost of your stay at Ceica Peru"
+msgstr "Para ver más precios y calcular el coste de su estancia"
+
+#: .\ceicaperu\templates\special-programs.html:82
+#| msgid "Special programs have a fixed duration"
+msgid "Some special programs have a fixed duration"
+msgstr "Algunas programas especiales pueden tienen una duración determinada."
+
+#: .\ceicaperu\templates\special-programs.html:83
+msgid "All programs involve some Spanish teaching"
+msgstr "Todas las programas incluyen clases de español."
+
+#: .\ceicaperu\templates\special-programs.html:84
+msgid ""
+"If you'd like to discuss putting together a program to meet your needs, get "
+"in touch!"
+msgstr ""
+"Si quiere saber cómo podemos ayudarle construir una programa personalizada a"
+" sus necesidades, contactenos!"
+
+#: .\ceicaperu\templates\template.html:114
+#: .\ceicaperu\templates\templateold.html:40
+msgid "Learn Spanish"
+msgstr "Aprender Español"
+
+#: .\ceicaperu\templates\template.html:128
+#: .\ceicaperu\templates\templateold.html:49
 msgid "Volunteer"
 msgstr "Voluntariado"
 
-#: .\ceicaperu\templates\template.html:50
+#: .\ceicaperu\templates\template.html:134
+#: .\ceicaperu\templates\templateold.html:51
+#: .\ceicaperu\templates\why-volunteer.html:11
 msgid "Why volunteer?"
 msgstr "¿Por qué?"
 
-#: .\ceicaperu\templates\template.html:51
-msgid "Volunteer programs"
-msgstr "Programas disponibles"
+#: .\ceicaperu\templates\template.html:135
+msgid "Volunteer projects"
+msgstr "Programas de voluntariado"
 
-#: .\ceicaperu\templates\template.html:52
-msgid "How to enroll"
-msgstr "Como registrarse"
-
-#: .\ceicaperu\templates\template.html:56
-msgid "Prices"
-msgstr "Precios"
-
-#: .\ceicaperu\templates\template.html:59
+#: .\ceicaperu\templates\template.html:144
+#: .\ceicaperu\templates\templateold.html:60
 msgid "About Us"
 msgstr "Nosotros"
 
-#: .\ceicaperu\templates\template.html:62
+#: .\ceicaperu\templates\template.html:151
+#: .\ceicaperu\templates\templateold.html:63
 msgid "About Arequipa"
 msgstr "Arequipa"
 
-#: .\ceicaperu\templates\template.html:63
-msgid "Contact Us"
-msgstr "Contacto"
-
-#: .\ceicaperu\templates\template.html:64
-msgid "FAQs"
-msgstr "Preguntas frecuentes"
-
-#: .\ceicaperu\templates\template.html:67
+#: .\ceicaperu\templates\template.html:156
+#: .\ceicaperu\templates\templateold.html:68
 msgid "Enroll"
 msgstr "Registrarse"
 
-#: .\ceicaperu\templates\template.html:84
+#: .\ceicaperu\templates\template.html:171
+#: .\ceicaperu\templates\templateold.html:85
 msgid "Address:"
+msgstr "Dirección"
+
+#: .\ceicaperu\templates\templateold.html:52
+msgid "Volunteer programs"
+msgstr "Programas disponibles"
+
+#: .\ceicaperu\templates\volunteer-projects.html:3
+msgid "Volunteer Projects | Ceica Peru Spanish School"
+msgstr "Proyectos | Ceica Peru"
+
+#: .\ceicaperu\templates\volunteer-projects.html:4
+#: .\ceicaperu\templates\volunteer-projects.html:21
+msgid ""
+"Below you will find the list of volunteer projects that Ceica Peru currently"
+" offers. You can choose the length of your stay and you can also choose to "
+"combine volunteering with Spanish lessons. For more information on this, see"
+" the price table at the bottom of the page."
 msgstr ""
+"Los voluntarios pueden elegir los siguientes lugares para trabajar. Puede "
+"elegir la duración de su estancia y puede combinar voluntar con clases de "
+"español. Para más información sobre esto, vea la tabla de precios en la "
+"parte inferior de la página."
+
+#: .\ceicaperu\templates\volunteer-projects.html:12
+#, fuzzy
+#| msgid ">Volunteer Projects"
+msgid "Volunteer Projects"
+msgstr "Proyectos"
+
+#: .\ceicaperu\templates\volunteer-projects.html:23
+msgid ">Volunteer Projects"
+msgstr "Proyectos"
+
+#: .\ceicaperu\templates\volunteer-projects.html:37
+msgid "No volunteer programs, sorry!"
+msgstr "No se han encontrado proyectos!"
+
+#: .\ceicaperu\templates\volunteer-projects.html:50
+msgid "Orientation"
+msgstr "Orientación"
+
+#: .\ceicaperu\templates\volunteer-projects.html:77
+msgid "Program requirements"
+msgstr "Requisitos para hacer Trabajo voluntario"
+
+#: .\ceicaperu\templates\volunteer-projects.html:79
+msgid "You must be at least 18 years old."
+msgstr "Tener como mínimo 18 años de edad."
+
+#: .\ceicaperu\templates\volunteer-projects.html:80
+msgid "You should obey the personnel in charge of your social project."
+msgstr ""
+"Tener capacidad para obedecer al personal a cargo del proyecto social."
+
+#: .\ceicaperu\templates\volunteer-projects.html:81
+msgid ""
+"It's important to have an open mindset to understand the restrictions that "
+"our traditional  conservative culture imposes, for example when you are "
+"working wear appropriate clothes (no miniskirts, shorts, low or skimpy tops "
+"etc); avoid romantic relationships with the personnel or youths in care."
+msgstr ""
+"Tener mentalidad abierta para comprender las restricciones que son impuestas"
+" por nuestra cultura tradicional, como, asistir a los centros de "
+"voluntariado con ropa adecuada (No minifaldas, no short's, no escotes "
+"pronunciados, no polos muy pequeños, etc); Evitar tener relaciones amorosas "
+"con los jóvenes de los albergues o con el personal que trabaja allí. "
+
+#: .\ceicaperu\templates\volunteer-projects.html:82
+msgid ""
+"Behave ethically in the volunteer work place and be willing to comply with "
+"the norms established by the institution."
+msgstr ""
+"Tener una conducta moral intachable en el lugar de trabajo voluntario y "
+"estar dispuesto a cumplir con las normas establecidas por la organización."
+
+#: .\ceicaperu\templates\why-volunteer.html:3
+msgid "Why volunteering in Arequipa? | Ceica Peru Spanish School"
+msgstr "¿Porque hacer trabajo voluntario? | Ceica Peru"
+
+#: .\ceicaperu\templates\why-volunteer.html:4
+msgid ""
+"Learn about why you should volunteer in Arequipa at one of the programs "
+"offered by Ceica Peru."
+msgstr ""
+"Apreneder los beneficios de voluntar en Arequipa en uno de los proyectos "
+"ofrecidos por Ceica Peru."
+
+#: .\ceicaperu\templates\why-volunteer.html:12
+msgid ""
+"In the present globalized world, a feeling of solidarity is growing like a "
+"light of hope which shows itself in many ways. There are for example the "
+"efforts to join forces to protect the environment; to save children from "
+"ignorance and distress; and to lift communities out of extreme poverty."
+msgstr ""
+"En el mundo globalizado actual, un sentimiento de solidaridad crece como una"
+" luz de esperanza que se muestra de muchas maneras. Hay, por ejemplo, muchos"
+"  esfuerzos para unir fuerzas para proteger el medio ambiente; para rescatar"
+" a los niños de la ignorancia y la angustia; y para sacar a las comunidades "
+"de la pobreza extrema."
+
+#: .\ceicaperu\templates\why-volunteer.html:13
+msgid ""
+"For this reason, Arequipa, like many cities in Latin America, has had the "
+"invaluable help of foreign friends and institutions who voluntarily work "
+"with abandoned children and the handicapped, in nurseries, in schools, and "
+"in health centers."
+msgstr ""
+"Por esta noble razón, Arequipa, como muchas ciudades en América Latina, ha "
+"tenido la ayuda invaluable de amigos e instituciones extranjeras que "
+"voluntariamente trabajan con niños abandonados y discapacitados, en "
+"guarderías, en colegios, en centros de salud, etc."
+
+#: .\ceicaperu\templates\why-volunteer.html:14
+msgid ""
+"Using its experience Ceica Peru Spanish School has designed some special "
+"programs for those interested in improving their Spanish and/or "
+"participating in voluntary work."
+msgstr ""
+"Usando su experiencia Ceica Peru ha diseñado algunos programas especiales "
+"para aquellos interesados en aprender o mejorar su español y/o hacer un "
+"trabajo voluntario. "
+
+#: .\ceicaperu\templates\why-volunteer.html:22
+msgid "Reasons to volunteer"
+msgstr "¿Porque hacer trabajo voluntario?"
+
+#: .\ceicaperu\templates\why-volunteer.html:24
+msgid ""
+"You will improve your natural abilities in a completely different culture. "
+"You will learn a great deal from the new situations that you will be met "
+"with  in your work place. All of which will enrich your perception of  life."
+msgstr ""
+"Mejorarás tus habilidades humanas en una cultura totalmente diversa, "
+"aprenderás mucho de las nuevas situaciones que se te presenten en tu lugar "
+"de trabajo, lo cual enriquecerla tu percepción de la vida."
+
+#: .\ceicaperu\templates\why-volunteer.html:25
+msgid ""
+"You will contribute to the education and upbringing of children in  schools "
+"or in care."
+msgstr ""
+"Contribuirás con la educación y formación de los niños de los albergues o de"
+" los colegios."
+
+#: .\ceicaperu\templates\why-volunteer.html:26
+msgid ""
+"You will discover your strengths and talents. You will develop new abilities"
+" that will serve you for the rest of  your life."
+msgstr ""
+"Descubrirás tus fortalezas, talentos y desarrollarás nuevas habilidades que "
+"te serán útiles a lo largo de la vida. "
+
+#: .\ceicaperu\templates\why-volunteer.html:27
+msgid "You will gain work experience."
+msgstr "Ganarás experiencia laboral."
+
+#: .\ceicaperu\templates\why-volunteer.html:28
+msgid ""
+"In a cultural exchange, you will learn about Peruvian culture and we will "
+"learn about your country and life in other countries."
+msgstr ""
+"Es un intercambio cultural, tu aprenderás de la cultura peruana y ellos "
+"aprenderás sobre tu país y la vida en otros lugares. "
+
+#: .\ceicaperu\templates\why-volunteer.html:29
+#, fuzzy
+#| msgid ""
+#| "And for those who wish to improve their knowledge of Spanish, there is "
+#| "nothing better than practicing it every day at work."
+msgid ""
+"And for those who wish to improve their knowledge of Spanish, there is "
+"nothing better than practising it every day at work."
+msgstr ""
+"Para los que buscan mejorar sus conocimientos de español, no hay nada mejor "
+"que usarlo a diario con las personas que trabajarán contigo."
+
+#: .\ceicaperu\templates\why-volunteer.html:37
+#| msgid "See our volunteer programs"
+msgid "See our volunteer projects"
+msgstr "Ver nuestras programas disponibles"
+
+#: .\ceicaperu\urls.py:48
+msgid "^contact/$"
+msgstr "contacto"
+
+#~ msgid "You can express an interest in extra courses when you enroll"
+#~ msgstr "Expresar"
+
+#~ msgid "Spanish"
+#~ msgstr "Clases de español"

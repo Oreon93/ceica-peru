@@ -13,6 +13,7 @@
 /* --------- Base --------- */
 
 @site-main: rgba(55, 106, 103, 1);
+@site-main-bright: #63a7a3;
 @site-main-translucent: rgba(55, 106, 103, 0.7);
 @site-light-blue: rgba(200, 222, 221, 1);
 @text-color: #545454;
@@ -26,9 +27,6 @@
 body {
   background-color: #fff;
   margin: 0;
-  @media (min-width: 940px) {
-    background-color: #fffff0;
-  }
 }
 
 img {
@@ -95,7 +93,7 @@ p + p {
 
 a {
   text-decoration: none;
-  color: @site-main;
+  color: @site-main-bright;
 }
 
 .prominent {
@@ -115,6 +113,34 @@ a {
   text-align: center;
 }
 
+
+.parallax-window {
+    min-height: 100px;
+    background: transparent;
+}
+
+.parallax-text {
+  padding: 100px 160px 50px 160px;
+  @media (max-width: 720px) {
+    padding: 60px 40px 30px 40px;
+  }
+}
+
+.parallax-title {
+  color: #fff;
+  font-size: 85px;
+  margin: 0;
+  text-align: center;
+  text-shadow: 0px 0px 20px #000;
+}
+
+.parallax-paragraph {
+  text-align: center;
+  padding: 10px 0px;
+  color: #fff;
+  font-size: 1.5em;
+  line-height: 1.4em;
+}
 
 /* --------- Layout --------- */
 
@@ -696,6 +722,7 @@ input:checked ~ .language-options {
 
   .sub-menu {
     box-sizing: border-box;
+    visibility: hidden;
     list-style: none;
     width: 100%;
     padding-left: 10px;
@@ -706,7 +733,7 @@ input:checked ~ .language-options {
     background-color: #e0e0e0;
     line-height: initial;
     z-index: 1;
-    transition: opacity 0.5s ease;
+    transition: visibility 0s, opacity 0.5s ease;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
   }
@@ -734,6 +761,8 @@ input:checked ~ .language-options {
 
   .sub-menu-link.opened .sub-menu {
     opacity: 1;
+    visibility: visible;
+    display: block;
   }
 
   .primary-nav > .nav-item {
@@ -844,7 +873,45 @@ input:checked ~ .language-options {
   }
 }
 
+/* Features */
+
+.features-group {
+  display: flex;
+  @media all and (max-width: 720px) {
+    display: block;
+  }
+}
+
+.features {
+  display: flex;
+  margin: 10px;
+}
+
+.features p {
+  font-size: 0.7em;
+  line-height: 1.3em;
+  margin-top: 0px;
+}
+
+.features img {
+  margin-right: 10px;
+  width: 50px;
+  height: 50px;
+  @media all and (max-width: 720px) {
+    width: 40px;
+    height: 40px;
+  }
+
+}
+
+
+
+
 /* Price tables */
+.responsive-table {
+  overflow-x: auto;
+}
+
 
 .price-list {
   width: 100%;
@@ -950,6 +1017,13 @@ table, th, td {
   @media (min-width: 720px) {
   width: 100%;
   }
+}
+
+img.feature {
+  display: block;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 640px;
 }
 
 /* Cards */

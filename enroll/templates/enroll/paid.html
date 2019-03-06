@@ -1,4 +1,8 @@
 {% extends "template.html" %}
+{% load i18n %}
+{% block title %}{% trans "Thanks for enrolling!" %}{% endblock %}
+{% block metadescription %}<meta name="description" content="{% trans 'All done! We will be in touch shortly to confirm your place on your chosen course. If you have any questions, just e-mail: info@ceica-peru.com' %}">{% endblock %}
+
 {% block content %}
 {% load static %}
 <header class="full-width page-title">

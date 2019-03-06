@@ -1,10 +1,17 @@
 {% extends "template.html" %}
+{% load i18n %}
+{% block title %}{% trans "Contact Us | Ceica Peru Spanish School" %}{% endblock %}
+{% block metadescription %}<meta name="description" content="{% trans 'Fill in our contact form to get in touch and we will respond to your query as soon as we can.' %}">{% endblock %}
 {% block content %}
 {% load static %}
-{% load i18n %}
+
 <header class="full-width">
   <div class="full-width-title-image">
-    <img style="margin-top: -40%" src="{% static 'images/contact-us.JPG' %}">
+    <picture>
+      <source media="(max-width: 799px)" srcset=" {% static 'images/contact-us-800.JPG' %}">
+      <source media="(min-width: 800px)" srcset=" {% static 'images/contact-us-1600.JPG' %}">
+      <img  src=" {% static 'images/contact-us-1600.JPG' %}" alt="{% trans 'Two students in class' %}">
+    </picture>
     <div class="title-image-text">
       <h1 class="slider-title">{% trans 'Contact Us' %}</h1>
     </div>

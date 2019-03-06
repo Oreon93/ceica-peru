@@ -33,8 +33,11 @@ $(document).ready(function(){
   });
 
 
-
-
+  radioselect('#id_application_type');
+  radioselect('#id_first_preference');
+  radioselect('#id_second_preference');
+  radioselect('#id_third_preference');
+  radioselect('#id_program_chosen');
   radioselect('#id_course_chosen');
   radioselect('#id_current_spanish_level');
   radioselect('#id_accommodation');
@@ -84,6 +87,61 @@ $(document).ready(function(){
       });
     }
   }
+
+  // Testimonials
+  if (document.getElementsByClassName('quote').length > 0) {
+    var secondcounter = 0;
+    var testimonials = "";
+    $('.quote:first').addClass("current");
+    testimonials = setInterval(swapTestimonials, 8000);
+    $('a.control').on( "click", control);
+  }
+
+  function control() {
+    clearInterval(testimonials);
+    console.log("Yay");
+    if ($(this).hasClass('control-left')) {
+      rewindTestimonials();
+    }
+    else {
+      swapTestimonials();
+    }
+  }
+
+  function swapTestimonials(){
+    secondcounter++;
+    var $active = $('.quote.current');
+    if ($('.quote.current').next().length > 0 && $('.quote.current').next().is("div")) {
+      var $next = $('.quote.current').next();
+    }
+    else {
+      var $next = $('.quote:first');
+    }
+    $active.fadeOut(function(){
+      $active.removeClass('current');
+      $next.removeAttr('style');
+      $next.addClass('current');
+    });
+    console.log("swap!");
+  }
+
+  function rewindTestimonials(){
+    var $active = $('.quote.current');
+    if ($('.quote.current').prev().length > 0 && $('.quote.current').prev().is("div")) {
+      var $prev = $('.quote.current').prev();
+    }
+    else {
+      var $prev = $('.quote:last');
+    }
+    $active.fadeOut(function(){
+    $active.removeClass('current');
+    $prev.removeAttr('style');
+    $prev.addClass('current');
+    });
+    console.log("rewind!");
+  }
+
+
 
 
 // Enroll part 2 - show the "different levels" option only when group number > 1
@@ -136,13 +194,15 @@ function checkboxselect(id) {
     var dateFields = [
       "#id_arrival_date",
       "#id_departure_date",
-      "#id_course_start_date"
+      "#id_course_start_date",
+      "#id_date_of_birth",
     ];
     dateFields.forEach(function(field) {
       if($(field).length) {
         $(field).datepicker(
           {
-            dateFormat: "dd/mm/yy"
+            changeYear: true,
+            yearRange: "1902:2020"
           }
         );
       }

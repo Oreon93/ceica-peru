@@ -6,9 +6,8 @@ var sliderImageText = [
 ]
 
 var counter = 0;
-var secondcounter = 0;
+
 var slider = "";
-var testimonials = "";
 
 
 $(document).ready(function(){
@@ -31,23 +30,9 @@ $(document).ready(function(){
     }
     $('a.control').on( "click", control);
   }
-  if (document.getElementsByClassName('quote').length > 0) {
-    $('.quote:first').addClass("current");
-    testimonials = setInterval(swapTestimonials, 8000);
-    $('a.control').on( "click", control);
-  }
 
-  // Testimonials
-  function control() {
-    clearInterval(testimonials);
-    console.log("Yay");
-    if ($(this).hasClass('control-left')) {
-      rewindTestimonials();
-    }
-    else {
-      swapTestimonials();
-    }
-  }
+
+
 
   function swapImages(){
 
@@ -73,37 +58,4 @@ $(document).ready(function(){
         }
       }
 
-  function swapTestimonials(){
-    secondcounter++;
-    var $active = $('.quote.current');
-    if ($('.quote.current').next().length > 0 && $('.quote.current').next().is("div")) {
-      var $next = $('.quote.current').next();
-    }
-    else {
-      var $next = $('.quote:first');
-    }
-    $active.fadeOut(function(){
-      $active.removeClass('current');
-      $next.removeAttr('style');
-      $next.addClass('current');
-    });
-    console.log("swap!");
-  }
-
-  function rewindTestimonials(){
-    var $active = $('.quote.current');
-    if ($('.quote.current').prev().length > 0 && $('.quote.current').prev().is("div")) {
-      var $prev = $('.quote.current').prev();
-    }
-    else {
-      var $prev = $('.quote:last');
-    }
-    $active.fadeOut(function(){
-    $active.removeClass('current');
-    $prev.removeAttr('style');
-    $prev.addClass('current');
-    });
-    console.log("rewind!");
-  }
-
-});
+  });

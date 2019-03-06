@@ -1,5 +1,7 @@
-
 {% extends "template.html" %}
+{% load i18n %}
+{% block title %}{% trans "Enroll - Your details | Ceica Peru Spanish School" %}{% endblock %}
+{% block metadescription %}<meta name="description" content="{% trans 'To get your application started, please fill out your details below. In order to register for lessons in Ceica Peru Spanish School each student must submit the enrollment form that appears below and a one time (non-refundable) 20 dollars registration fee.' %}">{% endblock %}
 {% block content %}
 {% load static %}
 
@@ -7,7 +9,7 @@
   <div class="container">
   <p class="prominent"><strong>Thanks for choosing Ceica Peru!</strong></p>
   <p class="prominent">
-    In order to register for lessons in Ceica Peru Spanish  School each student must submit the enrollment form that appears below and a one time (non-refundable) 20 dollars registration fee. This fee guarantees your enrollment in Ceica Peru Spanish School. This fee is not part of your tuition, which you will pay upon arrival. You may pay your tuition in Soles.
+    To get your application started, please fill out your details below. In order to register for lessons in Ceica Peru Spanish  School each student must submit the enrollment form that appears below and a one time (non-refundable) 20 dollars registration fee. This fee guarantees your enrollment in Ceica Peru Spanish School. This fee is not part of your tuition, which you will pay upon arrival. You may pay your tuition in Soles.
   </p>
 </div>
 </section>

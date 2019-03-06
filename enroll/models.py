@@ -2,6 +2,7 @@ from django.db import models
 from django.forms import ModelForm
 import datetime
 from django import forms
+from django.core.mail import send_mail
 
 
 # Create your models here.
@@ -111,11 +112,8 @@ class VolunteerProject(models.Model):
 
 class VolunteerProgram(models.Model):
     name = models.CharField(max_length=30)
-    PROGRAM_TYPE = (
-        ('v', 'Volunteering only'),
-        ('s', 'Spanish plus volunteering'),
-    )
-    program_type = models.CharField(max_length=1, choices=PROGRAM_TYPE, default='v')
+
+    program_type = models.CharField(max_length=30)
     orientation = models.CharField(max_length=50)
     spanish_lessons = models.CharField(max_length=50, null=True, blank=True)
     volunteer_work = models.CharField(max_length=50, null=False, blank=True, default="None")
@@ -123,7 +121,72 @@ class VolunteerProgram(models.Model):
     price = models.DecimalField(default=0, max_digits=7, decimal_places=2)
 
     def __str__(self):
-        return self.name
+        return self.name + " - " + self.program_type
+
+class VolunteerApplication(models.Model):
+    #Fields
+    DEFAULT_PROGRAM_ID = 1
+
+    applicant = models.ForeignKey('Customer', on_delete=models.SET_NULL, null=True)
+    program_chosen = models.ForeignKey('VolunteerProgram', on_delete=models.SET_NULL, null=True, default=DEFAULT_PROGRAM_ID)
+    #first_preference = models.CharField(max_length = 40, default="none")
+    #second_preference = models.CharField(max_length = 40, default="none")
+    #third_preference = models.CharField(max_length = 40, default="none")
+    preferences = models.CharField(max_length = 150, default="No preferences given")
+    course_start_date = models.DateField(auto_now=False, auto_now_add=False)
+
+    application_made = models.DateField(auto_now=True, auto_now_add=False)
+
+    STATUS = (
+        ('s', 'Submitted'),
+        ('a', 'Accepted')
+    )
+    status = models.CharField(max_length=1, choices=STATUS, default='s')
+
+    def __init__(self, *args, **kwargs):
+        super(VolunteerApplication, self).__init__(*args, **kwargs)
+        self.__original_status = self.status
+
+    def save(self, force_insert=False, force_update=False, *args, **kwargs):
+        if self.status != self.__original_status:
+            if self.status == 'a':
+                send_mail(
+                    'Subject here',
+                    'Dear ' + self.applicant.first_name + ", \n\n We're pleased to confirm that your volunteering application has been accepted. Please complete your enrollment by clicking the link below and choosing your accommodation: \n\nhttp://127.0.0.1:8000/en/enroll/part_three?q=" + self.applicant.email_address + "\n\nHasta pronto!\nThe Ceica Peru Team",
+                    'ceicaperuspanishschool@hotmail.com',
+                    [self.applicant.email_address],
+                    fail_silently=False,
+                    html_message = 'Dear ' + self.applicant.first_name + ", \n\n We're pleased to confirm that your volunteering application has been accepted. Please complete your enrollment by clicking the link below and choosing your accommodation: \n\n<a href='http://127.0.0.1:8000/en/enroll/part_three?q=" + self.applicant.email_address + "'>Complete enrollment</a>\n\nHasta pronto!\nThe Ceica Peru Team",
+                )
+        super(VolunteerApplication, self).save(force_insert, force_update, *args, **kwargs)
+        self.__original_status = self.status
+
+
+    def __str__(self):
+        return '{0} - {1} (Starting {2})'.format(self.applicant, self.program_chosen, self.course_start_date)
+
+    class Meta:
+        ordering = ['-application_made']
+
+    def total_price(self):
+        program_price = self.program_chosen.price
+        return 'S{0}'.format(program_price)
+
+class TextInput(forms.TextInput):
+    input_type = "text"
+
+class VolunteerApplicationForm(ModelForm):
+    first_preference = forms.ModelChoiceField(queryset=VolunteerProject.objects.all(), empty_label=None, widget = forms.RadioSelect())
+    second_preference = forms.ModelChoiceField(queryset=VolunteerProject.objects.all(), empty_label=None, widget = forms.RadioSelect())
+    third_preference = forms.ModelChoiceField(queryset=VolunteerProject.objects.all(), empty_label=None, widget = forms.RadioSelect())
+    class Meta:
+        model = VolunteerApplication
+        fields = '__all__'
+        exclude = ['application_made']
+        widgets = {
+            'program_chosen': forms.RadioSelect(),
+            'applicant': TextInput(attrs={'readonly': True})
+        }
 
 
 class Price(models.Model):
@@ -194,9 +257,6 @@ class CourseApplication(models.Model):
 
 class DateInput(forms.DateInput):
     input_type = 'date'
-
-class TextInput(forms.TextInput):
-    input_type = "text"
 
 class CourseApplicationForm(ModelForm):
     class Meta:

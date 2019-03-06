@@ -1,17 +1,21 @@
 {% extends "template.html" %}
+{% load i18n %}
+{% block title %}{% trans "Ceica Peru: Spanish lessons and volunteer programs in Arequipa" %}{% endblock %}
+{% block metadescription %}<meta name="description" content="{% trans 'Ceica Peru is a Spanish language school located in Arequipa, Peru. We provide lessons for all levels of Spanish speakers in a relaxed setting, in our beautiful garden or in the classroom.' %}">{% endblock %}
 {% block content %}
 {% load static %}
-{% load i18n %}
+
+
 <section class="full-width">
   <div class="slider">
     <video autoplay playsinline muted class="active" controls>
       <source src="{% static 'videos/welcome.mp4' %}" type="video/mp4">
       {% trans "Your browser does not support the video tag." %}"
     </video>
-    <img src="{% static 'images/slide-1.PNG' %}"/>
-    <img src="{% static 'images/slide-2.png' %}"/>
-    <img style="margin-top: -60%" src="{% static 'images/slide-3.png' %}"/>
-    <img src="{% static 'images/slide-4.PNG' %}"/>
+    <img alt="Students with teacher" src="{% static 'images/slide-1.PNG' %}"/>
+    <img alt="Volunteer hugging children" src="{% static 'images/slide-2.png' %}"/>
+    <img alt="Arequipa landscape" style="margin-top: -60%" src="{% static 'images/slide-3.png' %}"/>
+    <img alt="Students at Ceica Peru" src="{% static 'images/slide-4.PNG' %}"/>
     <div class="slider-text">
       <h2 class="slider-title">
 
@@ -23,6 +27,7 @@
   </div>
 </section>
 <section class="container single-column">
+  <h2 class="text-center">{% trans "Welcome to Ceica Peru" %}</h2>
   <p class="prominent">
     {% trans "Ceica Peru is a Spanish language school located in Arequipa, Peru." %}
   </p>
@@ -32,13 +37,13 @@
 </section>
 <section class="inset">
   <div class="container single-column">
-      <h2 class="text-center">{% trans "What we offer" %}</h2>
+    <h2 class="text-center">{% trans "What we offer" %}</h2>
     <div class="card-group">
       <div class="col-1-3 card">
         <div class="card-icon">
-          <img src="{% static 'images/learn-spanish.png' %}">
+          <img alt="Learn Spanish" src="{% static 'images/learn-spanish.png' %}">
         </div>
-        <img src="{% static 'images/home-courses.PNG' %}">
+        <img alt="Students learning Spanish" src="{% static 'images/home-courses.PNG' %}">
         <div class="card-caption">
           <p class="card-title">
           {% trans "Courses" %}
@@ -52,9 +57,9 @@
       </div><!--Stop the white space
       --><div class="col-1-3 card">
         <div class="card-icon">
-          <img src="{% static 'images/learn-spanish.png' %}">
+          <img alt="Special programs" src="{% static 'images/special-programs.png' %}">
         </div>
-        <img src="{% static 'images/home-special.PNG' %}">
+        <img alt="Tour of Arequipa" src="{% static 'images/home-special.PNG' %}">
         <div class="card-caption">
           <p class="card-title">
           {% trans "Special programs" %}
@@ -67,9 +72,9 @@
       </div><!--Stop the white space
       --><div class="col-1-3 card">
         <div class="card-icon">
-          <img src="{% static 'images/volunteer.PNG' %}">
+          <img alt="Volunteer" src="{% static 'images/volunteer.PNG' %}">
         </div>
-        <img src="{% static 'images/home-volunteering.PNG' %}">
+        <img alt="Group of volunteers" src="{% static 'images/home-volunteering.PNG' %}">
         <div class="card-caption">
           <p class="card-title">
           {% trans "Volunteering" %}
@@ -77,8 +82,9 @@
           <p>
           {% trans "Ceica Peru Spanish School works together with several social projects in Arequipa to offer volunteer programs that allow you to practice Spanish and at the same time contribute to the social development of the children and adults of these communities." %}
           </p>
-          <a href="{% url 'volunteer-programs' %}">{% trans "Read more" %} ></a>
+          <a href="{% url 'volunteer-projects' %}">{% trans "Read more" %} ></a>
         </div>
+      </div>
     </div>
   </div>
 </section>
@@ -93,7 +99,7 @@
         <p class="author">{{testimonial.name}}</p>
       </div>
       <div class="col col-1-4">
-        <img class="photo" src="/static/uploads/{{testimonial.image}}">
+        <img alt="{{testimonial.name}}" class="photo" src="/static/uploads/{{testimonial.image}}">
       </div>
       <a class="control control-right">›</a>
     </div>

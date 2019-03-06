@@ -1,0 +1,13 @@
+{% extends "template.html" %}
+{% load i18n %}
+{% block title %}{% trans "Sorry - page not found!" %}{% endblock %}
+{% block metadescription %}<meta name="description" content="{% trans 'We are very sorry that the page you are looking for cannot be found.' %}">{% endblock %}
+{% block content %}
+{% load static %}
+<section class="container">
+  <h1>Sorry!</h1>
+  <p class="prominent">{% trans 'We could not find the page you were looking for. If you would like support, please' %} <a href="/contact">{% trans 'contact us' %}</a></p>
+</section>
+
+
+{% endblock %}

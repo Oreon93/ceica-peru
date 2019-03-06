@@ -1,13 +1,18 @@
 {% extends "template.html" %}
+{% load i18n %}
+{% block title %}{% trans "Why volunteering in Arequipa? | Ceica Peru Spanish School" %}{% endblock %}
+{% block metadescription %}<meta name="description" content="{% trans 'Learn about why you should volunteer in Arequipa at one of the programs offered by Ceica Peru.' %}">{% endblock %}
 {% block content %}
 {% load static %}
-{% load i18n %}
+
 <section class="full-width">
-  <div class="parallax-window" data-parallax="scroll" data-image-src="{% static 'images/why-volunteer.jpg' %}">
+  <div class="parallax-window" data-parallax="scroll" data-image-src="{% static 'images/why-volunteer.JPG' %}">
+    <div class="parallax-text">
       <h1 class="parallax-title">{% trans 'Why volunteer?' %}</h1>
-    <p class="parallax-text">{% trans 'In the present globalized world, a feeling of solidarity is growing like a light of hope which shows itself in many ways. There are for example the efforts to join forces to protect the environment; to save children from ignorance and distress; and to lift communities out of extreme poverty.' %}</p>
-    <p class="parallax-text">{% trans 'For this reason, Arequipa, like many cities in Latin America, has had the invaluable help of foreign friends and institutions who voluntarily work with abandoned children and the handicapped, in nurseries, in schools, and in health centers.' %}</p>
-    <p class="parallax-text">{% trans 'Using its experience Ceica Peru Spanish School has designed some special programs for those interested in improving their Spanish and/or participating in voluntary work.' %}</p>
+      <p class="parallax-paragraph">{% trans 'In the present globalized world, a feeling of solidarity is growing like a light of hope which shows itself in many ways. There are for example the efforts to join forces to protect the environment; to save children from ignorance and distress; and to lift communities out of extreme poverty.' %}</p>
+      <p class="parallax-paragraph">{% trans 'For this reason, Arequipa, like many cities in Latin America, has had the invaluable help of foreign friends and institutions who voluntarily work with abandoned children and the handicapped, in nurseries, in schools, and in health centers.' %}</p>
+      <p class="parallax-paragraph">{% trans 'Using its experience Ceica Peru Spanish School has designed some special programs for those interested in improving their Spanish and/or participating in voluntary work.' %}</p>
+    </div>
   </div>
 </section>
 
@@ -21,7 +26,7 @@
         <li>{% trans 'You will discover your strengths and talents. You will develop new abilities that will serve you for the rest of  your life.' %}</li>
         <li>{% trans 'You will gain work experience.' %}</li>
         <li>{% trans 'In a cultural exchange, you will learn about Peruvian culture and we will learn about your country and life in other countries.' %}</li>
-        <li>{% trans 'And for those who wish to improve their knowledge of Spanish, there is nothing better than practicing it every day at work.' %}</li>
+        <li>{% trans 'And for those who wish to improve their knowledge of Spanish, there is nothing better than practising it every day at work.' %}</li>
       </ul>
   </div>
   <div class="col col-1-3 image-col">
@@ -29,7 +34,7 @@
   </div>
 </div>
 <div class="container">
-  <a href="{% url 'volunteer-programs' %}"><button class="btn btn-center">{% trans 'See our volunteer programs' %} <i class="fas fa-angle-right fa-lg style="float:right""></i></button></a>
+  <a href="{% url 'volunteer-projects' %}"><button class="btn btn-center">{% trans 'See our volunteer projects' %} <i class="fas fa-angle-right fa-lg style="float:right""></i></button></a>
 </div>
 </section>
 

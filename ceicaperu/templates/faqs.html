@@ -1,10 +1,17 @@
 {% extends "template.html" %}
+{% load i18n %}
+{% block title %}{% trans "FAQs | Ceica Peru Spanish School" %}{% endblock %}
+{% block metadescription %}<meta name="description" content="{% trans 'How much can I learn in a week? How do I get to Arequipa? Check out our FAQs and find the answer.' %}">{% endblock %}
 {% block content %}
 {% load static %}
-{% load i18n %}
+
 <header class="full-width">
   <div class="full-width-title-image">
-    <img style="margin-top: -40%" src="{% static 'images/faqs.JPG' %}">
+    <picture>
+      <source media="(max-width: 799px)" srcset=" {% static 'images/faqs-800.JPG' %}">
+      <source media="(min-width: 800px)" srcset=" {% static 'images/faqs-1600.JPG' %}">
+      <img src=" {% static 'images/faqs-1600.JPG' %}" alt="{% trans 'Plants in the Ceica Peru school garden' %}">
+    </picture>
     <div class="title-image-text">
       <h1 class="slider-title">{% trans 'FAQs' %}</h1>
     </div>

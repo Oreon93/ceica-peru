@@ -19,6 +19,12 @@ class TeacherTranslationOptions(TranslationOptions):
 class TestimonialTranslationOptions(TranslationOptions):
     fields = ('testimonial',)
 
+class AbilityLevelTranslationOptions(TranslationOptions):
+    fields = ('level_name', 'level_description')
+
+class VolunteerProgramTranslationOptions(TranslationOptions):
+    fields = ('name', 'program_type', 'orientation', 'spanish_lessons', 'volunteer_work', 'accommodation')
+
 
 translator.register(Service, ServiceTranslationOptions)
 translator.register(VolunteerProject, VolunteerProjectTranslationOptions)
@@ -26,3 +32,5 @@ translator.register(AccommodationDescription, AccommodationDescriptionTranslatio
 translator.register(FAQ, FAQTranslationOptions)
 translator.register(Teacher, TeacherTranslationOptions)
 translator.register(Testimonial, TestimonialTranslationOptions)
+translator.register(AbilityLevel, AbilityLevelTranslationOptions)
+translator.register(VolunteerProgram, VolunteerProgramTranslationOptions)

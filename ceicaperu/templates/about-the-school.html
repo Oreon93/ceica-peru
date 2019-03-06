@@ -1,14 +1,19 @@
 {% extends "template.html" %}
+{% load i18n %}
+{% block title %}{% trans "About the school | Ceica Peru Spanish School" %}{% endblock %}
+{% block metadescription %}<meta name="description" content="{% trans 'Learn all about the history of Ceica Peru Spanish school, our teaching methods, and meet the team' %}">{% endblock %}
 {% block content %}
 {% load static %}
-{% load i18n %}
+
 <section class="full-width">
-  <div class="parallax-window" data-parallax="scroll" data-image-src="{% static 'images/slide-3.PNG' %}">
+  <div class="parallax-window" data-parallax="scroll" data-image-src="{% static 'images/about-the-school.JPG' %}">
+    <div class="parallax-text">
       <h1 class="parallax-title">{% trans "About us" %}</h1>
-    <p class="parallax-text">{% trans "Welcome to the Ceica Peru  Spanish School  and to the city of Arequipa, <br>the main city of southern Peru." %}</p>
-    <p class="parallax-text">{% trans "Arequipa is a beautiful city with excellent weather, surrounded by spectacular mountains and declared by UNESCO as a world heritage site because of its colonial architecture. From here you can go on excursions to Colca Canyon, Cotahuasi Canyon (the deepest Canyon of the world) or to the cities of Puno, and Cuzco." %}</p>
-    <p class="parallax-text">{% trans "At Ceica Peru Spanish School, we have taught hundreds of people from around the world who are interested in studying in South America because of its culture, fascinating geography and the opportunity to get to know its diverse peoples." %}</p>
-    <p class="parallax-text">{% trans "Our teaching methods are regularly reviewed and updated based on the latest educational research and techniques. Based on this and our highly qualified teachers, you can be assured that you will quickly learn Spanish. It's easy." %}</p>
+      <p class="parallax-paragraph">{% trans "Welcome to the Ceica Peru  Spanish School  and to the city of Arequipa, <br>the main city of southern Peru." %}</p>
+      <p class="parallax-paragraph">{% trans "Arequipa is a beautiful city with excellent weather, surrounded by spectacular mountains and declared by UNESCO as a world heritage site because of its colonial architecture. From here you can go on excursions to Colca Canyon, Cotahuasi Canyon (the deepest Canyon of the world) or to the cities of Puno, and Cuzco." %}</p>
+      <p class="parallax-paragraph">{% trans "At Ceica Peru Spanish School, we have taught hundreds of people from around the world who are interested in studying in South America because of its culture, fascinating geography and the opportunity to get to know its diverse peoples." %}</p>
+      <p class="parallax-paragraph">{% trans "Our teaching methods are regularly reviewed and updated based on the latest educational research and techniques. Based on this and our highly qualified teachers, you can be assured that you will quickly learn Spanish. It's easy." %}</p>
+    </div>
   </div>
 </section>
 
@@ -20,13 +25,13 @@
       <p>{% trans "Ceica Peru Spanish School is situated near the center of Arequipa (only a 25 – minute walk from the historical city center)." %}</p>
   </div>
   <div class="col col-1-3 image-col">
-    <img src="{% static 'images/about-the-school-1.PNG' %}" class="photo">
+    <img src="{% static 'images/about-the-school-1.JPG' %}" alt="{% trans 'The founder of Ceica Peru with a student' %}" class="photo">
   </div>
 </section>
 <section class="full-width strips">
   <div class="container group">
     <div class="col col-1-3 image-col">
-      <img src="{% static 'images/about-the-school-2.PNG' %}" class="photo">
+      <img src="{% static 'images/about-the-school-2.JPG' %}" alt="{% trans 'A group of students in class' %}" class="photo">
     </div>
     <div class="col col-2-3">
       <h2>{% trans "Teaching method" %}</h2>
@@ -34,10 +39,9 @@
       <p>{% trans "All classes have a maximum of four students. Basic classes are taught by bilingual teachers (English and Spanish), more advance and special courses such as Peruvian history and literature are taught by monolingual teachers. All our teachers are professionals who have specialized in teaching Spanish as a foreign language and have many years of experience in this area." %}</p>
   </div>
 </section>
-<section class="full-width strips">
-  <div class="container">
+<section class="container single-column">
     <h2 class="text-center">{% trans 'Our team' %}</h2>
-    <img src="{% static 'images/about-the-school-3.PNG' %}" class="photo feature">
+    <img src="{% static 'images/about-the-school-3.JPG' %}" alt="{% trans 'A picture of all of the teachers in Ceica Peru' %}" class="photo feature">
 
   {% if teacher_list %}
   {% for teacher in teacher_list %}
@@ -51,7 +55,6 @@
       <a class="control control-right">›</a>
     </div>
   {% endfor %}
-  </div>
   {% else %}
   <p>{% trans 'No teachers, sorry!' %}</p>
   {% endif %}

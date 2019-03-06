@@ -1,5 +1,7 @@
-
 {% extends "template.html" %}
+{% load i18n %}
+{% block title %}{% trans "Enroll - Course application | Ceica Peru Spanish School" %}{% endblock %}
+{% block metadescription %}<meta name="description" content="{% trans 'Now it is time to register for a course! Tell us how many are in your group...' %}">{% endblock %}
 {% block content %}
 {% load static %}
 <header class="full-width page-title">

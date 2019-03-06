@@ -1,0 +1,25 @@
+{% extends "template.html" %}
+{% load i18n %}
+{% block title %}{% trans "Enroll - Choose your application | Ceica Peru Spanish School" %}{% endblock %}
+{% block metadescription %}<meta name="description" content="{% trans 'Please select the type of application you want to make:' %}">{% endblock %}
+{% block content %}
+{% load static %}
+<header class="full-width page-title">
+  <div class="container">
+    <img src="{% static 'images/icon-contact.png' %}">
+    <h1>Enroll</h1>
+  </div>
+</header>
+<section class="container">
+  <p class="prominent">Please select the type of application you want to make:</p>
+  <form action="" method="post" class="course-form">
+        {% csrf_token %}
+        <table>
+          <div class="enroll-form">
+          {{form.application_type.errors}}{{form.application_type}}
+          </div>
+        </table>
+        <input type="submit" value="Submit" />
+    </form>
+</section>
+{% endblock %}

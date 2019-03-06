@@ -1,10 +1,18 @@
 {% extends "template.html" %}
+{% load i18n %}
+{% block title %}{% trans "Spanish lessons: beginner to advanced | Ceica Peru Spanish School" %}{% endblock %}
+{% block metadescription %}<meta name="description" content="{% trans 'Ceica Peru offers Spanish lessons for all ability levels in our sunny garden. We also offer flexible schedules from easy-going to intensive courses.' %}">{% endblock %}
 {% block content %}
 {% load static %}
-{% load i18n %}
+
 <header class="full-width ">
   <div class="full-width-title-image">
-    <img src="{% static 'images/learn-spanish-2.JPG' %}">
+    <picture>
+      <source media="(max-width: 799px)" srcset=" {% static 'images/learn-spanish-800.JPG' %}">
+      <source media="(min-width: 800px)" srcset=" {% static 'images/learn-spanish-1600.JPG' %}">
+      <img src=" {% static 'images/learn-spanish-1600.JPG' %}" alt="{% trans 'Student learning Spanish in our garden' %}">
+    </picture>
+
     <div class="title-image-text">
       <h1 class="slider-title">{% trans 'Spanish Lessons' %}</h1>
     </div>
@@ -33,34 +41,35 @@
     {% if price_list %}
     <section class="single-column">
     <h2>{% trans 'Prices' %}</h2>
-    <table class="price-list">
-      <tr>
-        <th>(Price per person)
-        </th>
+    <div class="responsive-table">
+      <table class="price-list">
+        <tr>
+          <th>{% trans "(Price per person)" %}
+          </th>
 
-    {% for customer_type in customer_type_list %}
-      {% if customer_type.number == 4 %}
-      <th>{% trans 'Group of 4 or more ' %}</th>
-      {% elif customer_type.number == 1 %}
-      <th>One on one</th>
-      {% else %}
-      <th>{% trans 'Group of ' %}{{ customer_type.number}}</th>
-      {% endif %}
-    {% endfor %}
-      </tr>
-      {% regroup price_list by service as lesson_list %}
-      {% for service, prices in lesson_list %}
-      <tr>
-        <td>{{service}}
-        </td>
-        {% for customer_type in customer_type_list %}
-        <td>{% for price in prices %}{% if price.customer_type == customer_type %}S/.{{ price.price}}{% endif %}{% endfor %}</td>
-        {% endfor %}
+      {% for customer_type in customer_type_list %}
+        {% if customer_type.number == 4 %}
+        <th>{% trans 'Group of 4 or more ' %}</th>
+        {% elif customer_type.number == 1 %}
+        <th>{% trans 'One on one' %}</th>
+        {% else %}
+        <th>{% trans 'Group of' %} {{ customer_type.number}}</th>
+        {% endif %}
       {% endfor %}
-      </tr>
-    </table>
-
-    <p class="prominent">{% trans 'For more prices and to calculate the total cost of your stay at Ceica Peru, ' %}<a href="/prices">{% trans 'click here' %}</a>.</p>
+        </tr>
+        {% regroup price_list by service as lesson_list %}
+        {% for service, prices in lesson_list %}
+        <tr>
+          <td>{{service}}
+          </td>
+          {% for customer_type in customer_type_list %}
+          <td>{% for price in prices %}{% if price.customer_type == customer_type %}S/.{{ price.price}}{% endif %}{% endfor %}</td>
+          {% endfor %}
+        {% endfor %}
+        </tr>
+      </table>
+    </diiv>
+    <p class="prominent">{% trans 'For more prices and to calculate the total cost of your stay at Ceica Peru,' %}<a href="/prices"> {% trans 'click here' %}</a>.</p>
 
 
     {% endif %}
@@ -77,7 +86,7 @@
       <li>{% trans 'Maximum of <strong>4 students</strong> in a group' %}</li>
 
     </ul>
-    <a href="{% url 'enroll' %}"><button class="btn">{% trans 'Enrol now' %}</button></a>
+    <a href="{% url 'enroll' %}"><button class="btn">{% trans 'Enroll now' %}</button></a>
   </aside>
 </div>
 {% endblock %}

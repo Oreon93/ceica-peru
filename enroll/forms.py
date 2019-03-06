@@ -13,6 +13,13 @@ from datetimewidget.widgets import DateTimeWidget
 class DateInput(forms.DateInput):
     input_type = 'date'
 
+class ApplicationTypeForm(forms.Form):
+    APPLICATION_TYPE = (
+        ('v', 'Volunteering (with or without classes)'),
+        ('c', 'Spanish lessons only'),
+    )
+    application_type = forms.ChoiceField(choices=APPLICATION_TYPE, widget=forms.RadioSelect, initial="c")
+
 class ApplicationForm(forms.Form):
     YESNO = (
         ('y', 'Yes'),

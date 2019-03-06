@@ -1,14 +1,35 @@
 {% extends "template.html" %}
+{% load i18n %}
+{% block title %}{% trans "How to enroll in a volunteer program | Ceica Peru Spanish School" %}{% endblock %}
+{% block metadescription %}<meta name="description" content="{% trans 'Read on to find out how enrollment for a volunteer program works once you have decided on the project you want to do.' %}">{% endblock %}
 {% block content %}
 {% load static %}
-{% load i18n %}
+
 <header class="full-width">
   <div class="full-width-title-image">
-    <img style="margin-top: -45%" src="{% static 'images/how-to-enroll.jpg' %}">
+    <picture>
+      <source media="(max-width: 799px)" srcset=" {% static 'images/how-to-enroll-800.JPG' %}">
+      <source media="(min-width: 800px)" srcset=" {% static 'images/how-to-enroll-1600.JPG' %}">
+      <img src=" {% static 'images/how-to-enroll-1600.JPG' %}" alt="{% trans 'A group of children from a volunteer project in Arequipa' %}">
+    </picture>
     <div class="title-image-text">
       <h1 class="slider-title">{% trans 'How to enroll' %}</h1>
     </div>
 </header>
+<section class="container">
+  <p class="prominent">{% trans 'Our volunteer enrollment process aims to ensure that you are in a position to carry out your role safely and you are in the right project to you.' %}</p>
+</section>
+<section class="container">
+  <h2>{% trans 'How it works' %}</h2>
+  <ol>
+    <li><a href="/enroll">Go our enrollment page</a> to begin your application. You'll be asked fill out your basic details and select the type of program you'd like to do, choosing the length of your stay and whether or not you'd like Spanish classes. You can then select your three most preferred volunteer projects. Please note that places are subject to availability.</li>
+    <li>Once we have received the application form, we will ask you to send the documents which are requested by the relevant social organization. This could include a résumé in Spanish, a letter of Introduction about  yourself in Spanish, or possibly a copy of your university degree or your certificate of studies.</li>
+    <li>After a couple of days, we will send you a response telling you which organization has accepted you. You'll then be invited to choose your accommodation and complete your enrollment.</li>
+    <li>With everything confirmed, we will be in touch with you by e-mail you to coordinate further details and plan your arrival.</li>
+  </ol>
+  <a class="btn" href="{% url 'enroll' %}#A">Enroll now ></a>
+</section>
+
 <section class="container">
 {% if object_list %}
   {% regroup object_list by get_question_type_display as question_type_list %}
