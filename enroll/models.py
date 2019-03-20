@@ -3,37 +3,38 @@ from django.forms import ModelForm
 import datetime
 from django import forms
 from django.core.mail import send_mail
+from django.utils.translation import ugettext_lazy as _
 
 
 # Create your models here.
 class Customer(models.Model):
     # Fields
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
-    email_address = models.EmailField(max_length=254)
-    phone = models.CharField(max_length=15)
-    whatsapp = models.CharField(max_length=15)
-    nationality = models.CharField(max_length=15)
-    passport_number = models.CharField(max_length=12)
-    occupation = models.CharField(max_length = 30)
-    date_of_birth = models.DateField(auto_now=False, auto_now_add=False, default=datetime.date.today)
+    first_name = models.CharField(max_length=30, verbose_name=_('first_name'))
+    last_name = models.CharField(max_length=30, verbose_name=_('last_name'))
+    email_address = models.EmailField(max_length=254, verbose_name=_('email_address'))
+    phone = models.CharField(max_length=15, verbose_name=_('phone'))
+    whatsapp = models.CharField(max_length=15, blank=True, verbose_name=_('whatsapp'))
+    nationality = models.CharField(max_length=15, verbose_name=_('nationality'))
+    passport_number = models.CharField(max_length=12, verbose_name=_('passport_number'))
+    occupation = models.CharField(max_length = 30, blank=True, verbose_name=_('occupation'))
+    date_of_birth = models.DateField(auto_now=False, auto_now_add=False, default=datetime.date.today, verbose_name=_('date_of_birth'))
     emergency_name = models.CharField(max_length = 60)
     emergency_number = models.CharField(max_length = 15)
 
     GENDERS = (
-        ('m', 'Male'),
-        ('f', 'Female'),
-        ('o', 'Other'),
-        ('p', 'Prefer not to say'),
+        ('m', _('Male')),
+        ('f', _('Female')),
+        ('o', _('Other')),
+        ('p', _('Prefer not to say')),
     )
 
     MARITAL_STATUSES = (
-        ('m', 'Married'),
-        ('s', 'Single'),
+        ('m', _('Married')),
+        ('s', _('Single')),
     )
 
-    gender = models.CharField(max_length=1, choices=GENDERS)
-    marital_status = models.CharField(max_length=1, choices=MARITAL_STATUSES)
+    gender = models.CharField(max_length=1, choices=GENDERS, blank=True, verbose_name=_('gender'))
+    marital_status = models.CharField(max_length=1, choices=MARITAL_STATUSES, blank=True, verbose_name=_('marital_status'))
 
     class Meta:
         ordering = ["first_name"]
@@ -58,15 +59,10 @@ class Service(models.Model):
     service_description = models.TextField(max_length=2000, blank=True, null=True)
     levels_open_to = models.ManyToManyField('AbilityLevel')
     image = models.ImageField(upload_to='services/', null=True, blank=True)
-    SERVICE_TYPE = (
-        ('l', 'Lesson'),
-        ('s', 'Special program'),
-        ('e', 'Extra'),
-    )
     fixed_duration = models.BooleanField(default = False)
     duration_weeks = models.PositiveSmallIntegerField(default = 1, help_text = "Ignore if duration is not fixed")
     hours = models.PositiveSmallIntegerField(default = 10, help_text = "If duration is not fixed, put in hours per week")
-    service_type = models.CharField(max_length=1, choices = SERVICE_TYPE, default = 'l')
+    service_type = models.CharField(max_length=60)
 
     @property
     def daily_hours(self):
@@ -229,14 +225,14 @@ class CourseApplication(models.Model):
         (1, "1"),
         (2, "2"),
         (3, "3"),
-        (4, "4 or more"),
+        (4, _("4 or more")),
     )
 
     SPANISHLEVEL = (
-        ("b", "Beginner"),
-        ("i", "Intermediate"),
-        ("a", "Advanced"),
-        ("d", "Different levels"),
+        ("b", _("Beginner")),
+        ("i", _("Intermediate")),
+        ("a", _("Advanced")),
+        ("d", _("Different levels")),
     )
 
     current_spanish_level = models.CharField(max_length=1, choices=SPANISHLEVEL, default="b")
@@ -301,23 +297,23 @@ class Application(models.Model):
 class AccommodationOption(models.Model):
     #Fields
     ACCOMMODATION_TYPES = (
-        ('h', 'Host Family'),
-        ('s', 'School building'),
-        ('p', 'Private Apartment'),
+        ('h', _('Host Family')),
+        ('s', _('School building')),
+        ('p', _('Private Apartment')),
     )
 
     ROOM_TYPES = (
-        ('c', 'Shared'),
-        ('s', 'Single'),
-        ('d', 'Double'),
-        ('n', 'N/A'),
+        ('c', _('Shared room')),
+        ('s', _('Single room')),
+        ('d', _('Double room')),
+        ('n', _('N/A')),
     )
 
     CATERING = (
-        ('n', 'None'),
-        ('b', 'Breakfast'),
-        ('h', 'Half-board'),
-        ('f', 'Full-Board'),
+        ('n', _('None')),
+        ('b', _('Breakfast')),
+        ('h', _('Half-board')),
+        ('f', _('Full-Board')),
     )
 
     accommodation_type = models.CharField(max_length=1, choices=ACCOMMODATION_TYPES)
@@ -345,9 +341,9 @@ class AccommodationPrice(models.Model):
     price = models.DecimalField(default=0, max_digits=7, decimal_places=2)
 
     DURATIONS = (
-        ('d', 'daily'),
-        ('w', 'weekly'),
-        ('m', 'monthly'),
+        ('d', _('daily')),
+        ('w', _('weekly')),
+        ('m', _('monthly')),
     )
 
     duration = models.CharField(max_length=1, choices=DURATIONS)
@@ -359,17 +355,10 @@ class AccommodationPrice(models.Model):
 
 class FAQ(models.Model):
     #Fields
-    question = models.CharField(max_length = 80)
+    question = models.CharField(max_length = 160)
     answer = models.TextField(max_length = 1000)
 
-    TYPES = (
-        ('p', 'Planning your trip and arrival'),
-        ('l', 'Spanish lessons'),
-        ('b', 'Booking and payment'),
-        ('a', 'Accommodation'),
-    )
-
-    question_type = models.CharField(max_length=1, choices = TYPES)
+    question_type = models.CharField(max_length=40)
 
     def __str__(self):
         return self.question

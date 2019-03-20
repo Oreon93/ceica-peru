@@ -43,10 +43,10 @@
     <p>
       {{ e.description|linebreaksbr }}
     </p>
-    <a class="btn" href="{% url 'prices' %}#A">See prices ></a>
+    <a class="btn" href="{% url 'prices' %}#A">{% trans "See prices" %} ></a>
     </div>
     <div class="col-1-3">
-    <img class="photo" src="/static/uploads/{{e.image}}">
+    <img class="photo" src="/static/uploads/{{e.image}}" alt="{{e.name}}">
     </div>
   </div>
   </section>

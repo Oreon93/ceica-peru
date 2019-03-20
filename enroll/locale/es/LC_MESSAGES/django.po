@@ -8,28 +8,236 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-02 17:00+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2019-03-20 21:54+0100\n"
+"PO-Revision-Date: 2019-03-20 21:57-0015\n"
+"Last-Translator: b'  <nicholas-howley@hotmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.9.1\n"
+
+#: .\enroll\forms.py:19
+msgid "Volunteering (with or without classes)"
+msgstr "Voluntariado (con o sin clases)"
+
+#: .\enroll\forms.py:20
+msgid "Spanish lessons only"
+msgstr "Solo clases de español"
+
+#: .\enroll\forms.py:26
+msgid "Yes"
+msgstr "Sí"
+
+#: .\enroll\forms.py:27
+msgid "No"
+msgstr "No"
+
+#: .\enroll\forms.py:31 .\enroll\models.py:300
+msgid "Host Family"
+msgstr "Familia hospedadora"
+
+#: .\enroll\forms.py:32 .\enroll\models.py:301
+msgid "School building"
+msgstr "Edificio de la escuela"
+
+#: .\enroll\forms.py:33 .\enroll\models.py:302
+msgid "Private Apartment"
+msgstr "Departamento de dos cuartos"
+
+#: .\enroll\forms.py:37 .\enroll\models.py:306
+msgid "Shared room"
+msgstr "Habitación compartido"
+
+#: .\enroll\forms.py:38 .\enroll\models.py:307
+msgid "Single room"
+msgstr "Habitación individual"
+
+#: .\enroll\forms.py:39 .\enroll\models.py:308
+msgid "Double room"
+msgstr "Habitación doble"
+
+#: .\enroll\forms.py:40 .\enroll\models.py:309
+msgid "N/A"
+msgstr "N/A"
+
+#: .\enroll\forms.py:44 .\enroll\models.py:313
+msgid "None"
+msgstr "Nada"
+
+#: .\enroll\forms.py:45 .\enroll\models.py:314
+msgid "Breakfast"
+msgstr "Desayuno"
+
+#: .\enroll\forms.py:46 .\enroll\models.py:315
+msgid "Half-board"
+msgstr "Media pensión"
+
+#: .\enroll\forms.py:47 .\enroll\models.py:316
+msgid "Full-Board"
+msgstr "Pensión completa"
+
+#: .\enroll\forms.py:55
+msgid "Arrival date"
+msgstr "Fecha de llegada"
+
+#: .\enroll\forms.py:56
+msgid "Departure date"
+msgstr "Fecha de salida"
+
+#: .\enroll\models.py:12
+msgid "first_name"
+msgstr "nombre"
+
+#: .\enroll\models.py:13
+msgid "last_name"
+msgstr "appelido"
+
+#: .\enroll\models.py:14
+msgid "email_address"
+msgstr "correo electronico"
+
+#: .\enroll\models.py:15
+msgid "phone"
+msgstr "teléfono"
+
+#: .\enroll\models.py:16
+msgid "whatsapp"
+msgstr "whatsapp"
+
+#: .\enroll\models.py:17
+msgid "nationality"
+msgstr "nacionalidad"
+
+#: .\enroll\models.py:18
+msgid "passport_number"
+msgstr "numéro de pasaporte"
+
+#: .\enroll\models.py:19
+msgid "occupation"
+msgstr "ocupación"
+
+#: .\enroll\models.py:20
+msgid "date_of_birth"
+msgstr "fecha de nacamiento"
+
+#: .\enroll\models.py:25
+msgid "Male"
+msgstr "Hombre"
+
+#: .\enroll\models.py:26
+msgid "Female"
+msgstr "Mujer"
+
+#: .\enroll\models.py:27
+msgid "Other"
+msgstr "Otro"
+
+#: .\enroll\models.py:28
+msgid "Prefer not to say"
+msgstr "Prefiero no especificar "
+
+#: .\enroll\models.py:32
+msgid "Married"
+msgstr "Casado"
+
+#: .\enroll\models.py:33
+msgid "Single"
+msgstr "Solo"
+
+#: .\enroll\models.py:36
+msgid "gender"
+msgstr "sexo"
+
+#: .\enroll\models.py:37
+msgid "marital_status"
+msgstr "estado civil"
+
+#: .\enroll\models.py:228
+msgid "4 or more"
+msgstr "4 o más"
+
+#: .\enroll\models.py:232
+msgid "Beginner"
+msgstr "Principiante"
+
+#: .\enroll\models.py:233
+msgid "Intermediate"
+msgstr "Intermediado"
+
+#: .\enroll\models.py:234
+msgid "Advanced"
+msgstr "Avanzado"
+
+#: .\enroll\models.py:235
+msgid "Different levels"
+msgstr "Niveles diferentes"
+
+#: .\enroll\models.py:344
+msgid "daily"
+msgstr "diaramente"
+
+#: .\enroll\models.py:345
+msgid "weekly"
+msgstr "semanalmente"
+
+#: .\enroll\models.py:346
+msgid "monthly"
+msgstr "mensualmente"
 
 #: .\enroll\templates\enroll\application_form.html:4
 msgid "Enroll - Accommodation | Ceica Peru Spanish School"
-msgstr ""
+msgstr "Registrarse - Alojamiento | Ceica Peru"
 
 #: .\enroll\templates\enroll\application_form.html:5
 msgid ""
 "Complete your application to enroll at Ceica Peru by selecting your "
 "accommodation and transport preferences."
 msgstr ""
+"Completar tu aplicación seleccionando tus preferencias de transporte y "
+"alojamiento."
+
+#: .\enroll\templates\enroll\application_form.html:10
+#: .\enroll\templates\enroll\application_submitted.html:9
+#: .\enroll\templates\enroll\application_type_form.html:9
+#: .\enroll\templates\enroll\course_application_form.html:9
+#: .\enroll\templates\enroll\volunteer_application_form.html:9
+#: .\enroll\templates\enroll\volunteer_application_sent.html:9
+msgid "Enroll"
+msgstr "Registrarse"
+
+#: .\enroll\templates\enroll\application_form.html:15
+msgid "Finally..."
+msgstr ""
+
+#: .\enroll\templates\enroll\application_form.html:23
+msgid "Give us some more information about your stay:"
+msgstr ""
+
+#: .\enroll\templates\enroll\application_form.html:29
+msgid "Airport pickup?"
+msgstr ""
+
+#: .\enroll\templates\enroll\application_form.html:32
+msgid "Would you like accommodation?"
+msgstr ""
+
+#: .\enroll\templates\enroll\application_form.html:44
+msgid "Catering:"
+msgstr ""
+
+#: .\enroll\templates\enroll\application_form.html:50
+#: .\enroll\templates\enroll\application_type_form.html:21
+#: .\enroll\templates\enroll\course_application_form.html:44
+#: .\enroll\templates\enroll\customer_form.html:39
+#: .\enroll\templates\enroll\volunteer_application_form.html:38
+msgid "Submit"
+msgstr "Enviar"
 
 #: .\enroll\templates\enroll\application_submitted.html:3
 msgid "Enroll - Final step"
-msgstr ""
+msgstr "Registrarse - Ultimo paso"
 
 #: .\enroll\templates\enroll\application_submitted.html:4
 msgid ""
@@ -37,17 +245,26 @@ msgid ""
 "our school, please pay the enrollment fee using the button below:"
 msgstr ""
 
-#: .\enroll\templates\enroll\application_type_form.html:3
-msgid "Enroll - Choose your application | Ceica Peru Spanish School"
+#: .\enroll\templates\enroll\application_submitted.html:14
+msgid "One more step..."
 msgstr ""
 
+#: .\enroll\templates\enroll\application_submitted.html:16
+msgid "You"
+msgstr ""
+
+#: .\enroll\templates\enroll\application_type_form.html:3
+msgid "Enroll - Choose your application | Ceica Peru Spanish School"
+msgstr "Registrarse - Selecciona tu aplicación | Ceica Peru"
+
 #: .\enroll\templates\enroll\application_type_form.html:4
+#: .\enroll\templates\enroll\application_type_form.html:13
 msgid "Please select the type of application you want to make:"
 msgstr ""
 
 #: .\enroll\templates\enroll\course_application_form.html:3
 msgid "Enroll - Course application | Ceica Peru Spanish School"
-msgstr ""
+msgstr "Registrarse - Aplicación de curso | Ceica Peru"
 
 #: .\enroll\templates\enroll\course_application_form.html:4
 msgid ""
@@ -55,16 +272,64 @@ msgid ""
 "group..."
 msgstr ""
 
+#: .\enroll\templates\enroll\course_application_form.html:14
+msgid "Step 2: Course Registration"
+msgstr ""
+
+#: .\enroll\templates\enroll\course_application_form.html:16
+msgid "Now it"
+msgstr ""
+
+#: .\enroll\templates\enroll\course_application_form.html:24
+msgid "Select your current Spanish level:"
+msgstr ""
+
+#: .\enroll\templates\enroll\course_application_form.html:27
+msgid ""
+"We will be happy to hold group classes for members of your party who are at "
+"the same level."
+msgstr ""
+
+#: .\enroll\templates\enroll\course_application_form.html:28
+msgid "Select your course:"
+msgstr ""
+
+#: .\enroll\templates\enroll\course_application_form.html:31
+msgid "When would you like the course to begin?"
+msgstr ""
+
+#: .\enroll\templates\enroll\course_application_form.html:36
+msgid "How many weeks of teaching would you like?"
+msgstr ""
+
 #: .\enroll\templates\enroll\customer_form.html:3
 msgid "Enroll - Your details | Ceica Peru Spanish School"
-msgstr ""
+msgstr "Registrarse - Tus datos"
 
 #: .\enroll\templates\enroll\customer_form.html:4
 msgid ""
 "To get your application started, please fill out your details below. In "
-"order to register for lessons in Ceica Peru Spanish School each student must "
-"submit the enrollment form that appears below and a one time (non-"
+"order to register for lessons in Ceica Peru Spanish School each student must"
+" submit the enrollment form that appears below and a one time (non-"
 "refundable) 20 dollars registration fee."
+msgstr ""
+
+#: .\enroll\templates\enroll\customer_form.html:10
+msgid "Thanks for choosing Ceica Peru!"
+msgstr ""
+
+#: .\enroll\templates\enroll\customer_form.html:12
+msgid ""
+"To get your application started, please fill out your details below. In "
+"order to register for lessons in Ceica Peru Spanish  School each student "
+"must submit the enrollment form that appears below and a one time (non-"
+"refundable) 20 dollars registration fee. This fee guarantees your enrollment"
+" in Ceica Peru Spanish School. This fee is not part of your tuition, which "
+"you will pay upon arrival. You may pay your tuition in Soles."
+msgstr ""
+
+#: .\enroll\templates\enroll\customer_form.html:18
+msgid "Step 1: Your details"
 msgstr ""
 
 #: .\enroll\templates\enroll\paid.html:3
@@ -77,9 +342,21 @@ msgid ""
 "course. If you have any questions, just e-mail: info@ceica-peru.com"
 msgstr ""
 
+#: .\enroll\templates\enroll\paid.html:15
+msgid "All done!"
+msgstr ""
+
+#: .\enroll\templates\enroll\paid.html:17
+msgid "We"
+msgstr ""
+
+#: .\enroll\templates\enroll\paid.html:18
+msgid "Back to the home page."
+msgstr ""
+
 #: .\enroll\templates\enroll\volunteer_application_form.html:3
 msgid "Enroll - Volunteer application | Ceica Peru Spanish School"
-msgstr ""
+msgstr "Registrarse - Aplicación de voluntariado | Ceica Peru"
 
 #: .\enroll\templates\enroll\volunteer_application_form.html:4
 msgid ""
@@ -87,12 +364,49 @@ msgid ""
 "your type of program and where you wouldd like to volunteer:"
 msgstr ""
 
+#: .\enroll\templates\enroll\volunteer_application_form.html:14
+msgid "Volunteer Program Registration"
+msgstr ""
+
+#: .\enroll\templates\enroll\volunteer_application_form.html:16
+msgid ""
+"Thanks for your interest in volunteering through Ceica Peru. Please select "
+"your type of program and where you would like to volunteer:"
+msgstr ""
+
+#: .\enroll\templates\enroll\volunteer_application_form.html:23
+msgid ""
+"Where would you like to volunteer? Please select your first preference:"
+msgstr ""
+
+#: .\enroll\templates\enroll\volunteer_application_form.html:25
+msgid "Your second preference:"
+msgstr ""
+
+#: .\enroll\templates\enroll\volunteer_application_form.html:27
+msgid "Your third preference:"
+msgstr ""
+
+#: .\enroll\templates\enroll\volunteer_application_form.html:29
+msgid "When would you like the program to begin?"
+msgstr ""
+
 #: .\enroll\templates\enroll\volunteer_application_sent.html:3
 msgid "Enroll - Volunteer Application Submitted"
-msgstr ""
+msgstr "Registrarse - Aplicación de voluntariado enviado"
 
 #: .\enroll\templates\enroll\volunteer_application_sent.html:4
 msgid ""
 "Thank you for applying for a volunteer program at Ceica Peru. We will be in "
 "touch shortly about your next steps."
+msgstr ""
+
+#: .\enroll\templates\enroll\volunteer_application_sent.html:14
+#, fuzzy
+#| msgid "Enroll - Volunteer Application Submitted"
+msgid "Volunteer application submitted"
+msgstr "Registrarse - Aplicación de voluntariado enviado"
+
+#: .\enroll\templates\enroll\volunteer_application_sent.html:16
+msgid "Thank you for applying for a volunteer program at Ceica Peru. We"
 msgstr ""

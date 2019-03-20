@@ -204,7 +204,7 @@ function checkboxselect(id) {
             changeYear: true,
             yearRange: "1902:2020"
           }
-        );
+        ).datepicker( $.datepicker.regional[ "fr" ] );
       }
     });
   }

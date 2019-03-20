@@ -19,6 +19,24 @@ def index(request):
         context
     )
 
+def privacypolicy(request):
+    return render(
+        request,
+        'privacy-policy.html',
+    )
+
+def termsofservice(request):
+    return render(
+        request,
+        'terms-of-service.html',
+    )
+
+def iconsused(request):
+    return render(
+        request,
+        'icons-used.html',
+    )
+
 def enroll(request):
     return render(
         request,
@@ -71,7 +89,7 @@ class ExtrasListView(generic.ListView):
     model = Service
     template_name = 'extras.html'
     context_object_name = 'extras_list'
-    queryset = Service.objects.filter(service_type = "e")
+    queryset = Service.objects.filter(service_type = "Extras")
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get the context
         context = super(ExtrasListView, self).get_context_data(**kwargs)
@@ -84,13 +102,13 @@ class ExtrasListView(generic.ListView):
 
 class FAQListView(generic.ListView):
     model = FAQ
-    queryset = FAQ.objects.exclude(question_type = "a")
+    queryset = FAQ.objects.exclude(question_type = "Accommodation")
     template_name = 'faqs.html'
 
 class SpecialProgramListView(generic.ListView):
     model = Service
     context_object_name = 'special_program_list'   # your own name for the list as a template variable
-    queryset = Service.objects.filter(service_type = "s")
+    queryset = Service.objects.filter(service_type = "Special programs")
     template_name = 'special-programs.html'
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get the context
@@ -108,7 +126,7 @@ class AccommodationListView(generic.ListView):
         # Call the base implementation first to get the context
         context = super(AccommodationListView, self).get_context_data(**kwargs)
         # Create any data and add it to the context
-        context['faq_list'] = FAQ.objects.filter(question_type="a")
+        context['faq_list'] = FAQ.objects.filter(question_type="Accommodation") | FAQ.objects.filter(question_type = "Alojamiento")
         return context
 
 class PriceListView(generic.ListView):

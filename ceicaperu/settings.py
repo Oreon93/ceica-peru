@@ -36,6 +36,7 @@ ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -43,8 +44,11 @@ INSTALLED_APPS = [
     'enroll.apps.EnrollConfig',
     'datetimewidget',
     'rosetta',
-    'modeltranslation'
+    'modeltranslation',
+    'django.contrib.sitemaps'
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -122,6 +126,7 @@ LANGUAGES = [
 
 LOCALE_PATHS = (
     os.path.join(os.path.abspath(os.path.dirname(__file__)), 'locale'),
+    '././enroll/locale',
 )
 
 TIME_ZONE = 'Europe/Madrid'

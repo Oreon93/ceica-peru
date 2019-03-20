@@ -49,6 +49,18 @@ This site makes use of the following frameworks:
 - Fixed issue on About Us where teacher testimonials didn't display
 - Changed icon on home page in "Special programs" card
 
+0.5 - 20/03/2019
+- Almost all images optimised
+- Remainder of the site marked for translation
+- Paypal button styling fixed
+- Fixed an issue on the About Us page where teacher testimonials did not show
+- Checked and fixed text on all pages
+- Added Terms of Service
+- Added Privacy Policy
+- Attributed icons
+- Added robots.txt
+- Added sitemap
+
 # Future development
 - Integration with a Price Estimation app giving the user the ability to estimate the total cost of their registration before enrolling.
 - Add a Paypal / Stripe payment to registration

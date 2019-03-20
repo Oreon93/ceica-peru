@@ -23,10 +23,10 @@
 {% if price_list %}
   <h2 id="C" class="text-center">{% trans 'Courses' %}</h2>
   <p class="prominent">{% trans 'Prices are shown per week in Soles. Special courses may have a fixed duration (see ' %}<a href="{% url 'special-programs' %}">{% trans 'special programs' %}</a>).</p>
-  {% regroup price_list by service.get_service_type_display as service_type_list %}
+  {% regroup price_list by service.service_type as service_type_list %}
   {% for service_type, prices in service_type_list %}
       <div class="container">
-      <h2 id="{{service_type|first}}"> {{ service_type }}s</h2>
+      <h2 id="{{service_type|first}}"> {{ service_type }}</h2>
         <div class="responsive-table">
         <table class="price-list">
           <tr>
@@ -37,7 +37,7 @@
           {% if customer_type.number == 4 %}
           <th>{% trans 'Group of 4 or more ' %}</th>
           {% elif customer_type.number == 1 %}
-          <th>One on one</th>
+          <th>{% trans 'One on one' %}</th>
           {% else %}
           <th>{% trans 'Group of' %} {{ customer_type.number}}</th>
           {% endif %}
@@ -99,7 +99,7 @@
       <th>{% trans '(Price per room per week)' %}</th>
       {% regroup school_room_price_list by room_type as room_type_list %}
       {% for room_type, prices in room_type_list %}
-      <th>{{room_type}} {% trans 'room' %}</th>
+      <th>{{room_type}} </th>
       {% endfor %}
       {% regroup school_catering_price_list by catering as catering_type_list %}
       {% for catering_type, the_prices in catering_type_list %}
@@ -144,8 +144,8 @@
 <section class="strips">
   <div class="container">
     <h2 id="O" class="text-center">{% trans 'Other' %}</h2>
-    <p><b>{% trans 'Airport and pickup:' %}</b> {% trans 'We offer pick-up service for our students, where we charge 35 soles for transportation from the airport or bus station to the host family.' %}</p>
-    <p><b>{% trans 'Enrollment and reservation: ' %}</b>{% trans 'To book  courses and  accommodation students have to pay the enrollment fee, and complete and send the enrollment form that appears on the "Enroll" page. We request an enrollment fee of US$20 to book a place for a student, and this fee must be paid with a credit card via paypal. The payment of Spanish lessons and accommodation must be paid weekly at the school at the beginning of each week. We only accept cash and we prefer  payment in US dollars or Soles (the local currency).' %}</p>
+    <p><b>{% trans 'Airport and pickup:' %}</b>  {% trans 'We offer pick-up service for our students, where we charge 35 soles for transportation from the airport or bus station to the host family.' %}</p>
+    <p><b>{% trans 'Enrollment and reservation:' %} </b>{% trans 'To book  courses and  accommodation students have to pay the enrollment fee, and complete and send the enrollment form that appears on the "Enroll" page. We request an enrollment fee of US$20 to book a place for a student, and this fee must be paid with a credit card via paypal. The payment of Spanish lessons and accommodation must be paid weekly at the school at the beginning of each week. We only accept cash and we prefer  payment in US dollars or Soles (the local currency).' %}</p>
   </div>
 </section>
 

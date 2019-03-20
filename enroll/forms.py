@@ -4,6 +4,7 @@ from django.forms import ModelForm
 import datetime
 from enroll.models import Customer, AbilityLevel, Service, Price, CustomerType, CourseApplication, Application, AccommodationOption, AccommodationPrice, CustomerForm, CourseApplicationForm
 from datetimewidget.widgets import DateTimeWidget
+from django.utils.translation import ugettext_lazy as _
 
 
 #class CourseApplicationFormFull(CourseApplicationForm):
@@ -15,35 +16,35 @@ class DateInput(forms.DateInput):
 
 class ApplicationTypeForm(forms.Form):
     APPLICATION_TYPE = (
-        ('v', 'Volunteering (with or without classes)'),
-        ('c', 'Spanish lessons only'),
+        ('v', _('Volunteering (with or without classes)')),
+        ('c', _('Spanish lessons only')),
     )
     application_type = forms.ChoiceField(choices=APPLICATION_TYPE, widget=forms.RadioSelect, initial="c")
 
 class ApplicationForm(forms.Form):
     YESNO = (
-        ('y', 'Yes'),
-        ('n', 'No'),
+        ('y', _('Yes')),
+        ('n', _('No')),
     )
 
     ACCOMMODATION_TYPES = (
-        ('h', 'Host Family'),
-        ('s', 'School building'),
-        ('p', 'Private Apartment'),
+        ('h', _('Host Family')),
+        ('s', _('School building')),
+        ('p', _('Private Apartment')),
     )
 
     ROOM_TYPES = (
-        ('c', 'Shared'),
-        ('s', 'Single'),
-        ('d', 'Double'),
-        ('n', 'N/A'),
+        ('c', _('Shared room')),
+        ('s', _('Single room')),
+        ('d', _('Double room')),
+        ('n', _('N/A')),
     )
 
     CATERING = (
-        ('n', 'None'),
-        ('b', 'Breakfast'),
-        ('h', 'Half-board'),
-        ('f', 'Full-Board'),
+        ('n', _('None')),
+        ('b', _('Breakfast')),
+        ('h', _('Half-board')),
+        ('f', _('Full-Board')),
     )
     applicant = forms.CharField();
     accommodation = forms.ChoiceField(choices=YESNO, widget=forms.RadioSelect, initial="n")
@@ -51,8 +52,8 @@ class ApplicationForm(forms.Form):
     accommodation_type = forms.ChoiceField(choices=ACCOMMODATION_TYPES, widget=forms.RadioSelect, initial="h")
     room_type = forms.ChoiceField(choices=ROOM_TYPES, widget=forms.RadioSelect, initial="n")
     catering = forms.ChoiceField(choices=CATERING, widget=forms.RadioSelect, initial="n")
-    arrival_date = forms.DateField()
-    departure_date = forms.DateField()
+    arrival_date = forms.DateField(label=_("Arrival date"))
+    departure_date = forms.DateField(label=_("Departure date"))
     accommodation_choice = forms.CharField();
 
     class Meta:

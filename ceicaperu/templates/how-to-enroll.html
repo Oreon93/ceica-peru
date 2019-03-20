@@ -31,21 +31,46 @@
 </section>
 
 <section class="container">
-{% if object_list %}
-  {% regroup object_list by get_question_type_display as question_type_list %}
-  {% for question_type in question_type_list %}
-  <h2 class="text-center"> {{ question_type.grouper }}</h2>
-  {% for FAQ in question_type.list %}
-  <button class="accordion">{{ FAQ.question }}<i class="fas fa-angle-down fa-lg style="float:right""></i></button>
-  <div class="panel faq">
-    <p>{{FAQ.answer|linebreaksbr}}</p>
+<h2>Terms and conditions</h2>
+<p>
+    Please, read carefully the general rules of the Ceica Peru Volunteer Program. By submitting your Enrolment form and your Enrolment fee, you acknowledge and accept the following terms and conditions:
+</p>
+<p>
+    You confirm that you have read all of the information available in Ceica Peru Spanish School website concerning the requirements to apply for volunteer positions, the description of the programs that we offer, costs, etc.; and you understand and accept these.
+</p>
+<p>
+    Ceica Peru Spanish School expects that the persons interested in applying for a volunteer position, choose a Program for Volunteers that matches their needs and availability of time; and also, that they will fulfill with their responsibility of studying Spanish (if this option is chosen), accommodation and carrying out the volunteer work, because this is a commitment that Ceica Peru Spanish School assumes with the people in charge of the different institutions that accept volunteers
+</p>
+<p>
+    If you have to cancel your participation in Ceica Peru Volunteer Program for any reason, you can do it within 30 days before the start of your program, but your 20 dollars Enrollment fee will not be refunded.
+</p>
+<p>
+    If you decide to cancel your volunteer program due to an emergency after your arrival in Arequipa, we can refund you part of your money which will be determined by the management of Ceica Peru Spanish School.
+</p>
+<p>
+    If you decide to leave the accommodation and the volunteer work earlier than planned, no money will be refunded.
+</p>
+<p>
+    If you are absent from your accommodation no refund will be given. Also, it is not possible to postpone the days, which you are not in the accommodation, when you travel. If you stay after your programmed departure date, you have to pay these additional days in Ceica Peru’s Administrative Office.
+</p>
+<p>
+    The total payment of your Volunteer Program is expected on your arrival, in our Administrative Office.
+</p>
+<p>
+    Ceica Peru Spanish School will make a contribution of 150 Soles to the Institution chosen by the volunteer. This contribution will be in the form of food, clothing, and articles for the children etc. The volunteer will personally hand this over to the institution.
+</p>
+<p>
+    You agree that pictures taken during your project, in which you appear, can be used in Ceica Peru Spanish School website and promotional materials, in order to promote our Spanish School.
+</p>
+<p>
+    You will be expected to behave in a manner consistent with the laws and customs of Peru. If you commit any illegal acts, offend local sensibilities, put at risk the welfare or safety of yourself or others, or act in a manner detrimental to the school, the local families or the social organizations, you will be required to leave promptly without recourse or refund.
+</p>
+<p>
+    In the event of you choosing to leave the organization at any time, or if the staff has instructed you to leave, Ceica Peru Spanish School is released from any responsibility for your welfare immediately.
+</p>
+<p>
+    Ceica Peru Spanish School does not provide insurance cover for you or your possessions. We are not liable for the loss, wear or damage to any personal items. You are advised to provide yourselves with appropriate health, accident and travel insurance for the time of your stay in Arequipa.
+</p>
 
-
-  </div>
-  {% endfor %}
-  {% endfor %}
-{% else %}
-<p>No courses, sorry!</p>
-{% endif %}
 </section>
 {% endblock %}

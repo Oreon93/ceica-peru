@@ -6,15 +6,14 @@
 {% load static %}
 <header class="full-width page-title">
   <div class="container">
-    <img src="{% static 'images/icon-contact.png' %}">
-    <h1>Enroll</h1>
+    <h1>{% trans 'Enroll' %}</h1>
   </div>
 </header>
 <section class="container">
   <h2 class="text-center">
-    Step 2: Course Registration
+    {% trans 'Step 2: Course Registration' %}
   </h2>
-  <p class="prominent">Now it's time to register for a course! Tell us how many are in your group:</p>
+  <p class="prominent">{% trans 'Now it's time to register for a course! Tell us how many are in your group:' %}</p>
   <form action="" method="post" class="course-form">
         {% csrf_token %}
 
@@ -22,19 +21,19 @@
           <div class="enroll-form">
           {{form.group_number.errors}}{{form.group_number}}
 
-          <p class="prominent">Select your current Spanish level:</p>
+          <p class="prominent">{% trans 'Select your current Spanish level:' %}</p>
           {{form.applicant.errors}}{{form.applicant}}
           {{form.current_spanish_level.errors}}{{form.current_spanish_level}}
-          <p style="text-align: center">We will be happy to hold group classes for members of your party who are at the same level.</p>
-          <p class="prominent">Select your course:</p>
+          <p style="text-align: center">{% trans 'We will be happy to hold group classes for members of your party who are at the same level.' %}</p>
+          <p class="prominent">{% trans 'Select your course:' %}</p>
           {{form.course_chosen.errors}}{{form.course_chosen}}
 
-            <p class="prominent">When would you like the course to begin?
+            <p class="prominent">{% trans 'When would you like the course to begin?' %}
             </p>
             {{form.course_start_date.errors}}{{form.course_start_date}}
             <br>
             <br>
-            <p class="prominent">How many weeks of teaching would you like?
+            <p class="prominent">{% trans 'How many weeks of teaching would you like?' %}
             </p>
             {{form.course_length.errors}}{{form.course_length}}
           </div>
@@ -42,7 +41,7 @@
 
 
         </table>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="{% trans 'Submit' %}" />
     </form>
 </section>
 {% endblock %}

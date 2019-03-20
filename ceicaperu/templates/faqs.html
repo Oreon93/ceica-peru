@@ -18,7 +18,7 @@
 </header>
 <section class="container">
 {% if object_list %}
-  {% regroup object_list by get_question_type_display as question_type_list %}
+  {% regroup object_list by question_type as question_type_list %}
   {% for question_type in question_type_list %}
   <h2 class="text-center"> {{ question_type.grouper }}</h2>
   {% for FAQ in question_type.list %}

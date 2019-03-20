@@ -6,12 +6,11 @@
 {% load static %}
 <header class="full-width page-title">
   <div class="container">
-    <img src="{% static 'images/icon-contact.png' %}">
-    <h1>Enroll</h1>
+    <h1>{% trans 'Enroll' %}</h1>
   </div>
 </header>
 <section class="container">
-  <p class="prominent">Please select the type of application you want to make:</p>
+  <p class="prominent">{% trans 'Please select the type of application you want to make:' %}</p>
   <form action="" method="post" class="course-form">
         {% csrf_token %}
         <table>
@@ -19,7 +18,7 @@
           {{form.application_type.errors}}{{form.application_type}}
           </div>
         </table>
-        <input type="submit" value="Submit" />
+        <input type="submit"value="{% trans 'Submit' %}" />
     </form>
 </section>
 {% endblock %}

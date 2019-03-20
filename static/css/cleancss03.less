@@ -13,6 +13,7 @@
 /* --------- Base --------- */
 
 @site-main: rgba(55, 106, 103, 1);
+@site-main-dark: rgba(40, 77, 75, 1);
 @site-main-bright: #63a7a3;
 @site-main-translucent: rgba(55, 106, 103, 0.7);
 @site-light-blue: rgba(200, 222, 221, 1);
@@ -77,7 +78,7 @@ h3 {
   font-weight: 300;
 }
 
-p {
+p, li {
   font-size: 0.9em;
   line-height: 1.4em;
   margin-top: 0px;
@@ -191,6 +192,24 @@ a {
 .section {
   margin-bottom: 30px;
 }
+
+/* Icon columns */
+.icon-table-row {
+  display: flex;
+  justify-content: space-between;
+  paddiing: 20px 0px;
+  align-items: center;
+}
+
+.icon-image {
+  width: 32px;
+  margin-right: 30px;
+}
+
+.icon-attribution {
+  flex: 1;
+}
+
 
 /* Column styles! */
 
@@ -309,6 +328,16 @@ footer {
   color: #fff;
 }
 
+.footer-bottom {
+  padding: 10px 0px;
+  background-color: @site-main-dark;
+}
+
+.footer-bottom-text {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
 
 /* Header */
 
@@ -744,6 +773,7 @@ input:checked ~ .language-options {
 
   .nav-item {
     transition: background-color 0.5s ease;
+    font-size: 0.9em;
   }
 
   .nav-item p {
@@ -1114,6 +1144,10 @@ img.feature {
   }
 }
 
+.bio {
+  width: 100%;
+}
+
 .author {
   margin-bottom: 0px;
   font-style: normal;
@@ -1350,7 +1384,7 @@ to   { opacity: 1; }
   line-height: 40px;
 }
 
-input, textarea {
+.course-form input, .course-form textarea {
   font-size: 1.4em;
   font-weight: 300;
   width: 100%;
@@ -1409,4 +1443,10 @@ input:focus, textarea:focus {
     display: block;
     margin: 0 auto;
   }
+}
+
+/* Paypal button */
+
+.paypal {
+  text-align: center;
 }

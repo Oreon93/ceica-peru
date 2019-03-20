@@ -6,16 +6,15 @@
 {% load static %}
 <header class="full-width page-title">
   <div class="container">
-    <img src="{% static 'images/icon-contact.png' %}">
-    <h1>Enroll</h1>
+    <h1>{% trans 'Enroll' %}</h1>
   </div>
 </header>
 <section class="container">
   <h2 class="text-center">
-    One more step...
+    {% trans 'One more step...' %}
   </h2>
-  <p class="prominent">You're almost enrolled! To confirm your application and book your place at our school, please pay the enrollment fee using the button below:</p>
-  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  <p class="prominent">{% trans 'You're almost enrolled! To confirm your application and book your place at our school, please pay the enrollment fee using the button below:' %}</p>
+  <form class="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
     <input type="hidden" name="cmd" value="_s-xclick">
     <input type="hidden" name="hosted_button_id" value="AYXJLSPTQVHU2">
     <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">

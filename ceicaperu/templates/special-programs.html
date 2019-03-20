@@ -33,7 +33,7 @@
         {% else %}
         <p><b>{% trans 'Length' %}: {{ program.duration_weeks }} {% trans 'weeks' %} | {% trans 'Spanish lessons' %}: {{ program.hours}} {% trans 'a week' %}</b></p>
         {% endif %}
-        <img src="/static/uploads/{{program.image}}">
+        <img src="/static/uploads/{{program.image}}" alt="{{program.service_name }}">
 
         <p>{{program.service_description|linebreaksbr}}</p>
 

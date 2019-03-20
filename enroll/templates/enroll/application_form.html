@@ -7,13 +7,12 @@
 {% load static %}
 <header class="full-width page-title">
   <div class="container">
-    <img src="{% static 'images/icon-contact.png' %}">
-    <h1>Enroll</h1>
+    <h1>{% trans 'Enroll' %}</h1>
   </div>
 </header>
 <section class="container">
   <h2 class="text-center">
-    Finally...
+    {% trans 'Finally...' %}
   </h2>
   <form action="" method="post" class="course-form">
         {% csrf_token %}
@@ -21,34 +20,35 @@
         {{optionlist}}
         </div>
         <table>
-          <p class="prominent">Give us some more information about your stay:</p>
+          <p class="prominent">{% trans 'Give us some more information about your stay:' %}'</p>
           {{form.applicant.errors}}{{form.applicant.as_hidden}}
           {{form.accommodation_choice.errors}}{{form.accommodation_choice.as_hidden}}
           <div class="contact-details enroll-form">{{form.arrival_date.label_tag}}{{form.arrival_date.errors}}{{form.arrival_date}}</div>
           <div class="contact-details enroll-form">{{form.departure_date.label_tag}}{{form.departure_date.errors}}{{form.departure_date}}</div>
           <div class="enroll-form">
-            <p class="prominent">Airport pickup?</p>
+            <p class="prominent">{% trans 'Airport pickup?' %}</p>
             {{form.airport_pickup.errors}}{{form.airport_pickup}}
             <div class="cascading-binary">
-              <p class="prominent">Would you like accommodation?</p>
+              <p class="prominent">{% trans 'Would you like accommodation?' %}</p>
               {{form.accommodation.errors}}{{form.accommodation}}
             </div>
             <div id="level-0" class="cascading dynamic-options">
-              <p class="prominent">Select your accommodation:</p>
+              <p class="prominent">{% 'Select your accommodation:' %}</p>
               {{form.accommodation_type.errors}}{{form.accommodation_type}}
             </div>
             <div id="level-1" class="cascading dynamic-options">
-              <p class="prominent">Select your room:</p>
+              <p class="prominent">{% 'Select your room:' %}</p>
               {{form.room_type.errors}}{{form.room_type}}
             </div>
             <div id="level-2" class="cascading dynamic-options">
-              <p class="prominent">Catering:</p>
+              <p class="prominent">{% trans 'Catering:' %}</p>
               {{form.catering.errors}}{{form.catering}}
             </div>
           </div>
 
         </table>
-        <input type="submit" id="submit" value="Submit" />
+        <input type="submit" id="submit" value="{% trans 'Submit' %}" />
     </form>
 </section>
+<script src="{% static 'js/enrollpart03.js' %}"defer></script>
 {% endblock %}
